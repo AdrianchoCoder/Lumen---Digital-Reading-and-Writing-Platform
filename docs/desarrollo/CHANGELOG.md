@@ -32,7 +32,7 @@ Registro incremental. El más reciente va arriba.
 
 ### Commit de referencia
 
-- Commit: _(se completa tras push)_
+- Commit: `ccf6ceb`
 - Rama: `main`
 
 ---

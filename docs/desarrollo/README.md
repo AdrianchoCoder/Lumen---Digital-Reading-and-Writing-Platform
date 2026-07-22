@@ -25,7 +25,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 6 | Módulo Escritor | Completado | `99dc2b9` |
 | 7 | Módulo Administrador | Completado | `2597401` |
 | 8 | Middleware de roles | Completado | `990629c` |
-| 9 | Diseño visual completo | Completado | _(tras push)_ |
+| 9 | Diseño visual completo | Completado | `ccf6ceb` |
 
 ## Plan de módulos: cerrado
 
