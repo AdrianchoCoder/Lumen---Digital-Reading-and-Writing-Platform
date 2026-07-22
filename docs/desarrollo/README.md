@@ -28,7 +28,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9 | Diseño visual completo | Completado | `ccf6ceb` |
 | 9+ | Landing page pública (estilo Wattpad) | Completado | `480779d` |
 | 9+b | Logo + fondo landing + hovers | Completado | `2374778` |
-| 9+c | Pulido marca / hover claro / carrusel | Completado | *(ver CHANGELOG)* |
+| 9+c | Pulido marca / hover claro / carrusel | Completado | `e996bd4` |
 
 ## Plan de módulos: cerrado
 
