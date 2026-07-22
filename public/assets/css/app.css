@@ -1,11 +1,14 @@
-/* Estilos mínimos del módulo 1 (smoke test). El diseño completo es el módulo 9. */
+/* Estilos funcionales (módulos 1–3). El diseño completo es el módulo 9. */
 :root {
     --bg: #0f0f14;
+    --panel: #1a1a24;
+    --border: #2a2a3a;
     --text: #f2f2f7;
     --muted: #a1a1b5;
     --accent: #6c5ce7;
     --ok: #2ecc71;
     --warn: #f1c40f;
+    --err: #ff6b6b;
 }
 
 * {
@@ -20,10 +23,46 @@ body {
     color: var(--text);
 }
 
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.topnav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-user {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
 .shell {
     max-width: 640px;
     margin: 0 auto;
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
 }
 
 .eyebrow {
@@ -37,7 +76,7 @@ body {
 
 h1 {
     margin: 0 0 1rem;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
 }
 
@@ -47,15 +86,18 @@ h1 {
     margin: 0 0 1.5rem;
 }
 
-.db {
+.db,
+.flash {
     padding: 0.85rem 1rem;
     border-radius: 10px;
-    background: #1a1a24;
-    border: 1px solid #2a2a3a;
+    background: var(--panel);
+    border: 1px solid var(--border);
     font-size: 0.95rem;
+    margin: 0 0 1rem;
 }
 
-.db.ok {
+.db.ok,
+.flash-ok {
     border-color: color-mix(in srgb, var(--ok) 40%, transparent);
     color: var(--ok);
 }
@@ -63,4 +105,103 @@ h1 {
 .db.warn {
     border-color: color-mix(in srgb, var(--warn) 40%, transparent);
     color: var(--warn);
+}
+
+.flash-err {
+    border-color: color-mix(in srgb, var(--err) 40%, transparent);
+    color: var(--err);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.1rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    filter: brightness(1.08);
+    text-decoration: none;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-small {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.auth-card {
+    max-width: 420px;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form label {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.form input {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    font: inherit;
+}
+
+.form input:focus {
+    outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    border-color: var(--accent);
+}
+
+.field-error {
+    color: var(--err);
+    font-size: 0.85rem;
+}
+
+.muted-link {
+    margin-top: 1.25rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.inline-form {
+    display: inline;
+    margin: 0;
+}
+
+.linkish {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.linkish:hover {
+    text-decoration: underline;
 }

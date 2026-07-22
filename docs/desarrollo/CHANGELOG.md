@@ -4,6 +4,43 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 3] — Autenticación (2026-07-22)
+
+### Qué se implementó
+
+- `Session.php` y `Csrf.php` en el núcleo
+- Modelo `User.php` (buscar por id/email/username; crear lector)
+- `AuthController`: registro, login, logout
+- Vistas `auth/login.php` y `auth/register.php`
+- Rutas: `GET/POST /login`, `GET/POST /register`, `POST /logout`
+- Arranque de sesión + PDO en `public/index.php`
+- Layout con navegación Entrar/Registrarse o usuario + cerrar sesión
+- Flash messages de éxito/error
+
+### Decisiones técnicas
+
+- Registro siempre crea rol **`lector`**
+- Contraseñas solo con `password_hash` / `password_verify`
+- `session_regenerate_id(true)` tras login/registro (anti session fixation)
+- CSRF en todos los formularios POST de auth
+- Datos en sesión: id, username, email, display_name, role (sin password)
+- Logout solo por POST + CSRF
+- Assets del CSS con URL absoluta (`appUrl`) para que no se rompan en `/login`
+
+### Cómo probar
+
+1. `http://localhost/lumen/public/register` → crear cuenta (mín. 8 caracteres en contraseña)
+2. Debe redirigir al inicio con sesión activa y rol lector
+3. Cerrar sesión → `http://localhost/lumen/public/login`
+4. Probar admin seed: `admin@lumen.local` / `Admin123!`
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 2] — Base de datos MySQL (2026-07-22)
 
 ### Qué se implementó

@@ -8,14 +8,13 @@ use App\Core\Controller;
 use App\Core\Database;
 
 /**
- * Controlador de prueba del núcleo MVC (módulo 1).
- * Verifica que el Router, las vistas y (opcionalmente) la BD respondan.
+ * Portada / smoke test del núcleo + estado de autenticación.
  */
 final class HomeController extends Controller
 {
     public function index(): void
     {
-        $dbStatus = 'pendiente (aún no se creó la base lumen)';
+        $dbStatus = 'pendiente';
         $dbOk = false;
 
         try {
@@ -23,14 +22,13 @@ final class HomeController extends Controller
             $dbStatus = 'conexión PDO correcta';
             $dbOk = true;
         } catch (\Throwable $e) {
-            // Esperado hasta importar lumen.sql (módulo 2) o si MySQL no está activo.
             if ($this->config['app']['debug']) {
                 $dbStatus = $e->getMessage();
             }
         }
 
         $this->view('home/index', [
-            'appName'  => $this->config['app']['name'],
+            'title'    => $this->config['app']['name'],
             'dbStatus' => $dbStatus,
             'dbOk'     => $dbOk,
         ]);

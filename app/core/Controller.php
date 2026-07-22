@@ -32,6 +32,15 @@ abstract class Controller
             throw new \RuntimeException("Vista no encontrada: {$view}");
         }
 
+        $data = array_merge([
+            'appName'      => $this->config['app']['name'] ?? 'Lumen',
+            'appUrl'       => rtrim($this->config['app']['url'] ?? '', '/'),
+            'authUser'     => Session::get('user'),
+            'flashSuccess' => Session::pullFlash('success'),
+            'flashError'   => Session::pullFlash('error'),
+            'title'        => $this->config['app']['name'] ?? 'Lumen',
+        ], $data);
+
         extract($data, EXTR_SKIP);
 
         ob_start();
@@ -65,5 +74,11 @@ abstract class Controller
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode($payload, JSON_UNESCAPED_UNICODE);
         exit;
+    }
+
+    /** Escape HTML para prevenir XSS al mostrar datos. */
+    protected function e(?string $value): string
+    {
+        return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
     }
 }

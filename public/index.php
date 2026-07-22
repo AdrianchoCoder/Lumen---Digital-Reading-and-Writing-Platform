@@ -8,7 +8,9 @@ declare(strict_types=1);
  */
 
 use App\Core\Autoloader;
+use App\Core\Database;
 use App\Core\Router;
+use App\Core\Session;
 
 define('BASE_PATH', dirname(__DIR__));
 
@@ -27,6 +29,9 @@ if (!empty($config['app']['debug'])) {
     error_reporting(0);
     ini_set('display_errors', '0');
 }
+
+Session::start($config['session']['name'] ?? 'lumen_session');
+Database::getInstance($config['db']);
 
 $router = new Router();
 require BASE_PATH . '/app/routes/web.php';

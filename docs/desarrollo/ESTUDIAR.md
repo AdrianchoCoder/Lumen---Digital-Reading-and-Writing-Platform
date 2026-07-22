@@ -127,9 +127,43 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 3 — Autenticación (pendiente)
+## Módulo 3 — Autenticación (completado)
 
-_Se completará al cerrar el módulo 3._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Sesión PHP | El servidor “recuerda” quién eres entre páginas (`$_SESSION`) |
+| `password_hash` | Guarda un hash irreversible, nunca la contraseña en claro |
+| `password_verify` | Compara la clave del login con el hash guardado |
+| CSRF | Token secreto en el formulario para evitar envíos falsificados |
+| Registro = lector | Toda cuenta nueva empieza con rol `lector` |
+| Modelo `User` | Habla con la tabla `users` vía PDO preparado |
+| AuthController | Orquesta formularios de login/registro/logout |
+
+### Archivos para abrir y leer (en este orden)
+
+1. `public/index.php` — arranca Session + Database  
+2. `app/core/Session.php`  
+3. `app/core/Csrf.php`  
+4. `app/models/User.php`  
+5. `app/controllers/AuthController.php`  
+6. `app/views/auth/register.php` y `login.php`  
+7. `app/routes/web.php`  
+
+### Preguntas de repaso (módulo 3)
+
+- ¿Dónde se guarda la contraseña y en qué forma?  
+- ¿Qué hace `session_regenerate_id` después del login?  
+- ¿Por qué el logout es POST y no un enlace GET?  
+- ¿Qué rol obtiene un usuario al registrarse?  
+- ¿Qué datos del usuario se guardan en la sesión?
+
+### Práctica sugerida
+
+1. Registrar un usuario nuevo y verlo en phpMyAdmin → tabla `users`.  
+2. Confirmar que `password_hash` empieza por `$2y$`.  
+3. Cerrar sesión e iniciar con el admin de demo.
 
 ---
 
@@ -175,6 +209,7 @@ Marcar cuando corresponda (se refinará al final):
 
 - [ ] Ambos pueden explicar MVC con el mapa de carpetas  
 - [ ] Ambos instalaron el proyecto en XAMPP al menos una vez  
+- [ ] Ambos saben registrar/iniciar/cerrar sesión  
 - [ ] Ambos saben el flujo de roles (lector → escritor → admin)  
 - [ ] Ella hizo una demo de 5–10 min sin leer el código en vivo  
 - [ ] Existe `docs/entrega/` con el paso a paso limpio (solo al final)
