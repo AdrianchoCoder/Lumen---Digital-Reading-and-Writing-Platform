@@ -33,7 +33,7 @@ Registro incremental. El más reciente va arriba.
 
 ### Commit de referencia
 
-- Commit: _(se completa tras push)_
+- Commit: `488e54c`
 - Rama: `main`
 
 ---
