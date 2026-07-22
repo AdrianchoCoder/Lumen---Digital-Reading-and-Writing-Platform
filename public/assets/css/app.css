@@ -1,0 +1,66 @@
+/* Estilos mínimos del módulo 1 (smoke test). El diseño completo es el módulo 9. */
+:root {
+    --bg: #0f0f14;
+    --text: #f2f2f7;
+    --muted: #a1a1b5;
+    --accent: #6c5ce7;
+    --ok: #2ecc71;
+    --warn: #f1c40f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.shell {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.eyebrow {
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.lead {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+}
+
+.db {
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    background: #1a1a24;
+    border: 1px solid #2a2a3a;
+    font-size: 0.95rem;
+}
+
+.db.ok {
+    border-color: color-mix(in srgb, var(--ok) 40%, transparent);
+    color: var(--ok);
+}
+
+.db.warn {
+    border-color: color-mix(in srgb, var(--warn) 40%, transparent);
+    color: var(--warn);
+}

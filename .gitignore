@@ -1,0 +1,19 @@
+# Sistema / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs y temporales
+*.log
+tmp/
+temp/
+
+# Credenciales locales (si separa secretos del ejemplo)
+config/config.local.php
+
+# Subidas de usuarios (fase posterior)
+storage/uploads/*
+!storage/uploads/.gitkeep

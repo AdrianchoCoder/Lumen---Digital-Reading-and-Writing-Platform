@@ -1,0 +1,16 @@
+# Front controller: rutas amigables hacia index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si la app está en un subdirectorio de htdocs, Apache resuelve
+    # RewriteBase automáticamente; descomenta y ajusta solo si hace falta:
+    # RewriteBase /Lumen---Digital-Reading-and-Writing-Platform/public/
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Bloquear listado de directorios
+Options -Indexes

@@ -1,0 +1,8 @@
+# Redirige el tráfico al front controller en /public
+# Útil si abres la raíz del proyecto en Apache/XAMPP.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</IfModule>
