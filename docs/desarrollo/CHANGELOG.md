@@ -4,6 +4,30 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+c] — Pulido landing: marca, hovers claro, carrusel (2026-07-22)
+
+### Qué se implementó
+
+- Navbar: vuelve el texto **Lumen** junto al `logo.png`
+- Modo **claro**: hover de “Comenzar” e “Inicia sesión” con morado más oscuro (`#4f3dbd`) y texto blanco (mejor contraste); **modo oscuro sin cambios** en ese comportamiento base
+- Carrusel: más padding vertical + hover más suave para que las tarjetas **no se recorten** al pasar el mouse
+- Eliminado el watermark semitransparente “Lumen” del hero (casi invisible y competía con el fondo); se mantienen las tarjetas de comunidad
+
+### Cómo probar
+
+1. Ctrl+F5 en `http://localhost/lumen/public`
+2. Ver “Lumen” al lado del logo
+3. Tema claro: hover en Comenzar e Inicia sesión
+4. Tema oscuro: confirmar que los hovers siguen bien
+5. Hover en libros del carrusel: la tarjeta sube sin cortarse
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+b] — Logo, fondo y hovers de la landing (2026-07-22)
 
 ### Qué se implementó

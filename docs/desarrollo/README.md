@@ -28,6 +28,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9 | Diseño visual completo | Completado | `ccf6ceb` |
 | 9+ | Landing page pública (estilo Wattpad) | Completado | `480779d` |
 | 9+b | Logo + fondo landing + hovers | Completado | `2374778` |
+| 9+c | Pulido marca / hover claro / carrusel | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
@@ -36,7 +37,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora (9+)
 
-Landing en `/` con logo `logo.png`, fondo `backgroundLandingPages.jpeg` (visible, velo ligero), navbar sin “Inicio”, hovers contrastados, carrusel + modal y footer. **Sin cambiar** la estructura MVC.
+Landing en `/` con logo + texto **Lumen**, fondo visible, hovers (incluido contraste en modo claro), carrusel sin recorte en hover, modal y footer. **Sin cambiar** la estructura MVC.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

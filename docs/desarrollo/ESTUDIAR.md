@@ -457,6 +457,25 @@ GET /  →  HomeController::index
 
 ---
 
+## Mejora 9+c — Pulido UI landing (2026-07-22)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Marca en navbar | Logo + `.landing-brand-text` (“Lumen”) |
+| Hover por tema | Reglas `[data-theme="light"] …` solo afectan el modo claro |
+| Recorte del carrusel | `overflow-x: auto` recorta el eje Y; se compensa con **padding** vertical |
+| Watermark hero | Se eliminó `.hero-mark` para no tapar/competir con el fondo |
+
+### Preguntas de repaso
+
+- ¿Por qué el hover de Comenzar en claro usa un morado más oscuro?  
+- ¿Qué propiedad del carrusel evitaba ver bien el hover?  
+- ¿Dónde está el nombre “Lumen” en el HTML del navbar?
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):

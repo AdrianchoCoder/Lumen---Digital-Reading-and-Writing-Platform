@@ -34,10 +34,11 @@ $pageTitle = (!empty($title) && $title !== $appName)
             <span class="logo-slot" aria-label="Logo Lumen">
                 <img
                     src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/img/logo.png"
-                    alt="<?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?>"
+                    alt=""
                     class="logo-img"
                 >
             </span>
+            <span class="landing-brand-text"><?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?></span>
         </a>
         <nav class="landing-nav-links">
             <button type="button" class="icon-btn landing-interactive" id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">

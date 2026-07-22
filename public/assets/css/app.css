@@ -755,16 +755,25 @@ h2 {
 .landing-brand {
     display: inline-flex;
     align-items: center;
+    gap: 0.75rem;
+    color: var(--text);
     text-decoration: none;
     border-radius: 14px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .landing-brand:hover {
     text-decoration: none;
-    transform: translateY(-1px) scale(1.03);
+    color: var(--accent);
+    transform: translateY(-1px) scale(1.02);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent),
         0 8px 22px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.landing-brand-text {
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.03em;
 }
 
 .logo-slot {
@@ -884,6 +893,16 @@ h2 {
     text-decoration: none;
 }
 
+/* Modo claro: hover más contrastado (oscuro intacto) */
+[data-theme="light"] .landing-body .landing-btn:hover {
+    background: #4f3dbd;
+    color: #fff;
+    filter: none;
+    box-shadow:
+        0 0 0 2px #6c5ce7,
+        0 12px 28px rgba(79, 61, 189, 0.4);
+}
+
 .landing-body .landing-btn:active {
     transform: translateY(-1px) scale(1.01);
 }
@@ -897,8 +916,9 @@ h2 {
 }
 
 [data-theme="light"] .landing-body .landing-btn-ghost:hover {
-    color: var(--accent-strong);
-    background: #efe9ff;
+    color: #fff;
+    background: #4f3dbd;
+    border-color: #6c5ce7;
 }
 
 .landing-body .landing-interactive {
@@ -919,13 +939,28 @@ h2 {
     font-weight: 700;
     text-decoration: none;
     border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
+    padding: 0.15rem 0.4rem;
+    margin: 0 -0.15rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, text-shadow 0.2s ease;
 }
 
 .landing-text-link:hover {
-    color: #c4b5fd;
-    border-bottom-color: #c4b5fd;
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 55%, transparent);
+    color: #fff;
+    background: color-mix(in srgb, var(--accent) 88%, #000);
+    border-bottom-color: transparent;
+    text-shadow: none;
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+[data-theme="light"] .landing-text-link {
+    color: #4f3dbd;
+}
+
+[data-theme="light"] .landing-text-link:hover {
+    color: #fff;
+    background: #4f3dbd;
+    box-shadow: 0 6px 16px rgba(79, 61, 189, 0.35);
 }
 
 .landing-hero-login {
@@ -953,18 +988,6 @@ h2 {
     background:
         linear-gradient(145deg, color-mix(in srgb, var(--accent) 35%, #fff), color-mix(in srgb, #c7bff5 40%, transparent));
     opacity: 0.45;
-}
-
-.hero-mark {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    font-weight: 700;
-    letter-spacing: -0.06em;
-    color: rgba(255, 255, 255, 0.14);
-    pointer-events: none;
 }
 
 .hero-card {
@@ -1010,6 +1033,7 @@ h2 {
     max-width: 1100px;
     margin: 0 auto;
     padding: 1rem 1.5rem 3.5rem;
+    overflow: visible;
 }
 
 .carousel-header {
@@ -1035,12 +1059,15 @@ h2 {
     gap: 0.5rem;
 }
 
+/* Padding vertical: el hover sube la tarjeta; sin esto overflow-x la recorta */
 .book-carousel {
     display: flex;
     gap: 1rem;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    padding: 0.35rem 0.15rem 1rem;
+    padding: 1.15rem 0.35rem 1.6rem;
+    margin: 0 -0.15rem;
     scrollbar-width: thin;
 }
 
@@ -1055,10 +1082,13 @@ h2 {
     color: inherit;
     font: inherit;
     transition: transform 0.22s ease;
+    /* Evita que el scale recorte contra el borde del scroll */
+    transform-origin: center bottom;
 }
 
 .book-card:hover {
-    transform: translateY(-8px) scale(1.03);
+    transform: translateY(-6px) scale(1.02);
+    z-index: 2;
 }
 
 .book-card:hover .book-cover {

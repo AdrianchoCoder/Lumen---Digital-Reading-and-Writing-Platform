@@ -119,6 +119,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 9 | Diseño visual | `ccf6ceb` | `main` |
 | 9+ | Landing page pública | `480779d` | `main` |
 | 9+b | Logo + fondo + hovers landing | `2374778` | `main` |
+| 9+c | Pulido marca / hover claro / carrusel | *(rellenar tras commit)* | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

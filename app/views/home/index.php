@@ -35,7 +35,6 @@
                 <p>¿Alguien más está leyendo esto a las 2 a.m.?</p>
             </div>
         </div>
-        <div class="hero-mark"><?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?></div>
     </div>
 </section>
 
