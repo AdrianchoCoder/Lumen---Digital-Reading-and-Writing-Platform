@@ -59,7 +59,7 @@ docs/desarrollo/*
 
 Tras el push de este módulo, anota aquí el hash corto:
 
-- Commit: _(se completa tras `git push`)_
+- Commit: `fb20bbc`
 - Rama: `main`
 
 ---
