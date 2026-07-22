@@ -33,7 +33,7 @@ Sirve para **quien desarrolla** y para **quien presenta/estudia** el código (t�
 | 3 | Autenticación | Completado | `02cc863` |
 | 4 | Módulo Lector | Completado | `b7beee9` |
 | 5 | Solicitud de escritor | Completado | `488e54c` |
-| 6 | Módulo Escritor | Completado | _(tras push)_ |
+| 6 | Módulo Escritor | Completado | `99dc2b9` |
 | 7 | Módulo Administrador | Pendiente | — |
 | 8 | Middleware de roles | Pendiente | — |
 | 9 | Diseño visual completo | Pendiente | — |
