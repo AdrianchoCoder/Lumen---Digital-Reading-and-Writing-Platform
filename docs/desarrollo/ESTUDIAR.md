@@ -269,8 +269,10 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos pueden explicar MVC con el mapa de carpetas  
 - [ ] Ambos instalaron el proyecto en XAMPP al menos una vez  
 - [ ] Ambos saben registrar/iniciar/cerrar sesión  
-- [ ] Ambos saben el flujo de roles (lector → escritor → admin)  
+- [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
+- [ ] Ambos saben enviar una solicitud de escritor (lector)  
+- [ ] Ambos saben el flujo de roles (lector → solicitud → admin aprueba → escritor)  
 - [ ] Ella hizo una demo de 5–10 min sin leer el código en vivo  
 - [ ] Existe `docs/entrega/` con el paso a paso limpio (solo al final)
 
-Más contexto: [RECOMENDACIONES.md](RECOMENDACIONES.md).
+Más contexto: [RECOMENDACIONES.md](RECOMENDACIONES.md) · puntos Git: [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md).

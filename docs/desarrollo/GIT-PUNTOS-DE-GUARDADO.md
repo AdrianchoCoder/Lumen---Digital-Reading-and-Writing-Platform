@@ -97,7 +97,30 @@ Si ese commit **ya estaba en GitHub** y haces reset hard + push, hace falta `pus
 ## Recomendación para Lumen
 
 1. Al terminar cada módulo: **commit + push**
-2. Anota el hash en `CHANGELOG.md`
-3. Si algo sale mal: crea una **rama desde el commit bueno**, no borres `main` a la ligera
+2. Anota el hash en `CHANGELOG.md` **y** en la tabla de abajo
+3. Actualiza **todos** los archivos de `docs/desarrollo/` (acuerdo del proyecto)
+4. Si algo sale mal: crea una **rama desde el commit bueno**, no borres `main` a la ligera
 
 Así siempre tienes un “guardar partida” en GitHub.
+
+## Tabla de puntos de guardado (actualizar en cada módulo)
+
+| Módulo | Descripción corta | Commit | Rama |
+|--------|-------------------|--------|------|
+| 0 | Initial commit del repo | `f6cb580` | `main` |
+| 1 | Núcleo MVC | `fb20bbc` | `main` |
+| 2 | SQL `lumen.sql` + URL local | `4cf2488` | `main` |
+| 3 | Autenticación | `02cc863` | `main` |
+| 4 | Módulo Lector | `b7beee9` | `main` |
+| 5 | Solicitud de escritor | `488e54c` | `main` |
+| 6 | Escritor | — | — |
+| 7 | Administrador | — | — |
+| 8 | Middleware de roles | — | — |
+| 9 | Diseño visual | — | — |
+
+Para volver al estado del módulo 5, por ejemplo:
+
+```bash
+git switch -c reinicio-desde-modulo-5 488e54c
+```
+

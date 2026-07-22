@@ -36,6 +36,10 @@ Registro incremental. El más reciente va arriba.
 - Commit: `488e54c`
 - Rama: `main`
 
+### Documentación tocada al cerrar (refuerzo)
+
+Se acordó actualizar **toda** `docs/desarrollo/` en cada módulo (README, CHANGELOG, ESTUDIAR, PROMPT, RECOMENDACIONES, GIT), no solo ESTUDIAR.
+
 ---
 
 ## [Módulo 4] — Módulo Lector (2026-07-22)

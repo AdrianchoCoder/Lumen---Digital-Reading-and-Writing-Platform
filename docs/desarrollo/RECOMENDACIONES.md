@@ -20,7 +20,9 @@ Acuerdos y consejos acumulados durante el desarrollo.
 1. Un **módulo a la vez** (orden 1 → 9).
 2. Al terminar: ver código, decisiones breves, **esperar confirmación** antes del siguiente.
 3. No asumir requisitos no pedidos; preguntar si algo no está claro.
-4. Tras cada módulo aprobado: actualizar esta carpeta (`CHANGELOG`, `ESTUDIAR`, `PROMPT-CONTINUIDAD`, este archivo si aplica) + **commit + push**.
+4. Tras cada módulo: actualizar **TODOS** los archivos de `docs/desarrollo/` (no solo `ESTUDIAR.md`):
+   - `README.md`, `CHANGELOG.md`, `ESTUDIAR.md`, `PROMPT-CONTINUIDAD.md`, `RECOMENDACIONES.md`, `GIT-PUNTOS-DE-GUARDADO.md`
+5. Luego **commit + push**.
 
 ---
 
@@ -28,9 +30,8 @@ Acuerdos y consejos acumulados durante el desarrollo.
 
 - Cada commit (mejor con push a GitHub) es una “partida guardada”.
 - Si algo sale mal, se puede volver a un commit anterior o crear una rama desde ese punto.
-- Guía práctica: [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md).
-- Punto de guardado del módulo 1: commit `fb20bbc` (rama `main`).
-- URL local recomendada con junction: `http://localhost/lumen/public` (enlace `C:\xampp\htdocs\lumen` → carpeta del repo).
+- Guía práctica y tabla de hashes: [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md).
+- URL local: `http://localhost/lumen/public` (junction `C:\xampp\htdocs\lumen`).
 
 ---
 
@@ -133,6 +134,35 @@ Quitar el enlace (no borra el repo): `rmdir C:\xampp\htdocs\lumen`
 Si `lumen.sql` ya se importó antes, no hace falta borrar todo: ejecuta `database/patch_modulo4.sql` (crea `library` + datos demo de escritora/historias).
 
 Instalaciones nuevas: basta importar `database/lumen.sql` completo (ya incluye `library` y seeds).
+
+---
+
+## 11. Solicitud de escritor (módulo 5 — 2026-07-22)
+
+- Ruta: `/solicitar-escritor` (sidebar **Ser escritor**, solo si `role === lector`)
+- Guarda en `writer_requests` con estado `pendiente`
+- No permite otra solicitud mientras haya una pendiente
+- Si fue `rechazado`, puede volver a enviar
+- **Aprobar y cambiar el rol a escritor** = módulo 7 (Admin), no en este módulo
+- Cuentas útiles:
+  - Lector: el que registres tú
+  - Escritora demo: `escritor@lumen.local` / `Escritor123!` (no necesita solicitar)
+  - Admin: `admin@lumen.local` / `Admin123!`
+
+---
+
+## 12. Documentación completa por módulo (acuerdo reforzado)
+
+Al cerrar **cualquier** módulo nuevo, Cursor debe enriquecer **todos** estos archivos, no solo el de estudio:
+
+1. `README.md` — estado + commits  
+2. `CHANGELOG.md` — detalle técnico  
+3. `ESTUDIAR.md` — aprendizaje  
+4. `PROMPT-CONTINUIDAD.md` — siguiente paso  
+5. `RECOMENDACIONES.md` — al menos una sección/nota del módulo  
+6. `GIT-PUNTOS-DE-GUARDADO.md` — hash en la tabla  
+
+Si falta alguno, el cierre del módulo está incompleto.
 
 ---
 
