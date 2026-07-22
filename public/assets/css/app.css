@@ -397,6 +397,41 @@ h1 {
     font: inherit;
 }
 
+.admin-card {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+}
+
+.admin-card .muted,
+.muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.admin-actions {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.inline-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.inline-tools select {
+    padding: 0.45rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+}
+
 .actions form {
     display: inline-block;
     margin: 0;

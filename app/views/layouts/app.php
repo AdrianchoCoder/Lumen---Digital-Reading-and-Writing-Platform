@@ -25,6 +25,7 @@ $nav = static function (string $path, string $currentPath): string {
 
 $role = is_array($authUser) ? (string) ($authUser['role'] ?? '') : '';
 $isWriterPlus = in_array($role, ['escritor', 'administrador'], true);
+$isAdmin = $role === 'administrador';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,6 +51,9 @@ $isWriterPlus = in_array($role, ['escritor', 'administrador'], true);
                 <a class="<?= $currentPath === '/escribir/comunidades' || str_starts_with($currentPath, '/escribir/comunidades/') ? 'active' : '' ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir/comunidades">Comunidades</a>
                 <a class="<?= $currentPath === '/escribir/estadisticas' ? 'active' : '' ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir/estadisticas">Estadísticas</a>
                 <a class="btn btn-small" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir/libros/nueva">Nueva historia</a>
+            <?php endif; ?>
+            <?php if ($isAdmin): ?>
+                <a class="<?= str_starts_with($currentPath, '/admin') ? 'active' : '' ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/admin">Admin</a>
             <?php endif; ?>
         </nav>
         <div class="side-footer">

@@ -4,6 +4,42 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 7] — Administrador (2026-07-22)
+
+### Qué se implementó
+
+- `AdminController` + vistas en `app/views/admin/`
+- Panel `/admin` con resumen (solicitudes pendientes, usuarios, libros)
+- Solicitudes: filtrar, **aprobar** (sube `users.role` a `escritor` en transacción) o **rechazar**
+- Usuarios: buscar, cambiar rol, activar/desactivar (sin tocar la propia cuenta)
+- Contenido: buscar historias, archivar o republicar
+- Link **Admin** en sidebar solo para rol administrador
+- Métodos nuevos en `WriterRequest`, `User`, `Book`
+
+### Decisiones técnicas
+
+- Aprobación atómica: `BEGIN` → review request → `setRole('escritor')` → `COMMIT`
+- No se baja un admin a escritor al aprobar su propia solicitud hipotética
+- CSRF en todas las acciones POST
+- El usuario aprobado debe **cerrar sesión y volver a entrar** para refrescar el rol en la sesión
+- Middleware de rutas formal sigue pendiente (módulo 8); gate actual = `requireMinRole`
+
+### Cómo probar
+
+1. Login admin: `admin@lumen.local` / `Admin123!`
+2. Sidebar → **Admin** → Solicitudes
+3. Con otro navegador/cuenta lector, envía solicitud en Ser escritor
+4. Aprueba → en phpMyAdmin el usuario queda `escritor`
+5. El lector cierra sesión, entra de nuevo → ve menú Escribir
+6. Prueba Usuarios (desactivar) y Contenido (archivar)
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 6] — Área Escritor (2026-07-22)
 
 ### Qué se implementó

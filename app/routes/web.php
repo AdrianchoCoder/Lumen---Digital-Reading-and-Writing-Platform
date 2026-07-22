@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controllers\AdminController;
 use App\Controllers\AuthController;
 use App\Controllers\FollowController;
 use App\Controllers\HomeController;
@@ -59,3 +60,15 @@ $router->get('/escribir/comunidades/nueva', [WriterController::class, 'createCom
 $router->post('/escribir/comunidades', [WriterController::class, 'storeCommunity']);
 $router->post('/escribir/comunidades/{id}/toggle', [WriterController::class, 'toggleCommunity']);
 $router->get('/escribir/estadisticas', [WriterController::class, 'stats']);
+
+// Administrador
+$router->get('/admin', [AdminController::class, 'dashboard']);
+$router->get('/admin/solicitudes', [AdminController::class, 'writerRequests']);
+$router->post('/admin/solicitudes/{id}/aprobar', [AdminController::class, 'approveRequest']);
+$router->post('/admin/solicitudes/{id}/rechazar', [AdminController::class, 'rejectRequest']);
+$router->get('/admin/usuarios', [AdminController::class, 'users']);
+$router->post('/admin/usuarios/{id}/toggle', [AdminController::class, 'toggleUser']);
+$router->post('/admin/usuarios/{id}/rol', [AdminController::class, 'updateUserRole']);
+$router->get('/admin/contenido', [AdminController::class, 'books']);
+$router->post('/admin/contenido/{id}/archivar', [AdminController::class, 'archiveBook']);
+$router->post('/admin/contenido/{id}/publicar', [AdminController::class, 'publishBook']);

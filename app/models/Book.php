@@ -265,4 +265,52 @@ final class Book
             'library_saves'   => $saves,
         ];
     }
+
+    /** @return list<array> */
+    public function listForAdmin(?string $query = null, int $limit = 40): array
+    {
+        $limit = max(1, min(100, $limit));
+        $sql = 'SELECT b.id, b.title, b.genre, b.status, b.created_at,
+                       u.username AS author_username, u.display_name AS author_name
+                FROM books b
+                INNER JOIN users u ON u.id = b.author_id';
+        $params = [];
+
+        if ($query !== null && $query !== '') {
+            $sql .= ' WHERE b.title LIKE :q OR u.username LIKE :q OR u.display_name LIKE :q';
+            $params['q'] = '%' . $query . '%';
+        }
+
+        $sql .= ' ORDER BY b.updated_at DESC LIMIT ' . $limit;
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt->fetchAll();
+    }
+
+    public function findById(int $id): ?array
+    {
+        $stmt = $this->pdo->prepare('SELECT * FROM books WHERE id = :id LIMIT 1');
+        $stmt->execute(['id' => $id]);
+        $row = $stmt->fetch();
+
+        return $row ?: null;
+    }
+
+    public function setStatus(int $bookId, string $status): void
+    {
+        $stmt = $this->pdo->prepare(
+            'UPDATE books SET status = :status WHERE id = :id'
+        );
+        $stmt->execute([
+            'status' => $status,
+            'id'     => $bookId,
+        ]);
+    }
+
+    public function countAll(): int
+    {
+        return (int) $this->pdo->query('SELECT COUNT(*) FROM books')->fetchColumn();
+    }
 }

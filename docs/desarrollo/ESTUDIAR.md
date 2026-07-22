@@ -278,9 +278,39 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 7 — Administrador (pendiente)
+## Módulo 7 — Administrador (completado)
 
-_Se completará al cerrar el módulo 7._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Panel `/admin` | Zona solo para administradores |
+| Aprobar solicitud | Cambia `writer_requests` a aprobado **y** `users.role` a escritor |
+| Rechazar | Deja al usuario como lector; puede volver a pedir |
+| Transacción PDO | O todo se guarda o nada (evita estados a medias) |
+| Moderación | Archivar libro = ya no sale en Descubrir |
+| Sesión vs BD | Tras aprobar, el usuario debe re-loguearse para ver el nuevo menú |
+
+### Archivos para leer
+
+1. `app/controllers/AdminController.php`  
+2. `app/models/WriterRequest.php` (review, listByStatus)  
+3. `app/models/User.php` (setRole, setActive, listForAdmin)  
+4. `app/views/admin/*`  
+5. Rutas `/admin/*` en `web.php`  
+
+### Preguntas de repaso
+
+- ¿Qué dos tablas se tocan al aprobar?  
+- ¿Por qué se usa una transacción?  
+- ¿Puede el admin desactivarse a sí mismo?  
+- ¿Qué ve un lector si intenta entrar a `/admin`?
+
+### Práctica
+
+1. Solicitud pendiente → aprobar con admin.  
+2. Re-login del usuario → comprobar menú Escribir.  
+3. Archivar una historia y verificar que desaparece de Descubrir.
 
 ---
 
@@ -304,6 +334,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos instalaron el proyecto en XAMPP al menos una vez  
 - [ ] Ambos saben registrar/iniciar/cerrar sesión  
 - [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
+- [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  
 - [ ] Ambos saben enviar una solicitud de escritor (lector)  
 - [ ] Ambos saben el flujo de roles (lector → solicitud → admin aprueba → escritor)  

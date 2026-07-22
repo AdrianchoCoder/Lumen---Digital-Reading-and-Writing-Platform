@@ -113,4 +113,52 @@ final class User
 
         return $stmt->fetchAll();
     }
+
+    /** @return list<array> */
+    public function listForAdmin(?string $query = null, int $limit = 50): array
+    {
+        $limit = max(1, min(100, $limit));
+        $sql = 'SELECT id, username, email, display_name, role, is_active, created_at
+                FROM users';
+        $params = [];
+
+        if ($query !== null && $query !== '') {
+            $sql .= ' WHERE username LIKE :q OR email LIKE :q OR display_name LIKE :q';
+            $params['q'] = '%' . $query . '%';
+        }
+
+        $sql .= ' ORDER BY created_at DESC LIMIT ' . $limit;
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt->fetchAll();
+    }
+
+    public function setActive(int $userId, bool $active): void
+    {
+        $stmt = $this->pdo->prepare(
+            'UPDATE users SET is_active = :active WHERE id = :id'
+        );
+        $stmt->execute([
+            'active' => $active ? 1 : 0,
+            'id'     => $userId,
+        ]);
+    }
+
+    public function setRole(int $userId, string $role): void
+    {
+        $stmt = $this->pdo->prepare(
+            'UPDATE users SET role = :role WHERE id = :id'
+        );
+        $stmt->execute([
+            'role' => $role,
+            'id'   => $userId,
+        ]);
+    }
+
+    public function countAll(): int
+    {
+        return (int) $this->pdo->query('SELECT COUNT(*) FROM users')->fetchColumn();
+    }
 }

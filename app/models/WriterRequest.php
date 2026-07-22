@@ -85,4 +85,61 @@ final class WriterRequest
 
         return $stmt->fetchAll();
     }
+
+    /** @return list<array> */
+    public function listByStatus(?string $status = null, int $limit = 50): array
+    {
+        $limit = max(1, min(100, $limit));
+        $sql = 'SELECT wr.*, u.username, u.display_name, u.email, u.role AS user_role
+                FROM writer_requests wr
+                INNER JOIN users u ON u.id = wr.user_id';
+        $params = [];
+
+        if ($status !== null && $status !== '') {
+            $sql .= ' WHERE wr.status = :status';
+            $params['status'] = $status;
+        }
+
+        $sql .= ' ORDER BY wr.created_at DESC LIMIT ' . $limit;
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt->fetchAll();
+    }
+
+    public function countByStatus(string $status): int
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT COUNT(*) FROM writer_requests WHERE status = :status'
+        );
+        $stmt->execute(['status' => $status]);
+
+        return (int) $stmt->fetchColumn();
+    }
+
+    public function review(int $requestId, string $status, int $adminId, ?string $adminNote): bool
+    {
+        if (!in_array($status, ['aprobado', 'rechazado'], true)) {
+            return false;
+        }
+
+        $stmt = $this->pdo->prepare(
+            'UPDATE writer_requests
+             SET status = :status,
+                 admin_note = :admin_note,
+                 reviewed_by = :reviewed_by,
+                 reviewed_at = NOW()
+             WHERE id = :id AND status = \'pendiente\''
+        );
+
+        $stmt->execute([
+            'status'      => $status,
+            'admin_note'  => $adminNote,
+            'reviewed_by' => $adminId,
+            'id'          => $requestId,
+        ]);
+
+        return $stmt->rowCount() > 0;
+    }
 }

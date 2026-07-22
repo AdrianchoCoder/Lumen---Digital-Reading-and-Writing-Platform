@@ -47,8 +47,8 @@ $statusLabels = [
     </p>
 <?php elseif ($latest !== null && $latest['status'] === 'aprobado'): ?>
     <p class="flash flash-ok">
-        Tu solicitud fue aprobada. Si tu rol aún aparece como lector, cierra sesión y vuelve a entrar
-        (o espera a que el módulo Admin actualice el rol).
+        Tu solicitud fue aprobada. Cierra sesión y vuelve a entrar para ver el menú de escritor
+        (la sesión guarda el rol al iniciar sesión).
     </p>
 <?php endif; ?>
 

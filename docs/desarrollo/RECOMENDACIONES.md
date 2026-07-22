@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 6** (2026-07-22).
+Última actualización de este archivo: **módulo 7** (2026-07-22).
 
 ---
 
@@ -174,6 +174,16 @@ Si falta alguno, el cierre del módulo está incompleto.
 - Gate actual: `requireMinRole('escritor')` usando niveles de `config.php` (admin también entra)
 - El middleware de rutas dedicado llega en el **módulo 8**
 - Para que lectores vean una obra nueva: estado libro **y** capítulo en `publicado`
+
+---
+
+## 14. Panel administrador (módulo 7 — 2026-07-22)
+
+- Login: `admin@lumen.local` / `Admin123!`
+- Rutas: `/admin`, `/admin/solicitudes`, `/admin/usuarios`, `/admin/contenido`
+- Aprobar solicitud = rol `escritor` en BD; el usuario debe **cerrar sesión y entrar otra vez**
+- No puedes desactivar ni cambiar el rol de tu propia cuenta admin desde el panel
+- Archivar historia = moderación rápida sin borrar datos
 
 ---
 
