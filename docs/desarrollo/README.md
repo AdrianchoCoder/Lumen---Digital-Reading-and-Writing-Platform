@@ -26,7 +26,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 7 | Módulo Administrador | Completado | `2597401` |
 | 8 | Middleware de roles | Completado | `990629c` |
 | 9 | Diseño visual completo | Completado | `ccf6ceb` |
-| 9+ | Landing page pública (estilo Wattpad) | Completado | *(ver CHANGELOG)* |
+| 9+ | Landing page pública (estilo Wattpad) | Completado | `480779d` |
 
 ## Plan de módulos: cerrado
 

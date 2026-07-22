@@ -117,7 +117,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 7 | Administrador | `2597401` | `main` |
 | 8 | Middleware de roles | `990629c` | `main` |
 | 9 | Diseño visual | `ccf6ceb` | `main` |
-| 9+ | Landing page pública | *(rellenar tras commit)* | `main` |
+| 9+ | Landing page pública | `480779d` | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 
