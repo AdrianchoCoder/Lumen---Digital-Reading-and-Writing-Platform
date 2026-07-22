@@ -24,7 +24,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 5 | Solicitud de escritor | Completado | `488e54c` |
 | 6 | Módulo Escritor | Completado | `99dc2b9` |
 | 7 | Módulo Administrador | Completado | `2597401` |
-| 8 | Middleware de roles | Completado | _(tras push)_ |
+| 8 | Middleware de roles | Completado | `990629c` |
 | 9 | Diseño visual completo | Pendiente | — |
 
 ## Resumen hasta el módulo 8
