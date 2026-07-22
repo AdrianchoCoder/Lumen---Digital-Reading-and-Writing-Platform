@@ -27,6 +27,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 8 | Middleware de roles | Completado | `990629c` |
 | 9 | Diseño visual completo | Completado | `ccf6ceb` |
 | 9+ | Landing page pública (estilo Wattpad) | Completado | `480779d` |
+| 9+b | Logo + fondo landing + hovers | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
@@ -35,7 +36,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora (9+)
 
-Landing en `/` con navbar (logo + Lumen / Inicio / Login / Registro), hero, carrusel de libros populares con modal de incentivo a registrarse, footer y tema oscuro/claro con acento morado. **Sin cambiar** la estructura MVC ni carpetas existentes: solo layout nuevo `landing.php` + CSS/JS.
+Landing en `/` con logo `logo.png`, fondo `backgroundLandingPages.jpeg` (visible, velo ligero), navbar sin “Inicio”, hovers contrastados, carrusel + modal y footer. **Sin cambiar** la estructura MVC.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

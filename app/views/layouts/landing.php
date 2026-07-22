@@ -31,25 +31,20 @@ $pageTitle = (!empty($title) && $title !== $appName)
 <body class="landing-body">
     <header class="landing-nav">
         <a class="landing-brand" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/">
-            <!-- Espacio para tu logo: sustituye el placeholder por public/assets/img/logo.png -->
             <span class="logo-slot" aria-label="Logo Lumen">
-                <?php
-                $logoPng = dirname(__DIR__, 3) . '/public/assets/img/logo.png';
-                $logoSrc = is_file($logoPng)
-                    ? $appUrl . '/assets/img/logo.png'
-                    : $appUrl . '/assets/img/logo-placeholder.svg';
-                ?>
-                <img src="<?= htmlspecialchars($logoSrc, ENT_QUOTES, 'UTF-8') ?>" alt="Logo <?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?>" class="logo-img">
+                <img
+                    src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/img/logo.png"
+                    alt="<?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?>"
+                    class="logo-img"
+                >
             </span>
-            <span class="landing-brand-text"><?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?></span>
         </a>
         <nav class="landing-nav-links">
-            <button type="button" class="icon-btn" id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">
+            <button type="button" class="icon-btn landing-interactive" id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
             </button>
-            <a href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/">Inicio</a>
-            <a href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login">Iniciar sesión</a>
-            <a class="btn btn-small" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/register">Registro</a>
+            <a class="landing-nav-link landing-interactive" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login">Iniciar sesión</a>
+            <a class="btn btn-small landing-btn" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/register">Registro</a>
         </nav>
     </header>
 
@@ -100,8 +95,8 @@ $pageTitle = (!empty($title) && $title !== $appName)
                 Inicia sesión o crea una cuenta gratis para leer, guardar en tu biblioteca y seguir a tus autores favoritos.
             </p>
             <div class="actions">
-                <a class="btn" id="auth-modal-register" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/register">Crear cuenta</a>
-                <a class="btn btn-ghost" id="auth-modal-login" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login">Iniciar sesión</a>
+                <a class="btn landing-btn" id="auth-modal-register" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/register">Crear cuenta</a>
+                <a class="btn btn-ghost landing-btn-ghost" id="auth-modal-login" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login">Iniciar sesión</a>
             </div>
         </div>
     </div>

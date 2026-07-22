@@ -12,11 +12,11 @@
             que escriben para ti. Mejor que el scroll vacío — una comunidad de lectores y escritores.
         </p>
         <p class="actions">
-            <a class="btn btn-lg" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/register">Comenzar</a>
+            <a class="btn btn-lg landing-btn" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/register">Comenzar</a>
         </p>
         <p class="landing-hero-login">
             ¿Ya tienes una cuenta?
-            <a href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login">Inicia sesión</a>
+            <a class="landing-text-link" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login">Inicia sesión</a>
         </p>
     </div>
     <div class="landing-hero-art" aria-hidden="true">
@@ -47,10 +47,10 @@
             <p class="lead">Pasa el cursor y elige una. Te invitaremos a unirte para seguir leyendo.</p>
         </div>
         <div class="carousel-controls">
-            <button type="button" class="icon-btn" id="carousel-prev" aria-label="Anterior">
+            <button type="button" class="icon-btn landing-interactive" id="carousel-prev" aria-label="Anterior">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 9 12l6 6"/></svg>
             </button>
-            <button type="button" class="icon-btn" id="carousel-next" aria-label="Siguiente">
+            <button type="button" class="icon-btn landing-interactive" id="carousel-next" aria-label="Siguiente">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
             </button>
         </div>

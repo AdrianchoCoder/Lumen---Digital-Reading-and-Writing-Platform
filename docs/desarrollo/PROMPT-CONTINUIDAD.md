@@ -12,9 +12,8 @@ Actúa como desarrollador Full Stack senior. Proyecto "Lumen" (colegio, Ingenier
 Lee docs/desarrollo/ y docs/entrega/ antes de cambiar código.
 
 ## Estado
-Módulos 1–9 COMPLETADOS + mejora 9+ landing pública.
-Stack intacto (MVC/carpetas). Landing en `/` usa layout `landing.php`, carrusel de libros publicados, modal auth, footer.
-Logo: `public/assets/img/logo.png` (o placeholder SVG).
+Módulos 1–9 COMPLETADOS + mejora 9+/9+b landing (logo.png, fondo backgroundLandingPages.jpeg, hovers, sin botón Inicio).
+Stack intacto (MVC/carpetas). Landing en `/` usa layout `landing.php`.
 Siguiente trabajo: bajo demanda (más frontend, bugs, features del colegio).
 
 ## Stack

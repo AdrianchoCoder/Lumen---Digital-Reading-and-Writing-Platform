@@ -433,7 +433,27 @@ GET /  →  HomeController::index
 
 1. Sin sesión, abre la landing y prueba el modal de un libro.  
 2. Publica (o usa) una historia de prueba y recarga: debe aparecer en el carrusel.  
-3. Sustituye el placeholder: copia tu logo como `public/assets/img/logo.png`.
+3. Confirma `logo.png` en el navbar y el fondo `backgroundLandingPages.jpeg` (libros a la derecha).  
+4. Pasa el cursor por botones/nav/libros: debe notarse el hover morado.
+
+---
+
+## Mejora 9+b — Logo, fondo y hovers (2026-07-22)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Fondo CSS | `background-image` + gradiente suave (no tapa la foto) |
+| Legibilidad | Paneles `backdrop-filter` en hero/carrusel |
+| Hover landing | Clases `landing-btn`, `landing-interactive`, etc. solo en la portada |
+| Assets | Imágenes en `public/assets/img/` servidas por Apache |
+
+### Archivos
+
+1. `public/assets/img/logo.png`  
+2. `public/assets/img/backgroundLandingPages.jpeg`  
+3. Sección landing en `app.css`  
 
 ---
 

@@ -4,6 +4,38 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+b] — Logo, fondo y hovers de la landing (2026-07-22)
+
+### Qué se implementó
+
+- Logo real: `public/assets/img/logo.png` en el navbar (sin texto “Lumen” duplicado; el logo ya lo incluye)
+- Fondo: `public/assets/img/backgroundLandingPages.jpeg` a pantalla completa, visible (velo suave, no opaco)
+- Navbar: se quitó el enlace **Inicio** (era redundante); quedan tema + Iniciar sesión + Registro
+- Hovers contrastados en botones, nav, libros del carrusel, footer y modal (brillo morado + elevación)
+- Paneles semitransparentes en hero/carrusel para legibilidad sobre el fondo
+
+### Archivos clave
+
+- `app/views/layouts/landing.php`
+- `app/views/home/index.php`
+- `public/assets/css/app.css` (sección landing)
+- `public/assets/img/logo.png`
+- `public/assets/img/backgroundLandingPages.jpeg`
+
+### Cómo probar
+
+1. Sin sesión → `http://localhost/lumen/public` (Ctrl+F5)
+2. Comprobar logo y libros del fondo a la derecha
+3. Pasar el cursor por Registro, Comenzar, Iniciar sesión, libros y flechas del carrusel
+4. Probar tema claro y oscuro
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+] — Landing page pública (2026-07-22)
 
 ### Qué se implementó

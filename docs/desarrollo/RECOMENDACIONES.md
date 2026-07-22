@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 9+ landing** (2026-07-22).
+Última actualización de este archivo: **mejora 9+b logo/fondo/hovers** (2026-07-22).
 
 ---
 
@@ -221,7 +221,10 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - No reorganizar carpetas MVC por un rediseño: vistas + CSS/JS bastan
 - Carrusel = datos reales (`status = 'publicado'`); para “libros de prueba” publica historias desde Escritor
 - Clic en libro en landing **no** abre el lector: abre modal → login/registro (incentivo)
-- Logo: dejar `public/assets/img/logo.png`; hasta entonces se usa `logo-placeholder.svg`
+- Logo oficial: `public/assets/img/logo.png` (el propio logo ya dice “lumen”; no hace falta texto duplicado al lado)
+- Fondo: `public/assets/img/backgroundLandingPages.jpeg` con velo **ligero** (que se vea la ilustración)
+- No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
+- Hovers de landing con clases propias (`landing-btn`, etc.) para no ensuciar el resto de la app
 - Footer legal/redes puede quedar con `#` hasta tener URLs reales
 - Cada bloque grande de UI: actualizar los **6** docs de `docs/desarrollo/` + commit (punto de guardado)
 
