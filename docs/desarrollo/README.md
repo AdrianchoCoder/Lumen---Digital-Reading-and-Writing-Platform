@@ -26,11 +26,16 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 7 | Módulo Administrador | Completado | `2597401` |
 | 8 | Middleware de roles | Completado | `990629c` |
 | 9 | Diseño visual completo | Completado | `ccf6ceb` |
+| 9+ | Landing page pública (estilo Wattpad) | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
 Los **9 módulos** del plan inicial están completos.  
 A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
+
+### Última mejora (9+)
+
+Landing en `/` con navbar (logo + Lumen / Inicio / Login / Registro), hero, carrusel de libros populares con modal de incentivo a registrarse, footer y tema oscuro/claro con acento morado. **Sin cambiar** la estructura MVC ni carpetas existentes: solo layout nuevo `landing.php` + CSS/JS.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

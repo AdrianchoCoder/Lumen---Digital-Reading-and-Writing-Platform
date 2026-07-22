@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 9** (2026-07-22).
+Última actualización de este archivo: **mejora 9+ landing** (2026-07-22).
 
 ---
 
@@ -212,6 +212,18 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - Tras el módulo 9 **no hay más módulos obligatorios** del plan original
 - Siguiente trabajo típico: pulir frontend, bugs, o ampliar features que pida el colegio
 - Entrega: `docs/entrega/README.md`
+
+---
+
+## 17. Landing pública y cambios grandes de UI (mejora 9+ — 2026-07-22)
+
+- Preferir **layouts nuevos** (`landing.php`) antes de mezclar marketing con el sidebar del área logueada
+- No reorganizar carpetas MVC por un rediseño: vistas + CSS/JS bastan
+- Carrusel = datos reales (`status = 'publicado'`); para “libros de prueba” publica historias desde Escritor
+- Clic en libro en landing **no** abre el lector: abre modal → login/registro (incentivo)
+- Logo: dejar `public/assets/img/logo.png`; hasta entonces se usa `logo-placeholder.svg`
+- Footer legal/redes puede quedar con `#` hasta tener URLs reales
+- Cada bloque grande de UI: actualizar los **6** docs de `docs/desarrollo/` + commit (punto de guardado)
 
 ---
 

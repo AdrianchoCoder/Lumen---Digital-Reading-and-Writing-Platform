@@ -390,6 +390,50 @@ users ──┬──< writer_requests
 
 _El plan 1–9 terminó. Los siguientes cambios son mejoras o pedidos del colegio._
 
+---
+
+## Mejora 9+ — Landing page (2026-07-22)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Layout `landing` | HTML público (nav + footer + modal) distinto del layout `app` logueado |
+| Portada vs app | Visitantes ven marketing; usuarios con sesión van a `/inicio` |
+| Carrusel | Lista horizontal de libros publicados; el clic no abre el libro, pide auth |
+| Modal de incentivo | Popup JS que empuja a login/registro sin romper MVC |
+| Logo | Slot en `landing.php`; archivo `logo.png` o placeholder SVG |
+
+### Archivos para leer (orden sugerido)
+
+1. `app/controllers/HomeController.php` — elige layout `landing` y carga libros  
+2. `app/views/layouts/landing.php` — navbar, footer, modal  
+3. `app/views/home/index.php` — hero + carrusel  
+4. `public/assets/js/landing.js` — scroll y modal  
+5. Sección “Landing pública” al final de `public/assets/css/app.css`  
+
+### Flujo mental
+
+```
+GET /  →  HomeController::index
+         ├─ si hay sesión → redirect /inicio
+         └─ si no → vista home/index + layout landing
+                    + Book::latestPublished(12)
+                    + clic libro → modal → /login o /register
+```
+
+### Preguntas de repaso
+
+- ¿Por qué hay un layout `landing` aparte de `app` y `main`?  
+- ¿Qué pasa si entras a `/` estando logueado?  
+- ¿De dónde salen los libros del carrusel?  
+- ¿Dónde pones tu logo real?
+
+### Práctica
+
+1. Sin sesión, abre la landing y prueba el modal de un libro.  
+2. Publica (o usa) una historia de prueba y recarga: debe aparecer en el carrusel.  
+3. Sustituye el placeholder: copia tu logo como `public/assets/img/logo.png`.
 
 ---
 
@@ -402,6 +446,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos saben registrar/iniciar/cerrar sesión  
 - [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
 - [ ] Ambos probaron el tema claro/oscuro y la barra de búsqueda  
+- [ ] Ambos probaron la landing (carrusel + modal + footer) sin sesión  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

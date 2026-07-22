@@ -4,6 +4,49 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+] — Landing page pública (2026-07-22)
+
+### Qué se implementó
+
+- Nueva portada pública en `/` inspirada en Wattpad, con identidad Lumen (morado `#6C5CE7` + tema oscuro/claro)
+- Layout dedicado `app/views/layouts/landing.php` (no se tocó el layout `app` del área logueada)
+- Navbar: marca **Lumen + logo** a la izquierda; **Inicio / Iniciar sesión / Registro** + toggle de tema a la derecha
+- Hero con titular, CTA “Comenzar” → registro, y arte decorativo con “tarjetas de comunidad”
+- Carrusel horizontal de libros **publicados** (`Book::latestPublished(12)`); clic abre modal de incentivo
+- Modal: mensaje con el título del libro + botones a `/register` y `/login`
+- Footer: legal (placeholders), comunidad, redes y copyright
+- Espacio de logo: usa `public/assets/img/logo.png` si existe; si no, `logo-placeholder.svg`
+- JS: `public/assets/js/landing.js` (scroll del carrusel + modal)
+- CSS landing añadido al final de `public/assets/css/app.css`
+
+### Qué NO se cambió (estructura preservada)
+
+- Carpetas MVC (`app/controllers`, `models`, `views`, `core`, `routes`, etc.) intactas
+- Login/registro siguen con layout `main.php`
+- Usuario logueado en `/` sigue redirigiendo a `/inicio` (comportamiento previo)
+
+### Decisiones técnicas
+
+- Un layout separado evita ensuciar el sidebar del área autenticada
+- Libros de prueba = los que ya existan en BD con `status = 'publicado'` (añadir más historias publicadas alimenta el carrusel)
+- Enlaces legales/redes del footer son `#` por ahora (listos para URLs reales)
+- Logo: colocar tu imagen en `public/assets/img/logo.png` (recomendado cuadrado ~80–128 px)
+
+### Cómo probar
+
+1. Cerrar sesión (o ventana privada) → `http://localhost/lumen/public`
+2. Alternar tema claro/oscuro desde el navbar
+3. Deslizar el carrusel; clic en un libro → modal; “Crear cuenta” / “Iniciar sesión”
+4. Si no hay libros publicados, debe verse el mensaje vacío con enlace a registro
+5. Con sesión iniciada, `/` debe redirigir a `/inicio`
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Módulo 9] — Diseño visual completo (2026-07-22)
 
 ### Qué se implementó

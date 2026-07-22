@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\Book;
 
 /**
- * Portada pública para visitantes sin sesión.
+ * Portada pública (landing) para visitantes sin sesión.
  * Si hay sesión, redirige al Inicio del lector.
  */
 final class HomeController extends Controller
@@ -18,8 +19,11 @@ final class HomeController extends Controller
             $this->redirect('/inicio');
         }
 
+        $books = new Book();
+
         $this->view('home/index', [
-            'title' => 'Bienvenido',
-        ]);
+            'title'         => 'Bienvenido',
+            'popularBooks'  => $books->latestPublished(12),
+        ], 'landing');
     }
 }
