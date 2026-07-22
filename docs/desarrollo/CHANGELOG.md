@@ -4,6 +4,39 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 8] — Middleware de roles (2026-07-22)
+
+### Qué se implementó
+
+- `app/middleware/RoleMiddleware.php`
+- `Router` acepta 3er argumento: array de reglas por ruta
+- Reglas: `auth`, `guest`, `role:escritor`, `role:administrador` (niveles de `config.php`)
+- `app/routes/web.php` aplica middleware a todas las rutas sensibles
+- Login/registro = `guest`; área lectora = `auth`; `/escribir/*` = `role:escritor`; `/admin/*` = `role:administrador`
+- Se mantiene `requireMinRole` / `requireAuth` en controladores (segunda capa)
+
+### Decisiones técnicas
+
+- Jerarquía numérica: si eres admin (3) pasas `role:escritor` (2)
+- El middleware corre **antes** de instanciar/ejecutar el controlador
+- `guest` evita que un usuario logueado vea login/registro (redirige a `/inicio`)
+- No se eliminó la validación en controladores a propósito (defensa en profundidad para el colegio)
+
+### Cómo probar
+
+1. Sin sesión: `/escribir` y `/admin` → login
+2. Como lector: `/escribir` → Inicio con error de permiso; `/admin` igual
+3. Como escritor: `/escribir` OK; `/admin` → permiso denegado
+4. Como admin: ambas OK
+5. Logueado: abrir `/login` → redirige a `/inicio`
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 7] — Administrador (2026-07-22)
 
 ### Qué se implementó

@@ -314,9 +314,38 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 8 — Middleware de roles (pendiente)
+## Módulo 8 — Middleware de roles (completado)
 
-_Se completará al cerrar el módulo 8._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Middleware | Filtro que corre **antes** del controlador |
+| Niveles 1/2/3 | lector < escritor < administrador |
+| `role:escritor` en la ruta | Solo entran nivel ≥ 2 |
+| `auth` / `guest` | Con sesión / sin sesión |
+| Defensa en profundidad | Middleware + chequeo en controlador |
+
+### Archivos para leer
+
+1. `app/middleware/RoleMiddleware.php`  
+2. `app/core/Router.php` (bucle de middleware en `dispatch`)  
+3. `app/routes/web.php` (arrays `$auth`, `$writer`, `$admin`)  
+4. `config/config.php` → clave `roles`  
+5. `Controller::requireMinRole` (segunda capa)  
+
+### Preguntas de repaso
+
+- ¿En qué momento se ejecuta el middleware respecto al controlador?  
+- ¿Por qué un administrador puede entrar a `/escribir`?  
+- ¿Qué regla usan login y registro?  
+- ¿Qué pasa si quitas el middleware de una ruta de admin pero dejas `requireMinRole`?
+
+### Práctica
+
+1. Entra como lector e intenta `/admin` y `/escribir`.  
+2. Entra como escritor e intenta `/admin`.  
+3. Abre `web.php` y señala tres rutas con reglas distintas.
 
 ---
 
@@ -334,6 +363,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos instalaron el proyecto en XAMPP al menos una vez  
 - [ ] Ambos saben registrar/iniciar/cerrar sesión  
 - [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
+- [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  
 - [ ] Ambos saben enviar una solicitud de escritor (lector)  

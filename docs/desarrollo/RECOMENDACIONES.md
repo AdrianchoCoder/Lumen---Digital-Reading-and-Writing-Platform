@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 7** (2026-07-22).
+Última actualización de este archivo: **módulo 8** (2026-07-22).
 
 ---
 
@@ -184,6 +184,16 @@ Si falta alguno, el cierre del módulo está incompleto.
 - Aprobar solicitud = rol `escritor` en BD; el usuario debe **cerrar sesión y entrar otra vez**
 - No puedes desactivar ni cambiar el rol de tu propia cuenta admin desde el panel
 - Archivar historia = moderación rápida sin borrar datos
+
+---
+
+## 15. Middleware de roles (módulo 8 — 2026-07-22)
+
+- Clase: `App\Middleware\RoleMiddleware`
+- Se declara en cada ruta como 3er parámetro del Router
+- Ejemplos en `web.php`: `$auth`, `$guest`, `$writer`, `$admin`
+- Niveles en `config/config.php` → `roles`
+- Controladores siguen usando `requireAuth` / `requireMinRole` como respaldo
 
 ---
 

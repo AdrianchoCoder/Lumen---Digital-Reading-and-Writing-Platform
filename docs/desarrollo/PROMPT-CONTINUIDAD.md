@@ -16,25 +16,32 @@ PHP OO MVC puro, MySQL/XAMPP, HTML/CSS/JS vanilla
 Roles: lector=1, escritor=2, administrador=3
 URL: http://localhost/lumen/public
 Seguridad: password_hash/verify, PDO, sesión, CSRF, htmlspecialchars
-Gate actual: Controller::requireMinRole() — formalizar en módulo 8
+Middleware: RoleMiddleware (auth, guest, role:escritor, role:administrador) + requireMinRole en controladores
 
 ## Fuera de alcance
-Logros y Mensajes. docs/entrega/ solo al final.
+Logros y Mensajes.
 
 ## Estado
-1–7 COMPLETADOS (MVC, SQL, auth, lector, solicitud, escritor, admin)
-8 SIGUIENTE — Middleware de roles aplicado a rutas (RoleMiddleware + niveles 1/2/3), unificar protección de /escribir y /admin
-9 Diseño visual completo (CSS morado/oscuro, sidebar, etc. según identidad visual)
+1–8 COMPLETADOS
+9 SIGUIENTE — Integración del diseño visual completo:
+- Modo oscuro por defecto + toggle claro
+- Color principal morado/violeta (~#6C5CE7)
+- Sidebar fija izquierda, iconografía outline minimalista
+- Tipografía limpia sans-serif, whitespace generoso
+- Bordes redondeados suaves, sin sombras pesadas
+- Barra de búsqueda prominente arriba
+- Badges de notificación morados
+Aplicar sobre las vistas ya construidas (no rehacer la lógica).
+
+## Entrega
+Tras el módulo 9 (o cuando el usuario lo pida), preparar docs/entrega/ con guía limpia para la prima.
 
 ## Cómo trabajar
 Un módulo a la vez; explicar; esperar confirmación; español.
-Al cerrar CADA módulo actualiza TODOS:
-1. README.md  2. CHANGELOG.md  3. ESTUDIAR.md
-4. PROMPT-CONTINUIDAD.md  5. RECOMENDACIONES.md  6. GIT-PUNTOS-DE-GUARDADO.md
-Luego commit + push.
+Al cerrar actualiza TODOS los 6 archivos de docs/desarrollo/ + commit + push.
 
 ## Tarea ahora
-MÓDULO 8: middleware de roles. Crea app/middleware/RoleMiddleware.php, intégralo al Router o a un pipeline claro, aplica niveles jerárquicos a las rutas sensibles, documenta. Explica y espera confirmación. Al terminar actualiza TODA docs/desarrollo/.
+MÓDULO 9: diseño visual completo según la identidad anterior. Explica y espera confirmación. Actualiza TODA la documentación.
 ```
 
 ---
@@ -42,4 +49,4 @@ MÓDULO 8: middleware de roles. Crea app/middleware/RoleMiddleware.php, intégra
 ## Notas para ti (humano)
 
 - Chat nuevo → pega este prompt.
-- Tras cada módulo: los 6 docs + push.
+- Tras cada módulo: 6 docs + push.

@@ -1,18 +1,17 @@
 # Seguimiento del desarrollo — Lumen
 
-Documentación viva del proyecto de **Ingeniería de Software** (colegio).  
-Sirve para **quien desarrolla** y para **quien presenta/estudia** el código (tú y tu prima).
+Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 
 ## Archivos (actualizar TODOS en cada módulo)
 
 | Archivo | Uso |
 |---------|-----|
 | [README.md](README.md) | Estado + resumen |
-| [CHANGELOG.md](CHANGELOG.md) | Detalle técnico por módulo |
-| [ESTUDIAR.md](ESTUDIAR.md) | Guía de estudio compartida |
-| [PROMPT-CONTINUIDAD.md](PROMPT-CONTINUIDAD.md) | Prompt para Cursor |
-| [RECOMENDACIONES.md](RECOMENDACIONES.md) | Acuerdos y tips |
-| [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md) | Commits / restauración |
+| [CHANGELOG.md](CHANGELOG.md) | Detalle técnico |
+| [ESTUDIAR.md](ESTUDIAR.md) | Estudio compartido |
+| [PROMPT-CONTINUIDAD.md](PROMPT-CONTINUIDAD.md) | Prompt Cursor |
+| [RECOMENDACIONES.md](RECOMENDACIONES.md) | Acuerdos |
+| [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md) | Commits |
 
 ## Estado del software
 
@@ -25,20 +24,21 @@ Sirve para **quien desarrolla** y para **quien presenta/estudia** el código (t�
 | 5 | Solicitud de escritor | Completado | `488e54c` |
 | 6 | Módulo Escritor | Completado | `99dc2b9` |
 | 7 | Módulo Administrador | Completado | `2597401` |
-| 8 | Middleware de roles | Pendiente | — |
+| 8 | Middleware de roles | Completado | _(tras push)_ |
 | 9 | Diseño visual completo | Pendiente | — |
 
-## Resumen hasta el módulo 7
+## Resumen hasta el módulo 8
 
 - URL: `http://localhost/lumen/public`
-- Flujo completo de roles: lector → solicitud → **admin aprueba** → escritor
-- Admin: `/admin` (solicitudes, usuarios, contenido)
-- Gate: `requireMinRole('administrador')` (middleware formal = módulo 8)
+- Roles jerárquicos: lector=1, escritor=2, administrador=3
+- **RoleMiddleware** en rutas: `auth`, `guest`, `role:escritor`, `role:administrador`
+- Defensa en profundidad: middleware en Router + `requireMinRole` / `requireAuth` en controladores
+- Siguiente: módulo 9 (diseño visual)
 
 ## Ritual al cerrar cada módulo
 
-1. CHANGELOG · 2. README · 3. ESTUDIAR · 4. PROMPT · 5. RECOMENDACIONES · 6. GIT · 7. commit + push
+1–6 docs de esta carpeta + commit + push
 
 ## Entrega final
 
-`docs/entrega/` solo cerca del cierre. Ver [RECOMENDACIONES.md](RECOMENDACIONES.md).
+`docs/entrega/` cerca del cierre. Ver [RECOMENDACIONES.md](RECOMENDACIONES.md).

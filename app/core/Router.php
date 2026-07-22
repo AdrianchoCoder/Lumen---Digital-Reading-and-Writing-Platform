@@ -4,45 +4,46 @@ declare(strict_types=1);
 
 namespace App\Core;
 
+use App\Middleware\RoleMiddleware;
+
 /**
  * Enrutador HTTP mínimo: mapea método + URI a controlador@acción.
  *
- * Ejemplos de registro:
- *   $router->get('/', [HomeController::class, 'index']);
- *   $router->get('/books/{id}', [BookController::class, 'show']);
+ * Soporte de middleware por ruta (módulo 8):
+ *   $router->get('/escribir', [WriterController::class, 'hub'], ['role:escritor']);
+ *   $router->get('/admin', [AdminController::class, 'dashboard'], ['role:administrador']);
+ *   $router->get('/inicio', [ReaderController::class, 'home'], ['auth']);
  */
 final class Router
 {
-    /** @var array<int, array{methods: string[], pattern: string, handler: callable|array}> */
+    /** @var array<int, array{methods: string[], pattern: string, handler: callable|array, middleware: string[]}> */
     private array $routes = [];
 
-    public function get(string $path, callable|array $handler): void
+    public function get(string $path, callable|array $handler, array $middleware = []): void
     {
-        $this->add(['GET'], $path, $handler);
+        $this->add(['GET'], $path, $handler, $middleware);
     }
 
-    public function post(string $path, callable|array $handler): void
+    public function post(string $path, callable|array $handler, array $middleware = []): void
     {
-        $this->add(['POST'], $path, $handler);
+        $this->add(['POST'], $path, $handler, $middleware);
     }
 
-    public function match(array $methods, string $path, callable|array $handler): void
+    public function match(array $methods, string $path, callable|array $handler, array $middleware = []): void
     {
-        $this->add($methods, $path, $handler);
+        $this->add($methods, $path, $handler, $middleware);
     }
 
-    private function add(array $methods, string $path, callable|array $handler): void
+    private function add(array $methods, string $path, callable|array $handler, array $middleware = []): void
     {
         $this->routes[] = [
-            'methods' => array_map('strtoupper', $methods),
-            'pattern' => $this->compile($path),
-            'handler' => $handler,
+            'methods'    => array_map('strtoupper', $methods),
+            'pattern'    => $this->compile($path),
+            'handler'    => $handler,
+            'middleware' => $middleware,
         ];
     }
 
-    /**
-     * Convierte /books/{id} en una expresión regular con grupos con nombre.
-     */
     private function compile(string $path): string
     {
         $path = '/' . trim($path, '/');
@@ -64,7 +65,6 @@ final class Router
             $path = rtrim($path, '/') ?: '/';
         }
 
-        // Si la app vive en un subdirectorio (.../public), se normaliza el path.
         $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
         $base = str_replace('\\', '/', dirname($scriptName));
         if ($base !== '/' && $base !== '.' && str_starts_with($path, $base)) {
@@ -86,6 +86,10 @@ final class Router
                 static fn ($key) => !is_int($key),
                 ARRAY_FILTER_USE_KEY
             );
+
+            foreach ($route['middleware'] as $rule) {
+                RoleMiddleware::handle($rule);
+            }
 
             $this->invoke($route['handler'], $params);
             return;
