@@ -4,6 +4,44 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 6] — Área Escritor (2026-07-22)
+
+### Qué se implementó
+
+- `requireMinRole('escritor')` en el controlador base (niveles de `config.php`)
+- `WriterController` + vistas en `app/views/writer/`
+- Modelos ampliados: `Book` (CRUD autor) y nuevo `Community`
+- Rutas bajo `/escribir/*`
+- Sidebar: Escribir, Comunidades, Estadísticas, botón Nueva historia (solo escritor/admin)
+- Mis libros: crear/editar historia (borrador/publicado/archivado)
+- Capítulos: crear/editar (borrador/publicado), numeración automática
+- Comunidades: crear y activar/desactivar
+- Estadísticas simples (conteos de libros, capítulos, guardados en bibliotecas, seguidores, comunidades)
+
+### Decisiones técnicas
+
+- Admin también entra al área escritor (nivel 3 ≥ 2)
+- Ownership: solo el autor edita sus libros/capítulos/comunidades
+- CSRF en todos los POST de escritura
+- Middleware dedicado (`RoleMiddleware`) se formaliza en el módulo 8; aquí ya hay gate por nivel
+- Comunidades básicas (sin miembros/posts aún): suficiente para el alcance del módulo
+
+### Cómo probar
+
+1. Login: `escritor@lumen.local` / `Escritor123!` (o admin)
+2. Sidebar → **Escribir** / **Nueva historia**
+3. Crear historia → añadir capítulo → publicar ambos
+4. Verla en Descubrir (si está publicada)
+5. Crear una comunidad y revisar Estadísticas
+6. Con un **lector**, `/escribir` debe redirigir a Inicio con error de permiso
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 5] — Solicitud de escritor (2026-07-22)
 
 ### Qué se implementó

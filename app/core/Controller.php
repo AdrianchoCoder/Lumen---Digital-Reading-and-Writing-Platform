@@ -102,6 +102,33 @@ abstract class Controller
         return $user;
     }
 
+    /**
+     * Nivel numérico del rol según config (lector=1, escritor=2, administrador=3).
+     */
+    protected function roleLevel(string $role): int
+    {
+        return (int) ($this->config['roles'][$role] ?? 0);
+    }
+
+    /**
+     * Exige rol mínimo (p. ej. escritor). Middleware formal llega en el módulo 8.
+     *
+     * @return array{id:int,username:string,email:string,display_name:string,role:string}
+     */
+    protected function requireMinRole(string $minRole): array
+    {
+        $user = $this->requireAuth();
+        $userLevel = $this->roleLevel((string) $user['role']);
+        $needed = $this->roleLevel($minRole);
+
+        if ($userLevel < $needed) {
+            Session::flash('error', 'No tienes permiso para acceder a esta sección.');
+            $this->redirect('/inicio');
+        }
+
+        return $user;
+    }
+
     protected function assertCsrf(): bool
     {
         $token = isset($_POST['_csrf']) && is_string($_POST['_csrf']) ? $_POST['_csrf'] : null;

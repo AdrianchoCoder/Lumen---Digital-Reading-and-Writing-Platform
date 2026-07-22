@@ -9,37 +9,33 @@ Copia y pega el bloque de abajo en el chat de Cursor cuando quieras retomar el d
 ```
 Actúa como desarrollador Full Stack senior. Estamos construyendo "Lumen" (colegio, Ingeniería de Software).
 
-ANTES de generar código, lee toda la carpeta docs/desarrollo/ (README, CHANGELOG, ESTUDIAR, RECOMENDACIONES, GIT-PUNTOS-DE-GUARDADO y este prompt).
+ANTES de generar código, lee TODA la carpeta docs/desarrollo/ (README, CHANGELOG, ESTUDIAR, RECOMENDACIONES, GIT-PUNTOS-DE-GUARDADO y este prompt).
 
 ## Stack
 PHP OO MVC puro, MySQL/XAMPP, HTML/CSS/JS vanilla
 Roles: lector=1, escritor=2, administrador=3
 URL: http://localhost/lumen/public
 Seguridad: password_hash/verify, PDO, sesión, CSRF, htmlspecialchars
+Gate de roles actual: Controller::requireMinRole() (middleware formal = módulo 8)
 
 ## Fuera de alcance
 Logros y Mensajes. docs/entrega/ solo al final.
 
 ## Estado
-1–5 COMPLETADOS (MVC, SQL, auth, lector, solicitud de escritor)
-6 SIGUIENTE — Módulo Escritor (Escribir, Comunidades, Estadísticas, Mis libros / Nueva historia)
-7 Administrador (aprobar writer_requests y subir rol)
-8 Middleware de roles
+1–6 COMPLETADOS (MVC, SQL, auth, lector, solicitud escritor, área escritor)
+7 SIGUIENTE — Módulo Administrador: revisar writer_requests (aprobar/rechazar), subir rol a escritor, gestión básica de usuarios/contenido
+8 Middleware de roles en rutas
 9 Diseño visual completo
 
 ## Cómo trabajar
-- Un módulo a la vez; explicar; esperar confirmación; español.
-- Al cerrar CADA módulo debes actualizar TODOS estos archivos (no solo ESTUDIAR):
-  1. docs/desarrollo/README.md (estado + commit)
-  2. docs/desarrollo/CHANGELOG.md
-  3. docs/desarrollo/ESTUDIAR.md
-  4. docs/desarrollo/PROMPT-CONTINUIDAD.md (este archivo)
-  5. docs/desarrollo/RECOMENDACIONES.md (nueva nota del módulo)
-  6. docs/desarrollo/GIT-PUNTOS-DE-GUARDADO.md (tabla de commits)
-- Luego commit + push a GitHub.
+Un módulo a la vez; explicar; esperar confirmación; español.
+Al cerrar CADA módulo actualiza TODOS:
+1. README.md  2. CHANGELOG.md  3. ESTUDIAR.md
+4. PROMPT-CONTINUIDAD.md  5. RECOMENDACIONES.md  6. GIT-PUNTOS-DE-GUARDADO.md
+Luego commit + push.
 
 ## Tarea ahora
-MÓDULO 6: área escritor. Por ahora restringe por rol === escritor|administrador (middleware formal en módulo 8). Incluye gestión de mis libros/capítulos, comunidades básicas y estadísticas simples. Explica y espera confirmación. Al terminar, actualiza TODA la documentación de docs/desarrollo/.
+MÓDULO 7: panel administrador. Aprobar/rechazar solicitudes de escritor actualizando users.role, listar usuarios y moderación básica de contenido (p. ej. desactivar usuario o archivar libro). Explica y espera confirmación. Al terminar actualiza TODA docs/desarrollo/.
 ```
 
 ---
@@ -47,4 +43,4 @@ MÓDULO 6: área escritor. Por ahora restringe por rol === escritor|administrado
 ## Notas para ti (humano)
 
 - Chat nuevo → pega este prompt.
-- Tras aprobar un módulo: pide explícitamente si hace falta, pero Cursor ya debe actualizar **todos** los docs + push.
+- Tras cada módulo: docs completos + push.

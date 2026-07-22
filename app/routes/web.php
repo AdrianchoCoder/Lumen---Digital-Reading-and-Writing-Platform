@@ -6,6 +6,7 @@ use App\Controllers\AuthController;
 use App\Controllers\FollowController;
 use App\Controllers\HomeController;
 use App\Controllers\ReaderController;
+use App\Controllers\WriterController;
 use App\Controllers\WriterRequestController;
 use App\Core\Router;
 
@@ -41,3 +42,20 @@ $router->post('/dejar-seguir/{userId}', [FollowController::class, 'unfollow']);
 
 $router->get('/solicitar-escritor', [WriterRequestController::class, 'show']);
 $router->post('/solicitar-escritor', [WriterRequestController::class, 'store']);
+
+// Escritor (rol mínimo escritor; admin también pasa)
+$router->get('/escribir', [WriterController::class, 'hub']);
+$router->get('/escribir/libros', [WriterController::class, 'books']);
+$router->get('/escribir/libros/nueva', [WriterController::class, 'createBookForm']);
+$router->post('/escribir/libros', [WriterController::class, 'storeBook']);
+$router->get('/escribir/libros/{id}', [WriterController::class, 'showBook']);
+$router->post('/escribir/libros/{id}', [WriterController::class, 'updateBook']);
+$router->get('/escribir/libros/{bookId}/capitulos/nuevo', [WriterController::class, 'createChapterForm']);
+$router->post('/escribir/libros/{bookId}/capitulos', [WriterController::class, 'storeChapter']);
+$router->get('/escribir/libros/{bookId}/capitulos/{chapterId}/editar', [WriterController::class, 'editChapterForm']);
+$router->post('/escribir/libros/{bookId}/capitulos/{chapterId}', [WriterController::class, 'updateChapter']);
+$router->get('/escribir/comunidades', [WriterController::class, 'communities']);
+$router->get('/escribir/comunidades/nueva', [WriterController::class, 'createCommunityForm']);
+$router->post('/escribir/comunidades', [WriterController::class, 'storeCommunity']);
+$router->post('/escribir/comunidades/{id}/toggle', [WriterController::class, 'toggleCommunity']);
+$router->get('/escribir/estadisticas', [WriterController::class, 'stats']);

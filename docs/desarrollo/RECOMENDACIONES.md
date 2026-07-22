@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 5** (2026-07-22).
+Última actualización de este archivo: **módulo 6** (2026-07-22).
 
 ---
 
@@ -163,6 +163,17 @@ Al cerrar **cualquier** módulo nuevo, Cursor debe enriquecer **todos** estos ar
 6. `GIT-PUNTOS-DE-GUARDADO.md` — hash en la tabla  
 
 Si falta alguno, el cierre del módulo está incompleto.
+
+---
+
+## 13. Área escritor (módulo 6 — 2026-07-22)
+
+- Login demo escritor: `escritor@lumen.local` / `Escritor123!`
+- Rutas principales: `/escribir`, `/escribir/libros`, `/escribir/comunidades`, `/escribir/estadisticas`
+- Nueva historia: `/escribir/libros/nueva`
+- Gate actual: `requireMinRole('escritor')` usando niveles de `config.php` (admin también entra)
+- El middleware de rutas dedicado llega en el **módulo 8**
+- Para que lectores vean una obra nueva: estado libro **y** capítulo en `publicado`
 
 ---
 

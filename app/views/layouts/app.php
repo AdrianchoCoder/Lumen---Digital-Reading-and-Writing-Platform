@@ -16,8 +16,15 @@ $pageTitle = (!empty($title) && $title !== $appName)
     : $appName;
 
 $nav = static function (string $path, string $currentPath): string {
+    if ($path === '/escribir') {
+        return str_starts_with($currentPath, '/escribir') ? 'active' : '';
+    }
+
     return $currentPath === $path ? 'active' : '';
 };
+
+$role = is_array($authUser) ? (string) ($authUser['role'] ?? '') : '';
+$isWriterPlus = in_array($role, ['escritor', 'administrador'], true);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,8 +42,14 @@ $nav = static function (string $path, string $currentPath): string {
             <a class="<?= $nav('/descubrir', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/descubrir">Descubrir</a>
             <a class="<?= $nav('/biblioteca', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/biblioteca">Biblioteca</a>
             <a class="<?= $nav('/perfil', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/perfil">Perfil</a>
-            <?php if (is_array($authUser) && ($authUser['role'] ?? '') === 'lector'): ?>
+            <?php if ($role === 'lector'): ?>
                 <a class="<?= $nav('/solicitar-escritor', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/solicitar-escritor">Ser escritor</a>
+            <?php endif; ?>
+            <?php if ($isWriterPlus): ?>
+                <a class="<?= $nav('/escribir', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir">Escribir</a>
+                <a class="<?= $currentPath === '/escribir/comunidades' || str_starts_with($currentPath, '/escribir/comunidades/') ? 'active' : '' ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir/comunidades">Comunidades</a>
+                <a class="<?= $currentPath === '/escribir/estadisticas' ? 'active' : '' ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir/estadisticas">Estadísticas</a>
+                <a class="btn btn-small" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/escribir/libros/nueva">Nueva historia</a>
             <?php endif; ?>
         </nav>
         <div class="side-footer">

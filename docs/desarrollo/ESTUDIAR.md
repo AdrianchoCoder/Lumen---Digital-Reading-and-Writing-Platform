@@ -238,9 +238,43 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 6 — Escritor (pendiente)
+## Módulo 6 — Escritor (completado)
 
-_Se completará al cerrar el módulo 6._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| `requireMinRole` | Bloquea si tu nivel de rol es menor al pedido |
+| Área `/escribir` | Panel del escritor: hub, libros, comunidades, stats |
+| Ownership | Solo editas lo que creaste (`author_id` / `owner_id`) |
+| Estados de libro | `borrador`, `publicado`, `archivado` |
+| Estados de capítulo | `borrador`, `publicado` (solo publicados se leen en Descubrir) |
+| Comunidades | Espacios del escritor (versión básica sin feed) |
+| Estadísticas | Conteos simples, no analytics avanzados |
+
+### Archivos para leer
+
+1. `app/core/Controller.php` → `requireMinRole` / `roleLevel`  
+2. `app/controllers/WriterController.php`  
+3. `app/models/Book.php` (métodos de autor)  
+4. `app/models/Community.php`  
+5. `app/views/writer/*`  
+6. `app/routes/web.php` (bloque `/escribir`)  
+7. `app/views/layouts/app.php` (links condicionales)  
+
+### Preguntas de repaso
+
+- ¿Qué roles pueden entrar a `/escribir`?  
+- ¿Qué pasa si un lector intenta abrir esa URL?  
+- ¿Cómo se asegura que no edites el libro de otro autor?  
+- ¿Cuándo aparece una historia en Descubrir?  
+- ¿Qué hace el botón de Nueva historia en el sidebar?
+
+### Práctica
+
+1. Con la cuenta escritora, crea “Mi prueba Lumen” y un capítulo publicado.  
+2. Cierra sesión, entra como lector y búscalo en Descubrir.  
+3. Vuelve como escritor y revisa Estadísticas (library_saves si alguien lo guardó).
 
 ---
 
@@ -270,6 +304,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos instalaron el proyecto en XAMPP al menos una vez  
 - [ ] Ambos saben registrar/iniciar/cerrar sesión  
 - [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
+- [ ] Ambos probaron el área Escribir (crear historia + capítulo)  
 - [ ] Ambos saben enviar una solicitud de escritor (lector)  
 - [ ] Ambos saben el flujo de roles (lector → solicitud → admin aprueba → escritor)  
 - [ ] Ella hizo una demo de 5–10 min sin leer el código en vivo  

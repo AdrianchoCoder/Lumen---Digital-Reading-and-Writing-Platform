@@ -113,7 +113,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 3 | Autenticación | `02cc863` | `main` |
 | 4 | Módulo Lector | `b7beee9` | `main` |
 | 5 | Solicitud de escritor | `488e54c` | `main` |
-| 6 | Escritor | — | — |
+| 6 | Escritor | _(tras push)_ | `main` |
 | 7 | Administrador | — | — |
 | 8 | Middleware de roles | — | — |
 | 9 | Diseño visual | — | — |
