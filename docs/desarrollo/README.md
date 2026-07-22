@@ -25,20 +25,17 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 6 | Módulo Escritor | Completado | `99dc2b9` |
 | 7 | Módulo Administrador | Completado | `2597401` |
 | 8 | Middleware de roles | Completado | `990629c` |
-| 9 | Diseño visual completo | Pendiente | — |
+| 9 | Diseño visual completo | Completado | _(tras push)_ |
 
-## Resumen hasta el módulo 8
+## Plan de módulos: cerrado
 
-- URL: `http://localhost/lumen/public`
-- Roles jerárquicos: lector=1, escritor=2, administrador=3
-- **RoleMiddleware** en rutas: `auth`, `guest`, `role:escritor`, `role:administrador`
-- Defensa en profundidad: middleware en Router + `requireMinRole` / `requireAuth` en controladores
-- Siguiente: módulo 9 (diseño visual)
+Los **9 módulos** del plan inicial están completos.  
+A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
-## Ritual al cerrar cada módulo
+Guía de entrega: [../entrega/README.md](../entrega/README.md)
 
-1–6 docs de esta carpeta + commit + push
+## Ritual (sigue aplicando a cambios grandes)
 
-## Entrega final
+1–6 docs + commit + push cuando cierres un bloque de trabajo.
 
-`docs/entrega/` cerca del cierre. Ver [RECOMENDACIONES.md](RECOMENDACIONES.md).
+URL local: `http://localhost/lumen/public`

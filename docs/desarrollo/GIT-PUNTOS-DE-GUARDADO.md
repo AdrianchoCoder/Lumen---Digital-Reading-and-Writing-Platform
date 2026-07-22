@@ -116,7 +116,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 6 | Escritor | `99dc2b9` | `main` |
 | 7 | Administrador | `2597401` | `main` |
 | 8 | Middleware de roles | `990629c` | `main` |
-| 9 | Diseño visual | — | — |
+| 9 | Diseño visual | _(tras push)_ | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

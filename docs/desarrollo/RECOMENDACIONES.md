@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 8** (2026-07-22).
+Última actualización de este archivo: **módulo 9** (2026-07-22).
 
 ---
 
@@ -202,6 +202,16 @@ Si falta alguno, el cierre del módulo está incompleto.
 - Incorrecto: `http://localhost/lumen/public/login/escribir` (ruta relativa mal armada → 404)
 
 Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, el navegador lo pega después de `/login/`.
+
+---
+
+## 16. Diseño visual y cierre del plan (módulo 9 — 2026-07-22)
+
+- Oscuro por defecto; toggle en la barra superior (y en auth)
+- Acento `#6C5CE7`, fuente Outfit
+- Tras el módulo 9 **no hay más módulos obligatorios** del plan original
+- Siguiente trabajo típico: pulir frontend, bugs, o ampliar features que pida el colegio
+- Entrega: `docs/entrega/README.md`
 
 ---
 

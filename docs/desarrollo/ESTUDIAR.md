@@ -352,9 +352,44 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 9 — Diseño visual (pendiente)
+## Módulo 9 — Diseño visual (completado)
 
-_Se completará al cerrar el módulo 9._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Design tokens | Variables CSS (`--accent`, `--bg`, etc.) |
+| Tema claro/oscuro | `data-theme` + `localStorage` (`theme.js`) |
+| Layout `app` | Sidebar + top chrome + contenido |
+| Iconos outline | SVG en el sidebar, estilo minimalista |
+| Separación | El CSS no cambia la lógica PHP/MVC |
+
+### Archivos para leer
+
+1. `public/assets/css/app.css`  
+2. `public/assets/js/theme.js`  
+3. `app/views/layouts/app.php`  
+4. `app/views/layouts/main.php`  
+5. `docs/entrega/README.md`  
+
+### Preguntas de repaso
+
+- ¿Dónde se define el color morado principal?  
+- ¿Cómo recuerda el navegador si elegiste tema claro?  
+- ¿La búsqueda de arriba a qué ruta envía?  
+
+### Práctica
+
+1. Cambia a tema claro, recarga y confirma que se mantiene.  
+2. Busca “fantasía” desde la barra superior.  
+3. Revisa el sidebar en móvil/ventana estrecha.
+
+---
+
+## Módulo 9+ — Mejoras posteriores (fuera del plan)
+
+_El plan 1–9 terminó. Los siguientes cambios son mejoras o pedidos del colegio._
+
 
 ---
 
@@ -366,12 +401,13 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos instalaron el proyecto en XAMPP al menos una vez  
 - [ ] Ambos saben registrar/iniciar/cerrar sesión  
 - [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
+- [ ] Ambos probaron el tema claro/oscuro y la barra de búsqueda  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  
 - [ ] Ambos saben enviar una solicitud de escritor (lector)  
 - [ ] Ambos saben el flujo de roles (lector → solicitud → admin aprueba → escritor)  
 - [ ] Ella hizo una demo de 5–10 min sin leer el código en vivo  
-- [ ] Existe `docs/entrega/` con el paso a paso limpio (solo al final)
+- [x] Existe `docs/entrega/` con el paso a paso limpio
 
 Más contexto: [RECOMENDACIONES.md](RECOMENDACIONES.md) · puntos Git: [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md).

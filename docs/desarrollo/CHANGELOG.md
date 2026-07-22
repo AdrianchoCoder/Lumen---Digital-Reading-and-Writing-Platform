@@ -4,6 +4,39 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 9] — Diseño visual completo (2026-07-22)
+
+### Qué se implementó
+
+- Sistema de tema **oscuro por defecto** + **claro** (`data-theme="light"`, `localStorage`)
+- Paleta con acento `#6C5CE7`, tipografía Outfit
+- Sidebar fija con iconos outline, secciones Escritor/Admin
+- Barra superior con **búsqueda** (envía a Descubrir) + toggle tema + badge de notificaciones (UI; módulo mensajes/notificaciones sigue fuera de alcance)
+- Layouts `app.php` y `main.php` rediseñados
+- `public/assets/css/app.css` reescrito; `public/assets/js/theme.js`
+- Guía inicial de entrega en `docs/entrega/README.md`
+
+### Decisiones técnicas
+
+- Tema aplicado en `<head>` antes del CSS para evitar flash
+- Notificaciones: solo indicador visual (no hay backend aún, como se acordó)
+- No se reescribió la lógica de negocio; solo presentación
+- Con el módulo 9 cierra el plan de 9 módulos del prompt original
+
+### Cómo probar
+
+1. `http://localhost/lumen/public` (portada) y login  
+2. Área logueada: sidebar, búsqueda arriba, badge  
+3. Botón sol/tema → alterna claro/oscuro y persiste al recargar  
+4. Responsive: reduce la ventana (<860px)
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 8] — Middleware de roles (2026-07-22)
 
 ### Qué se implementó
