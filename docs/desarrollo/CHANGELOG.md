@@ -24,11 +24,19 @@ Registro incremental. El más reciente va arriba.
 
 ### Cómo probar
 
-1. Sin sesión: `/escribir` y `/admin` → login
-2. Como lector: `/escribir` → Inicio con error de permiso; `/admin` igual
-3. Como escritor: `/escribir` OK; `/admin` → permiso denegado
-4. Como admin: ambas OK
-5. Logueado: abrir `/login` → redirige a `/inicio`
+**Importante:** escribe la URL **completa** en la barra (no pegues solo `escribir` estando en `/login`, porque el navegador arma `.../login/escribir` y da 404).
+
+URLs correctas (copia y pega):
+
+1. Sin sesión → `http://localhost/lumen/public/escribir` → te manda a login  
+2. Sin sesión → `http://localhost/lumen/public/admin` → te manda a login  
+3. Como lector (ya logueado) → mismas URLs → Inicio con “no tienes permiso”  
+4. Como escritor → `.../escribir` OK; `.../admin` → sin permiso  
+5. Como admin → ambas OK  
+6. Logueado → `http://localhost/lumen/public/login` → redirige a `/inicio`
+
+URL **incorrecta** (lo que salió en la prueba):  
+`http://localhost/lumen/public/login/escribir` → 404 (esa ruta no existe; el middleware ni siquiera corre).
 
 ### Commit de referencia
 

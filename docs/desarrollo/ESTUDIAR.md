@@ -343,9 +343,12 @@ users ──┬──< writer_requests
 
 ### Práctica
 
-1. Entra como lector e intenta `/admin` y `/escribir`.  
-2. Entra como escritor e intenta `/admin`.  
-3. Abre `web.php` y señala tres rutas con reglas distintas.
+1. Cierra sesión. En la barra pega exactamente:  
+   `http://localhost/lumen/public/escribir`  
+   Debe llevarte a login (no uses `.../login/escribir`).  
+2. Entra como lector e intenta de nuevo esa misma URL completa (y `/admin`).  
+3. Entra como escritor e intenta `http://localhost/lumen/public/admin`.  
+4. Abre `web.php` y señala tres rutas con reglas distintas.
 
 ---
 

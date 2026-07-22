@@ -195,6 +195,14 @@ Si falta alguno, el cierre del módulo está incompleto.
 - Niveles en `config/config.php` → `roles`
 - Controladores siguen usando `requireAuth` / `requireMinRole` como respaldo
 
+**Cómo probar bien (evitar 404 falso):**
+
+- Correcto: `http://localhost/lumen/public/escribir`  
+- Correcto: `http://localhost/lumen/public/admin`  
+- Incorrecto: `http://localhost/lumen/public/login/escribir` (ruta relativa mal armada → 404)
+
+Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, el navegador lo pega después de `/login/`.
+
 ---
 
 ## Plantilla: nuevas recomendaciones
