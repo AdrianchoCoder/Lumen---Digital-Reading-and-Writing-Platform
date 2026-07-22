@@ -41,7 +41,7 @@ Cuentas demo útiles:
 
 ### Commit de referencia
 
-- Commit: _(se completa tras push)_
+- Commit: `b7beee9`
 - Rama: `main`
 
 ---
