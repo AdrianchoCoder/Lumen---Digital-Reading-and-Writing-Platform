@@ -76,9 +76,54 @@ Navegador → public/index.php → Router → Controller → Vista (HTML)
 
 ---
 
-## Módulo 2 — Base de datos (pendiente)
+## Módulo 2 — Base de datos (completado)
 
-_Se completará al cerrar el módulo 2: tablas, FKs, índices, cómo importar en phpMyAdmin, preguntas de repaso._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Base de datos `lumen` | Contenedor MySQL donde viven todas las tablas del proyecto |
+| PK AUTO_INCREMENT | ID numérico que MySQL asigna solo; rápido en relaciones |
+| FK (clave foránea) | Garantiza que un `author_id` exista en `users` |
+| CASCADE | Si borras un libro, se borran sus capítulos automáticamente |
+| ENUM de rol | En BD: `lector` / `escritor` / `administrador` (un solo campo) |
+| `follows` asimétrico | A puede seguir a B sin que B siga a A |
+| `writer_requests` | Pedido de un lector para subir a escritor; lo revisa un admin |
+
+### Diagrama mental de relaciones
+
+```
+users ──┬──< writer_requests
+        ├──< books ──< chapters
+        ├──< communities
+        └──< follows (follower / followed)
+```
+
+### Archivos / lugares para revisar
+
+1. `database/lumen.sql` — script completo  
+2. `config/config.php` — nombre de BD `lumen` y URL `http://localhost/lumen/public`  
+3. phpMyAdmin → base `lumen` → pestaña Estructura de cada tabla  
+
+### Preguntas de repaso (módulo 2)
+
+- ¿Por qué usamos `INT` y no UUID como clave primaria aquí?  
+- ¿Qué pasa con los capítulos si se elimina un libro?  
+- ¿Qué estados puede tener una solicitud de escritor?  
+- ¿Cómo se representa “Ana sigue a Luis” en la tabla `follows`?  
+- ¿Dónde está el nivel numérico del rol (1/2/3): en la tabla o en config?
+
+### Práctica sugerida
+
+1. Importar (o reimportar) `lumen.sql` en phpMyAdmin.  
+2. Abrir la tabla `users` y localizar el admin de demo.  
+3. Explicar en voz alta la relación `books` → `chapters`.
+
+### Credenciales de prueba (solo desarrollo)
+
+- Email: `admin@lumen.local`  
+- Contraseña: `Admin123!`  
+- Rol: administrador  
 
 ---
 

@@ -22,6 +22,7 @@ Actúa como desarrollador Full Stack senior. Estamos construyendo "Lumen", una p
 - Backend: PHP orientado a objetos, MVC puro (sin Laravel)
 - BD: MySQL (XAMPP + phpMyAdmin)
 - Roles jerárquicos en un solo campo users.role: lector=1, escritor=2, administrador=3
+- URL local: http://localhost/lumen/public (junction htdocs/lumen → repo)
 
 ## Fuera de alcance por ahora
 - Logros y Mensajes (no implementar)
@@ -34,31 +35,26 @@ Actúa como desarrollador Full Stack senior. Estamos construyendo "Lumen", una p
 - CSRF en formularios de escritura/admin
 
 ## Documentación (actualizar SIEMPRE al cerrar un módulo)
-1. docs/desarrollo/CHANGELOG.md — qué se hizo, decisiones, cómo probar, hash commit
-2. docs/desarrollo/README.md — tabla de estado de módulos
-3. docs/desarrollo/ESTUDIAR.md — ampliar guía de estudio (conceptos, archivos a leer, preguntas de repaso) para el usuario y su prima
-4. docs/desarrollo/PROMPT-CONTINUIDAD.md — este prompt (estado + siguiente módulo)
-5. docs/desarrollo/RECOMENDACIONES.md — solo si hay acuerdos/consejos nuevos
-6. Commit + push a GitHub (punto de guardado)
+1. docs/desarrollo/CHANGELOG.md
+2. docs/desarrollo/README.md — tabla de estado
+3. docs/desarrollo/ESTUDIAR.md — conceptos, archivos, preguntas de repaso
+4. docs/desarrollo/PROMPT-CONTINUIDAD.md — este prompt
+5. docs/desarrollo/RECOMENDACIONES.md — si hay acuerdos nuevos
+6. Commit + push a GitHub
 
 ## Entrega limpia al colegio
-- NO crear aún docs/entrega/ ni la guía final de empaquetado.
-- Esa guía se hace cerca del FINAL (módulo 9 / proyecto presentable).
-- Mientras tanto, docs/desarrollo/ es el material de estudio y seguimiento.
-- Detalle del acuerdo: docs/desarrollo/RECOMENDACIONES.md
+- NO crear aún docs/entrega/.
+- Se hace cerca del FINAL (módulo 9 / proyecto presentable).
+- Detalle: docs/desarrollo/RECOMENDACIONES.md
 
 ## Estado actual del proyecto
-MÓDULO 1 COMPLETADO:
-- Estructura MVC en app/, public/, config/, database/
-- Autoloader, Database (PDO), Router, Controller base
-- Front controller public/index.php
-- HomeController + vista de smoke test
-- docs/desarrollo/ con README, CHANGELOG, ESTUDIAR, RECOMENDACIONES, PROMPT, GIT
+MÓDULO 1 COMPLETADO: núcleo MVC, Router, PDO, front controller, docs.
+MÓDULO 2 COMPLETADO: database/lumen.sql con users, writer_requests, books, chapters, follows, communities; admin demo; URL localhost/lumen/public.
 
 ## Orden de módulos
 1. Estructura base — COMPLETADO
-2. Script SQL completo (database/lumen.sql) — SIGUIENTE
-3. Autenticación
+2. Script SQL — COMPLETADO
+3. Autenticación (registro como lector, login, logout, sesiones) — SIGUIENTE
 4. Módulo Lector
 5. Solicitud de escritor
 6. Módulo Escritor
@@ -68,13 +64,13 @@ MÓDULO 1 COMPLETADO:
 
 ## Cómo trabajar
 - Un módulo a la vez
-- Al terminar: mostrar/explicar el módulo, decisiones técnicas breves, esperar confirmación antes del siguiente
+- Al terminar: explicar el módulo, decisiones breves, esperar confirmación
 - No asumir requisitos no dados; preguntar si algo no está claro
-- PK recomendada salvo indicación contraria: INT UNSIGNED AUTO_INCREMENT
+- PK: INT UNSIGNED AUTO_INCREMENT (ya aplicado en SQL)
 - Responder en español
 
 ## Tarea ahora
-Continúa con el MÓDULO 2: genera el script SQL completo database/lumen.sql con las tablas users, writer_requests, books, chapters, follows, communities (FKs, índices, estados de solicitudes). Explica brevemente las decisiones y espera confirmación antes del módulo 3. Al confirmar el módulo 2, actualiza toda la documentación de docs/desarrollo/ según la lista de arriba.
+Continúa con el MÓDULO 3: autenticación completa (registro como lector, login, logout, sesiones PHP). Usa password_hash/password_verify, PDO preparado, vistas en app/views/auth/, AuthController, modelo User. Explica decisiones y espera confirmación antes del módulo 4. Al confirmar, actualiza docs/desarrollo/.
 ```
 
 ---

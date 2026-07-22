@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 1** (2026-07-21).
+Última actualización de este archivo: **módulo 2** (2026-07-22).
 
 ---
 
@@ -30,6 +30,7 @@ Acuerdos y consejos acumulados durante el desarrollo.
 - Si algo sale mal, se puede volver a un commit anterior o crear una rama desde ese punto.
 - Guía práctica: [GIT-PUNTOS-DE-GUARDADO.md](GIT-PUNTOS-DE-GUARDADO.md).
 - Punto de guardado del módulo 1: commit `fb20bbc` (rama `main`).
+- URL local recomendada con junction: `http://localhost/lumen/public` (enlace `C:\xampp\htdocs\lumen` → carpeta del repo).
 
 ---
 
@@ -103,15 +104,27 @@ Detalle fino se escribirá en `docs/entrega/` en su momento.
 
 ---
 
-## 8. Cómo probar el módulo 1 (recordatorio)
+## 8. Cómo probar el módulo 1–2 (recordatorio)
 
-1. XAMPP: Apache (MySQL opcional aún)
-2. Proyecto en `htdocs` (ej. `C:\xampp\htdocs\lumen`)
-3. Ajustar `app.url` en `config/config.php`
-4. Abrir `http://localhost/lumen/public`
-5. Ver “Núcleo MVC listo”; aviso de BD es normal hasta el módulo 2
+1. Junction: `C:\xampp\htdocs\lumen` → repo en Documents/GitHub  
+2. `config.php` → `'url' => 'http://localhost/lumen/public'`  
+3. XAMPP: Apache + MySQL  
+4. Importar `database/lumen.sql` en phpMyAdmin (si aún no está)  
+5. Abrir `http://localhost/lumen/public` — debería indicar conexión PDO correcta  
 
-Explicación de carpetas y flujo de petición: [ESTUDIAR.md](ESTUDIAR.md).
+Explicación de carpetas y BD: [ESTUDIAR.md](ESTUDIAR.md).
+
+---
+
+## 9. Opción B de instalación: enlace en htdocs (módulo 1–2)
+
+No hace falta copiar el proyecto a `htdocs`. En Windows se creó una unión:
+
+```bat
+mklink /J C:\xampp\htdocs\lumen "C:\Users\USUARIO\OneDrive\Documents\GitHub\Lumen---Digital-Reading-and-Writing-Platform"
+```
+
+Quitar el enlace (no borra el repo): `rmdir C:\xampp\htdocs\lumen`
 
 ---
 

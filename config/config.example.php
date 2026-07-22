@@ -10,7 +10,7 @@ return [
         'name'      => 'Lumen',
         'env'       => 'local',
         'debug'     => true,
-        'url'       => 'http://localhost/tu-carpeta/public',
+        'url'       => 'http://localhost/lumen/public',
         'timezone'  => 'America/Bogota',
     ],
 

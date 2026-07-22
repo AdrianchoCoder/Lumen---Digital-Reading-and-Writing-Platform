@@ -28,7 +28,7 @@ Sirve para **quien desarrolla** y para **quien presenta/estudia** el c처digo (t�
 | M처dulo | Descripci처n | Estado |
 |--------|-------------|--------|
 | 1 | Estructura base MVC + config + Database + Router + Controller | Completado |
-| 2 | Script SQL `database/lumen.sql` | Pendiente |
+| 2 | Script SQL `database/lumen.sql` | Completado |
 | 3 | Autenticaci처n (registro, login, logout, sesiones) | Pendiente |
 | 4 | M처dulo Lector | Pendiente |
 | 5 | Solicitud para convertirse en Escritor | Pendiente |

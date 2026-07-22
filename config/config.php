@@ -13,7 +13,7 @@ return [
         'name'      => 'Lumen',
         'env'       => 'local',
         'debug'     => true,
-        'url'       => 'http://localhost/Lumen---Digital-Reading-and-Writing-Platform/public',
+        'url'       => 'http://localhost/lumen/public',
         'timezone'  => 'America/Bogota',
     ],
 

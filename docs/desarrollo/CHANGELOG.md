@@ -4,6 +4,46 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 2] — Base de datos MySQL (2026-07-22)
+
+### Qué se implementó
+
+- Script completo `database/lumen.sql` para importar en phpMyAdmin / MySQL (XAMPP)
+- Base `lumen` con charset `utf8mb4`
+- Tablas: `users`, `writer_requests`, `books`, `chapters`, `follows`, `communities`
+- Claves foráneas, índices y usuario admin de demo
+- URL de la app fijada a `http://localhost/lumen/public` (enlace en `htdocs`)
+
+### Decisiones técnicas
+
+- **PK `INT UNSIGNED AUTO_INCREMENT`**: más eficiente en joins e índices que UUID en MySQL/XAMPP escolar
+- **Roles en ENUM** (`lector|escritor|administrador`): legible en phpMyAdmin; los niveles 1/2/3 siguen en `config.php` para el middleware
+- **`ON DELETE CASCADE`** en libros, capítulos, follows y comunidades al borrar el dueño/usuario
+- **`ON DELETE SET NULL`** en `writer_requests.reviewed_by`: se conserva el historial de solicitudes si se borra el admin
+- **`follows`**: PK compuesta `(follower_id, followed_id)` + `CHECK` anti auto-seguimiento
+- Seed admin: `admin@lumen.local` / `Admin123!` (solo para pruebas)
+
+### Cómo probar / importar
+
+**Opción A — phpMyAdmin**
+
+1. XAMPP: Start Apache + MySQL
+2. Abrir `http://localhost/phpmyadmin`
+3. Importar → elegir `database/lumen.sql` → Continuar
+4. Verificar que exista la BD `lumen` y las 6 tablas
+
+**Opción B — ya importado por consola en este entorno** (si MySQL estaba activo)
+
+1. Abrir `http://localhost/lumen/public`
+2. El aviso de BD debería pasar a conexión correcta (HomeController)
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 1] — Estructura base MVC (2026-07-21)
 
 ### Qué se implementó
