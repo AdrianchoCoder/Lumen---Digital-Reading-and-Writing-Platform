@@ -57,10 +57,18 @@ docs/desarrollo/*
 
 ### Commit de referencia
 
-Tras el push de este módulo, anota aquí el hash corto:
-
-- Commit: `fb20bbc`
+- Commit código módulo 1: `fb20bbc`
+- Commit hash en changelog: `171053e`
 - Rama: `main`
+
+### Documentación de estudio / entrega (ampliación post módulo 1)
+
+Se añadieron y enriquecieron en `docs/desarrollo/`:
+
+- `ESTUDIAR.md` — guía compartida (tú + prima): conceptos, archivos a leer, preguntas de repaso
+- `RECOMENDACIONES.md` — acuerdos: Git, cuándo documentar, entrega al final, presentación colegio
+- `README.md` y `PROMPT-CONTINUIDAD.md` — ritual obligatorio de actualizar docs en cada módulo
+- Acuerdo: la carpeta `docs/entrega/` se crea **cerca del cierre**, no ahora
 
 ---
 
