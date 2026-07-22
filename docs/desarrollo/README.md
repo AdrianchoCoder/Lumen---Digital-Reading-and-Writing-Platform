@@ -24,7 +24,7 @@ Sirve para **quien desarrolla** y para **quien presenta/estudia** el código (t�
 | 4 | Módulo Lector | Completado | `b7beee9` |
 | 5 | Solicitud de escritor | Completado | `488e54c` |
 | 6 | Módulo Escritor | Completado | `99dc2b9` |
-| 7 | Módulo Administrador | Completado | _(tras push)_ |
+| 7 | Módulo Administrador | Completado | `2597401` |
 | 8 | Middleware de roles | Pendiente | — |
 | 9 | Diseño visual completo | Pendiente | — |
 
