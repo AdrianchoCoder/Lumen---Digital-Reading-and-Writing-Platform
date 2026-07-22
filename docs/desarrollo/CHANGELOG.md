@@ -4,6 +4,42 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+d] — Auth login/register + marca separada (2026-07-22)
+
+### Qué se implementó
+
+- **Landing navbar:** logo e imagen y el texto **Lumen** ya no van en un solo enlace/botón; son dos enlaces separados (`.landing-logo-link` + `.landing-brand-text`)
+- **Login / Register** (`layouts/main.php`): mismo lenguaje visual que la landing
+  - Logo `logo.png` al lado del texto Lumen, **sin agruparlos** en un solo botón
+  - Fondo `backgroundLandingPages.jpeg` + velo suave (oscuro/claro)
+  - Formulario en tarjeta semitransparente con blur (contraste con el fondo)
+  - Hovers morados al estilo landing
+- **Navbar auth contextual:**
+  - En `/login`: se quitó el botón Entrar/Iniciar (ya estás ahí); queda **Registrarse**
+  - En `/register`: el antiguo “Entrar” pasa a **Iniciar sesión**; no se muestra Registrarse
+- Botones de envío del formulario con clase `auth-submit-btn` (hover coherente)
+
+### Archivos clave
+
+- `app/views/layouts/landing.php`
+- `app/views/layouts/main.php`
+- `app/views/auth/login.php`, `register.php`
+- `public/assets/css/app.css` (secciones landing + auth)
+
+### Cómo probar
+
+1. Landing: logo y “Lumen” se ven separados (hovers independientes)
+2. `/login`: fondo con imagen, logo + Lumen separados, solo Registrarse arriba
+3. `/register`: mismo diseño, arriba **Iniciar sesión** (sin Entrar)
+4. Tema claro/oscuro en ambas pantallas
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+c] — Pulido landing: marca, hovers claro, carrusel (2026-07-22)
 
 ### Qué se implementó

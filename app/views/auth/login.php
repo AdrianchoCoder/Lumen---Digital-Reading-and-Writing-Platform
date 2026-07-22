@@ -31,7 +31,7 @@
             <?php endif; ?>
         </label>
 
-        <button type="submit" class="btn">Entrar</button>
+        <button type="submit" class="btn auth-submit-btn">Entrar</button>
     </form>
 
     <p class="muted-link">

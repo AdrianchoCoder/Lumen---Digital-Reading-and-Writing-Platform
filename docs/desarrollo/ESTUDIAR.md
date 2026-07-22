@@ -476,6 +476,31 @@ GET /  →  HomeController::index
 
 ---
 
+## Mejora 9+d — Login / Register alineados con la landing (2026-07-22)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Marca separada | Logo y texto son **dos** `<a>`; no un solo botón compuesto |
+| Layout `main` | Sigue siendo el de auth; solo cambió presentación |
+| Nav contextual | Según `$currentPath` se oculta Entrar en login o se muestra Iniciar sesión en register |
+| Fondo auth | Misma imagen que la landing + gradiente; la tarjeta `.guest-shell` contrasta |
+
+### Archivos para leer
+
+1. `app/views/layouts/main.php`  
+2. `app/views/layouts/landing.php` (comparar marca separada)  
+3. CSS `.auth-body` / `.guest-shell` en `app.css`  
+
+### Práctica
+
+1. Abre `/login` y `/register` y compara el navbar superior.  
+2. Alterna tema claro/oscuro.  
+3. En la landing, pasa el mouse solo por el logo y solo por “Lumen”.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -486,6 +511,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron Descubrir, Biblioteca y seguir a un autor  
 - [ ] Ambos probaron el tema claro/oscuro y la barra de búsqueda  
 - [ ] Ambos probaron la landing (carrusel + modal + footer) sin sesión  
+- [ ] Ambos probaron login/register con el nuevo diseño y tema claro/oscuro  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

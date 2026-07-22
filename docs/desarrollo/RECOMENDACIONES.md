@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 9+c pulido landing** (2026-07-22).
+Última actualización de este archivo: **mejora 9+d auth + marca separada** (2026-07-22).
 
 ---
 
@@ -221,10 +221,12 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - No reorganizar carpetas MVC por un rediseño: vistas + CSS/JS bastan
 - Carrusel = datos reales (`status = 'publicado'`); para “libros de prueba” publica historias desde Escritor
 - Clic en libro en landing **no** abre el lector: abre modal → login/registro (incentivo)
-- Logo oficial: `public/assets/img/logo.png` + texto **Lumen** en `.landing-brand-text`
-- Fondo: `public/assets/img/backgroundLandingPages.jpeg` con velo **ligero** (que se vea la ilustración)
+- Logo oficial: `public/assets/img/logo.png` + texto **Lumen** como elementos **separados** (no un solo botón compuesto)
+- Fondo: `public/assets/img/backgroundLandingPages.jpeg` con velo **ligero** (landing y auth)
+- Login/register: reutilizar el lenguaje visual de la landing en `layouts/main.php`, no inventar otro sistema
+- En login no mostrar botón de “Entrar/Iniciar” en el top (redundante); en register mostrar **Iniciar sesión**
 - No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
-- Hovers de landing con clases propias (`landing-btn`, etc.); en **modo claro** usar morado más oscuro para contraste (no lavanda claro)
+- Hovers de landing/auth con clases propias; en **modo claro** usar morado más oscuro para contraste
 - Carrusel: si el hover “recorta” tarjetas, añadir padding vertical (overflow-x implica recorte en Y)
 - No usar watermarks casi invisibles sobre el hero si compiten con el fondo
 - Footer legal/redes puede quedar con `#` hasta tener URLs reales

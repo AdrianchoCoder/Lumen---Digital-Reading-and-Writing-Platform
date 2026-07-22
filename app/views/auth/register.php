@@ -51,7 +51,7 @@
             <?php endif; ?>
         </label>
 
-        <button type="submit" class="btn">Registrarme</button>
+        <button type="submit" class="btn auth-submit-btn">Registrarme</button>
     </form>
 
     <p class="muted-link">

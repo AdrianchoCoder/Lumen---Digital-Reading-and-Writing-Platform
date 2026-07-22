@@ -318,24 +318,153 @@ a:hover {
 
 /* ——— Auth / portada ——— */
 .auth-body {
+    --landing-bg: url("../img/backgroundLandingPages.jpeg");
     min-height: 100vh;
     display: grid;
     place-items: center;
     padding: 2rem 1rem;
-    background:
-        radial-gradient(900px 420px at 10% -10%, var(--accent-soft), transparent 60%),
-        var(--bg);
+    color: var(--text);
+    background-color: #1a1228;
+    background-image:
+        linear-gradient(
+            125deg,
+            color-mix(in srgb, #120b1f 62%, transparent) 0%,
+            color-mix(in srgb, #1a1230 38%, transparent) 45%,
+            color-mix(in srgb, #6c5ce7 16%, transparent) 100%
+        ),
+        var(--landing-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+[data-theme="light"] .auth-body {
+    background-color: #ebe4f7;
+    background-image:
+        linear-gradient(
+            125deg,
+            color-mix(in srgb, #f4efff 55%, transparent) 0%,
+            color-mix(in srgb, #efe8fc 28%, transparent) 50%,
+            color-mix(in srgb, #6c5ce7 10%, transparent) 100%
+        ),
+        var(--landing-bg);
 }
 
 .auth-wrap {
-    width: min(440px, 100%);
+    width: min(480px, 100%);
 }
 
 .auth-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.auth-brand-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.auth-logo-link {
+    display: inline-flex;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-logo-link:hover {
+    transform: translateY(-1px) scale(1.04);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent),
+        0 8px 20px color-mix(in srgb, var(--accent) 35%, transparent);
+    text-decoration: none;
+}
+
+.auth-logo-slot {
+    height: 52px;
+}
+
+.auth-logo-slot .logo-img {
+    height: 52px;
+    max-width: 180px;
+}
+
+.auth-brand-text {
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.35rem 0.55rem;
+    border-radius: 10px;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.auth-brand-text:hover {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.auth-body .top-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.auth-body .auth-nav-btn,
+.auth-body .auth-submit-btn {
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-body .auth-nav-btn:hover,
+.auth-body .auth-submit-btn:hover {
+    background: #8b7cf0;
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, #c4b5fd 70%, transparent),
+        0 10px 24px color-mix(in srgb, var(--accent) 50%, transparent);
+    text-decoration: none;
+}
+
+[data-theme="light"] .auth-body .auth-nav-btn:hover,
+[data-theme="light"] .auth-body .auth-submit-btn:hover {
+    background: #4f3dbd;
+    color: #fff;
+    box-shadow:
+        0 0 0 2px #6c5ce7,
+        0 10px 24px rgba(79, 61, 189, 0.4);
+}
+
+.auth-body .auth-nav-btn.btn-ghost {
+    background: color-mix(in srgb, var(--panel) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+    color: var(--text);
+}
+
+.auth-body .auth-interactive {
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.auth-body .auth-interactive:hover {
+    transform: translateY(-2px) scale(1.06);
+    border-color: var(--accent);
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 18%, var(--panel));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .shell {
@@ -347,9 +476,22 @@ a:hover {
 .guest-shell {
     width: min(520px, 100%);
     padding: 2rem;
-    background: var(--panel);
-    border: 1px solid var(--border);
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
     border-radius: calc(var(--radius) + 4px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="light"] .guest-shell {
+    background: color-mix(in srgb, #ffffff 90%, transparent);
+    box-shadow: 0 18px 48px rgba(79, 61, 189, 0.12);
+}
+
+@media (max-width: 900px) {
+    .auth-body {
+        background-attachment: scroll;
+    }
 }
 
 /* ——— Tipografía y UI ——— */
@@ -752,28 +894,42 @@ h2 {
     border-bottom: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
 }
 
-.landing-brand {
+.landing-brand-group {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 14px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    gap: 0.85rem;
 }
 
-.landing-brand:hover {
+.landing-logo-link {
+    display: inline-flex;
+    border-radius: 12px;
     text-decoration: none;
-    color: var(--accent);
-    transform: translateY(-1px) scale(1.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-logo-link:hover {
+    transform: translateY(-1px) scale(1.04);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent),
-        0 8px 22px color-mix(in srgb, var(--accent) 35%, transparent);
+        0 8px 20px color-mix(in srgb, var(--accent) 35%, transparent);
+    text-decoration: none;
 }
 
 .landing-brand-text {
     font-weight: 700;
     font-size: 1.35rem;
     letter-spacing: -0.03em;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.35rem 0.55rem;
+    border-radius: 10px;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.landing-brand-text:hover {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    text-decoration: none;
+    transform: translateY(-1px);
 }
 
 .logo-slot {

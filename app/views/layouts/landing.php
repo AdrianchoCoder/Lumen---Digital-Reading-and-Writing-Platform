@@ -30,16 +30,18 @@ $pageTitle = (!empty($title) && $title !== $appName)
 </head>
 <body class="landing-body">
     <header class="landing-nav">
-        <a class="landing-brand" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/">
-            <span class="logo-slot" aria-label="Logo Lumen">
-                <img
-                    src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/img/logo.png"
-                    alt=""
-                    class="logo-img"
-                >
-            </span>
-            <span class="landing-brand-text"><?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?></span>
-        </a>
+        <div class="landing-brand-group">
+            <a class="landing-logo-link" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/" aria-label="Ir al inicio — logo">
+                <span class="logo-slot">
+                    <img
+                        src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/img/logo.png"
+                        alt=""
+                        class="logo-img"
+                    >
+                </span>
+            </a>
+            <a class="landing-brand-text" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/"><?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?></a>
+        </div>
         <nav class="landing-nav-links">
             <button type="button" class="icon-btn landing-interactive" id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
