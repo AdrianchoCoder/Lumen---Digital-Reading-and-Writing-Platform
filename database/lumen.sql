@@ -19,6 +19,7 @@ USE `lumen`;
 -- Rol jerárquico en un solo campo ENUM (lector < escritor < administrador).
 -- Los niveles numéricos (1/2/3) viven en config/config.php para el middleware.
 -- -----------------------------------------------------------------------------
+DROP TABLE IF EXISTS `library`;
 DROP TABLE IF EXISTS `follows`;
 DROP TABLE IF EXISTS `chapters`;
 DROP TABLE IF EXISTS `books`;
@@ -158,6 +159,23 @@ CREATE TABLE `communities` (
     ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- -----------------------------------------------------------------------------
+-- library (biblioteca personal del lector: historias guardadas)
+-- -----------------------------------------------------------------------------
+CREATE TABLE `library` (
+  `user_id` INT UNSIGNED NOT NULL,
+  `book_id` INT UNSIGNED NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`, `book_id`),
+  KEY `idx_library_book` (`book_id`),
+  CONSTRAINT `fk_library_user`
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_library_book`
+    FOREIGN KEY (`book_id`) REFERENCES `books` (`id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 SET FOREIGN_KEY_CHECKS = 1;
 
 -- -----------------------------------------------------------------------------
@@ -176,3 +194,39 @@ VALUES (
   'Cuenta de administración para pruebas del proyecto.',
   'administrador'
 );
+
+-- Escritor de demo + historias publicadas (para Descubrir / Biblioteca)
+-- Email: escritor@lumen.local | Contraseña: Escritor123!
+INSERT INTO `users` (`username`, `email`, `password_hash`, `display_name`, `bio`, `role`)
+VALUES (
+  'luna_writes',
+  'escritor@lumen.local',
+  '$2y$10$jHy4S4XKPNLfEEprlv/qDeaF6XHD50p6lzt/f7VNxAX/suf3VMF4q',
+  'Luna Escritora',
+  'Escribo fantasía urbana y relatos cortos.',
+  'escritor'
+);
+
+INSERT INTO `books` (`author_id`, `title`, `synopsis`, `genre`, `status`)
+SELECT u.id,
+       'Luces sobre el río',
+       'Una joven descubre que las farolas de su ciudad guardan memorias de quienes las miran demasiado tiempo.',
+       'Fantasía',
+       'publicado'
+FROM `users` u WHERE u.username = 'luna_writes' LIMIT 1;
+
+INSERT INTO `books` (`author_id`, `title`, `synopsis`, `genre`, `status`)
+SELECT u.id,
+       'Café a medianoche',
+       'Historias breves de desconocidos que coinciden siempre en la misma mesa de un café 24 horas.',
+       'Contemporáneo',
+       'publicado'
+FROM `users` u WHERE u.username = 'luna_writes' LIMIT 1;
+
+INSERT INTO `chapters` (`book_id`, `number`, `title`, `content`, `status`)
+SELECT b.id, 1, 'Capítulo 1', 'El río brillaba como si alguien hubiera derramado estrellas sobre el agua.\n\nMarina detuvo la bicicleta y miró la farola más cercana: parpadeó dos veces, como saludando.', 'publicado'
+FROM `books` b WHERE b.title = 'Luces sobre el río' LIMIT 1;
+
+INSERT INTO `chapters` (`book_id`, `number`, `title`, `content`, `status`)
+SELECT b.id, 1, 'Primera visita', 'El barista no preguntó el nombre. Solo dejó una taza humeante y dijo: \"La de siempre\".\n\nEl problema era que era la primera vez.', 'publicado'
+FROM `books` b WHERE b.title = 'Café a medianoche' LIMIT 1;

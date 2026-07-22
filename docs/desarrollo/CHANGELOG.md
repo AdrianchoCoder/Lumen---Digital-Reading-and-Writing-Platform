@@ -4,6 +4,48 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 4] — Módulo Lector (2026-07-22)
+
+### Qué se implementó
+
+- Layout `app` con sidebar: Inicio, Descubrir, Biblioteca, Perfil
+- `ReaderController` + `FollowController`
+- Modelos `Book`, `Follow`, `Library`
+- Tabla `library` (biblioteca personal) + parche `database/patch_modulo4.sql`
+- Datos demo: escritora `luna_writes` y 2 historias publicadas con capítulos
+- Seguir / dejar de seguir autores
+- Guardar / quitar historias de biblioteca
+- Lectura de capítulos publicados
+- Edición de perfil propio (nombre visible + bio)
+- `requireAuth()` en el controlador base
+
+### Decisiones técnicas
+
+- Biblioteca = tabla pivote `library (user_id, book_id)`; no existía en el módulo 2 y era necesaria
+- Inicio autenticado en `/inicio`; `/` queda como portada pública
+- Perfiles públicos en `/u/{username}`; el propio en `/perfil`
+- CSRF en follow/unfollow y biblioteca
+- Diseño sidebar funcional (estética final = módulo 9)
+
+### Cómo probar
+
+1. Si la BD ya existía: importar `database/patch_modulo4.sql` (o reimportar `lumen.sql`)
+2. Login con un lector (o registrar uno nuevo)
+3. Ir a Descubrir → abrir una historia → Guardar en biblioteca / Seguir autor
+4. Revisar Biblioteca, Inicio (siguiendo) y Perfil
+
+Cuentas demo útiles:
+- Lector: la que registres tú
+- Escritora: `escritor@lumen.local` / `Escritor123!`
+- Admin: `admin@lumen.local` / `Admin123!`
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 3] — Autenticación (2026-07-22)
 
 ### Qué se implementó

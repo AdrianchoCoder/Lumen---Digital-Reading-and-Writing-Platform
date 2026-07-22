@@ -205,3 +205,165 @@ h1 {
 .linkish:hover {
     text-decoration: underline;
 }
+
+/* Layout app (módulo 4 — funcional; diseño final en módulo 9) */
+.app-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: #12121a;
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.side-nav {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.side-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.65rem 0.8rem;
+    border-radius: 10px;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+    background: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+}
+
+.side-footer {
+    margin-top: auto;
+}
+
+.nav-role {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin: 0 0 0.75rem;
+    text-transform: capitalize;
+}
+
+.app-main {
+    padding: 2rem 1.75rem;
+    max-width: 880px;
+}
+
+.stack-section {
+    margin-top: 2rem;
+}
+
+.stack-section h2 {
+    margin: 0 0 0.85rem;
+    font-size: 1.15rem;
+}
+
+.card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+}
+
+.card-link {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+}
+
+.card-link span,
+.card-link em {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: normal;
+}
+
+.card-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.card-row .card-link {
+    flex: 1;
+}
+
+.empty {
+    color: var(--muted);
+}
+
+.search-form {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    margin: 1rem 0 0;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    font: inherit;
+}
+
+.form textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    font: inherit;
+    resize: vertical;
+}
+
+.chapter-body {
+    margin-top: 1.5rem;
+    line-height: 1.75;
+    color: #dddde8;
+    white-space: normal;
+}
+
+.actions form {
+    display: inline-block;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .app-body {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .side-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+

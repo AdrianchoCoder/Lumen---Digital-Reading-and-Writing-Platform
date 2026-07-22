@@ -12,70 +12,45 @@ Copia y pega el bloque de abajo en el chat de Cursor cuando quieras retomar el d
 Actúa como desarrollador Full Stack senior. Estamos construyendo "Lumen", una plataforma web tipo Wattpad para un proyecto de colegio (Ingeniería de Software).
 
 ## Contexto humano
-- El software lo desarrolla y estudia el usuario con Cursor.
-- Su prima también debe poder estudiar el código, instalarlo y presentarlo.
-- Toda la documentación viva está en docs/desarrollo/.
-- ANTES de generar código nuevo, lee: docs/desarrollo/README.md, CHANGELOG.md, ESTUDIAR.md, RECOMENDACIONES.md y este prompt.
+- Documentación viva en docs/desarrollo/ — léela antes de generar código.
+- El usuario y su prima estudian con ESTUDIAR.md.
 
 ## Stack
-- Frontend: HTML5, CSS3, JavaScript vanilla
-- Backend: PHP orientado a objetos, MVC puro (sin Laravel)
-- BD: MySQL (XAMPP + phpMyAdmin)
-- Roles jerárquicos en un solo campo users.role: lector=1, escritor=2, administrador=3
-- URL local: http://localhost/lumen/public (junction htdocs/lumen → repo)
+- PHP OO MVC puro, MySQL/XAMPP, HTML/CSS/JS vanilla
+- Roles: lector=1, escritor=2, administrador=3
+- URL: http://localhost/lumen/public
 
 ## Fuera de alcance por ahora
-- Logros y Mensajes (no implementar)
+- Logros y Mensajes
 
-## Seguridad (obligatoria)
-- password_hash / password_verify
-- PDO + sentencias preparadas
-- Sesión + CSRF en formularios POST
-- Sanitización anti-XSS (htmlspecialchars en vistas)
-- Middleware de roles cuando corresponda (módulo 8; por ahora checks puntuales si hace falta)
+## Seguridad
+- password_hash/verify, PDO preparado, sesión, CSRF en POST, htmlspecialchars en vistas
 
-## Documentación (actualizar SIEMPRE al cerrar un módulo)
-1. docs/desarrollo/CHANGELOG.md
-2. docs/desarrollo/README.md — tabla de estado
-3. docs/desarrollo/ESTUDIAR.md
-4. docs/desarrollo/PROMPT-CONTINUIDAD.md
-5. docs/desarrollo/RECOMENDACIONES.md — si hay acuerdos nuevos
-6. Commit + push a GitHub
+## Documentación al cerrar cada módulo
+Actualizar CHANGELOG, README (estado), ESTUDIAR, este prompt, RECOMENDACIONES si aplica + commit/push.
+NO crear docs/entrega/ aún.
 
-## Entrega limpia al colegio
-- NO crear aún docs/entrega/. Se hace cerca del FINAL.
-- Detalle: docs/desarrollo/RECOMENDACIONES.md
-
-## Estado actual del proyecto
-MÓDULO 1 COMPLETADO: núcleo MVC.
-MÓDULO 2 COMPLETADO: database/lumen.sql + admin demo.
-MÓDULO 3 COMPLETADO: Auth (Session, Csrf, User, AuthController, login/register/logout).
-
-## Orden de módulos
-1. Estructura base — COMPLETADO
-2. Script SQL — COMPLETADO
-3. Autenticación — COMPLETADO
-4. Módulo Lector (Inicio, Descubrir, Biblioteca, Perfil, seguir/dejar de seguir) — SIGUIENTE
-5. Solicitud de escritor
-6. Módulo Escritor
-7. Módulo Administrador
-8. Middleware de roles en todas las rutas
-9. Integración del diseño visual completo
+## Estado
+1 COMPLETADO — núcleo MVC
+2 COMPLETADO — lumen.sql (+ library en módulo 4)
+3 COMPLETADO — auth
+4 COMPLETADO — lector (inicio, descubrir, biblioteca, perfil, follows, lectura)
+5 SIGUIENTE — solicitud para convertirse en escritor (formulario + writer_requests)
+6 Escritor
+7 Administrador
+8 Middleware de roles
+9 Diseño visual completo
 
 ## Cómo trabajar
-- Un módulo a la vez
-- Al terminar: explicar, decisiones breves, esperar confirmación
-- No asumir requisitos no dados; preguntar si algo no está claro
-- Responder en español
+Un módulo a la vez; explicar; esperar confirmación; español.
 
 ## Tarea ahora
-Continúa con el MÓDULO 4: módulo Lector (Inicio, Descubrir, Biblioteca, Perfil, seguir/dejar de seguir). Reutiliza auth de sesión. Explica decisiones y espera confirmación antes del módulo 5. Al confirmar, actualiza docs/desarrollo/.
+MÓDULO 5: solicitud de escritor (formulario del lector, tabla writer_requests, estados pendiente/aprobado/rechazado). La aprobación admin puede quedar en el módulo 7 si separas responsabilidades, pero el lector debe poder enviar la solicitud. Explica y espera confirmación. Luego actualiza docs/desarrollo/.
 ```
 
 ---
 
 ## Notas para ti (humano)
 
-- Si abres un chat nuevo, pega este prompt completo.
-- Después de aprobar un módulo, di: **“actualiza la documentación de docs/desarrollo y haz commit + push”**.
-- Tu prima puede estudiar con `ESTUDIAR.md`.
+- Chat nuevo → pega este prompt.
+- Tras aprobar un módulo: “actualiza docs/desarrollo y haz commit + push”.

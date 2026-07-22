@@ -5,32 +5,21 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Core\Database;
 
 /**
- * Portada / smoke test del núcleo + estado de autenticación.
+ * Portada pública para visitantes sin sesión.
+ * Si hay sesión, redirige al Inicio del lector.
  */
 final class HomeController extends Controller
 {
     public function index(): void
     {
-        $dbStatus = 'pendiente';
-        $dbOk = false;
-
-        try {
-            Database::getInstance($this->config['db']);
-            $dbStatus = 'conexión PDO correcta';
-            $dbOk = true;
-        } catch (\Throwable $e) {
-            if ($this->config['app']['debug']) {
-                $dbStatus = $e->getMessage();
-            }
+        if ($this->isLoggedIn()) {
+            $this->redirect('/inicio');
         }
 
         $this->view('home/index', [
-            'title'    => $this->config['app']['name'],
-            'dbStatus' => $dbStatus,
-            'dbOk'     => $dbOk,
+            'title' => 'Bienvenido',
         ]);
     }
 }

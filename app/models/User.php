@@ -76,4 +76,41 @@ final class User
 
         return (int) $this->pdo->lastInsertId();
     }
+
+    /**
+     * Actualiza datos básicos del perfil (nombre visible y bio).
+     */
+    public function updateProfile(int $userId, string $displayName, ?string $bio): void
+    {
+        $stmt = $this->pdo->prepare(
+            'UPDATE users SET display_name = :display_name, bio = :bio WHERE id = :id'
+        );
+        $stmt->execute([
+            'display_name' => $displayName,
+            'bio'          => $bio,
+            'id'           => $userId,
+        ]);
+    }
+
+    /** @return list<array> */
+    public function searchWriters(?string $query = null, int $limit = 12): array
+    {
+        $limit = max(1, min(30, $limit));
+        $sql = 'SELECT id, username, display_name, bio, role
+                FROM users
+                WHERE is_active = 1 AND role IN (\'escritor\', \'administrador\')';
+        $params = [];
+
+        if ($query !== null && $query !== '') {
+            $sql .= ' AND (username LIKE :q OR display_name LIKE :q)';
+            $params['q'] = '%' . $query . '%';
+        }
+
+        $sql .= ' ORDER BY display_name ASC LIMIT ' . $limit;
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt->fetchAll();
+    }
 }

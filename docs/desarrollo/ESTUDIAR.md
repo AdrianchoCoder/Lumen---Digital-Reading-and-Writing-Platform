@@ -167,9 +167,40 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 4 — Lector (pendiente)
+## Módulo 4 — Lector (completado)
 
-_Se completará al cerrar el módulo 4._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Sidebar / layout `app` | Navegación fija del área logueada (Inicio, Descubrir, etc.) |
+| `requireAuth()` | Si no hay sesión, redirige a login |
+| Descubrir | Busca libros publicados y escritores |
+| Biblioteca | Historias que el lector guardó (`library`) |
+| Follow asimétrico | Tú puedes seguir a alguien sin que te siga |
+| Perfil `/u/user` | Ver a otro usuario; `/perfil` es el tuyo editable |
+
+### Archivos para leer
+
+1. `app/controllers/ReaderController.php`  
+2. `app/controllers/FollowController.php`  
+3. `app/models/Book.php`, `Follow.php`, `Library.php`  
+4. `app/views/layouts/app.php`  
+5. `app/views/reader/*`  
+6. `database/patch_modulo4.sql` / sección `library` en `lumen.sql`  
+
+### Preguntas de repaso
+
+- ¿Qué pasa si entras a `/biblioteca` sin sesión?  
+- ¿Cómo se guarda una historia en la biblioteca a nivel de tabla?  
+- ¿Cuál es la diferencia entre `/perfil` y `/u/luna_writes`?  
+- ¿Dónde se listan las personas que sigues?
+
+### Práctica
+
+1. Seguir a `luna_writes` y verla en Inicio.  
+2. Guardar “Luces sobre el río” y verla en Biblioteca.  
+3. Leer el capítulo 1.
 
 ---
 

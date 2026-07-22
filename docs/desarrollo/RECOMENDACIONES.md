@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 3** (2026-07-22).
+Última actualización de este archivo: **módulo 4** (2026-07-22).
 
 ---
 
@@ -125,6 +125,14 @@ mklink /J C:\xampp\htdocs\lumen "C:\Users\USUARIO\OneDrive\Documents\GitHub\Lume
 ```
 
 Quitar el enlace (no borra el repo): `rmdir C:\xampp\htdocs\lumen`
+
+---
+
+## 10. Parches SQL en BD ya importada (módulo 4)
+
+Si `lumen.sql` ya se importó antes, no hace falta borrar todo: ejecuta `database/patch_modulo4.sql` (crea `library` + datos demo de escritora/historias).
+
+Instalaciones nuevas: basta importar `database/lumen.sql` completo (ya incluye `library` y seeds).
 
 ---
 

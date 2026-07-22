@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Core\Csrf;
 use App\Core\Session;
 use App\Models\User;
 
@@ -198,36 +197,6 @@ final class AuthController extends Controller
         }
 
         return $errors;
-    }
-
-    private function stringInput(string $key): string
-    {
-        $value = $_POST[$key] ?? '';
-        if (!is_string($value)) {
-            return '';
-        }
-
-        return trim($value);
-    }
-
-    private function assertCsrf(): bool
-    {
-        $token = isset($_POST['_csrf']) && is_string($_POST['_csrf']) ? $_POST['_csrf'] : null;
-
-        if (!Csrf::validate($token)) {
-            Session::flash('error', 'Token de seguridad inválido. Intenta de nuevo.');
-            $this->redirect($_SERVER['HTTP_REFERER'] ?? '/');
-            return false;
-        }
-
-        return true;
-    }
-
-    private function isLoggedIn(): bool
-    {
-        $user = Session::get('user');
-
-        return is_array($user) && isset($user['id']);
     }
 
     private function storeAuthUser(?array $user): void
