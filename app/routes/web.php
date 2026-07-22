@@ -6,6 +6,7 @@ use App\Controllers\AuthController;
 use App\Controllers\FollowController;
 use App\Controllers\HomeController;
 use App\Controllers\ReaderController;
+use App\Controllers\WriterRequestController;
 use App\Core\Router;
 
 /** @var Router $router */
@@ -37,3 +38,6 @@ $router->post('/biblioteca/quitar/{bookId}', [ReaderController::class, 'removeFr
 
 $router->post('/seguir/{userId}', [FollowController::class, 'follow']);
 $router->post('/dejar-seguir/{userId}', [FollowController::class, 'unfollow']);
+
+$router->get('/solicitar-escritor', [WriterRequestController::class, 'show']);
+$router->post('/solicitar-escritor', [WriterRequestController::class, 'store']);

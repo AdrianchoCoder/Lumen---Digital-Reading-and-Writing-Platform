@@ -204,9 +204,37 @@ users ──┬──< writer_requests
 
 ---
 
-## Módulo 5 — Solicitud de escritor (pendiente)
+## Módulo 5 — Solicitud de escritor (completado)
 
-_Se completará al cerrar el módulo 5._
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| `writer_requests` | Tabla donde el lector pide ser escritor |
+| Estado `pendiente` | Enviada; espera al admin |
+| Estado `aprobado` / `rechazado` | Lo define el admin (módulo 7) |
+| Una pendiente a la vez | No puedes spamear solicitudes |
+| Sidebar condicional | El link “Ser escritor” solo lo ven los lectores |
+
+### Archivos para leer
+
+1. `app/models/WriterRequest.php`  
+2. `app/controllers/WriterRequestController.php`  
+3. `app/views/reader/writer-request.php`  
+4. Rutas en `app/routes/web.php`  
+
+### Preguntas de repaso
+
+- ¿Quién puede enviar la solicitud?  
+- ¿Qué columnas clave tiene `writer_requests`?  
+- ¿Qué pasa si ya tienes una solicitud pendiente?  
+- ¿En qué módulo se aprueba y se cambia el rol?
+
+### Práctica
+
+1. Con un lector, envía una solicitud.  
+2. Confírmala en phpMyAdmin.  
+3. Recarga la página y verifica que no puedas enviar otra.
 
 ---
 

@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **módulo 4** (2026-07-22).
+Última actualización de este archivo: **módulo 5** (2026-07-22).
 
 ---
 

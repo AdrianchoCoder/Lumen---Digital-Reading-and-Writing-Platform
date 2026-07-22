@@ -31,7 +31,7 @@ Sirve para **quien desarrolla** y para **quien presenta/estudia** el c처digo (t�
 | 2 | Script SQL `database/lumen.sql` | Completado |
 | 3 | Autenticaci처n (registro, login, logout, sesiones) | Completado |
 | 4 | M처dulo Lector | Completado |
-| 5 | Solicitud para convertirse en Escritor | Pendiente |
+| 5 | Solicitud para convertirse en Escritor | Completado |
 | 6 | M처dulo Escritor | Pendiente |
 | 7 | M처dulo Administrador | Pendiente |
 | 8 | Middleware de roles | Pendiente |

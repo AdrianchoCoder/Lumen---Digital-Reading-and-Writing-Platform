@@ -347,6 +347,19 @@ h1 {
     white-space: normal;
 }
 
+.request-box {
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.request-box h2 {
+    margin-top: 0;
+    font-size: 1.05rem;
+}
+
 .actions form {
     display: inline-block;
     margin: 0;

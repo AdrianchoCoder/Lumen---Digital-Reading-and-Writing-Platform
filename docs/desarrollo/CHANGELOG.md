@@ -4,6 +4,40 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Módulo 5] — Solicitud de escritor (2026-07-22)
+
+### Qué se implementó
+
+- Modelo `WriterRequest.php`
+- `WriterRequestController` (ver estado + enviar solicitud)
+- Vista `reader/writer-request.php`
+- Rutas `GET/POST /solicitar-escritor`
+- Enlace **Ser escritor** en el sidebar (solo rol `lector`)
+- Validación de motivación (30–2000 caracteres), CSRF, anti-duplicado si hay solicitud pendiente
+- Historial de solicitudes del usuario
+
+### Decisiones técnicas
+
+- Solo `lector` puede enviar; escritor/admin ven mensaje de que ya tienen acceso
+- Si hay solicitud `pendiente`, no se permite otra
+- Si fue `rechazado`, puede volver a solicitar
+- La **aprobación y cambio de rol** quedan para el módulo 7 (Admin); aquí solo se crea el registro en `writer_requests`
+
+### Cómo probar
+
+1. Entra con una cuenta **lector**
+2. Sidebar → **Ser escritor**
+3. Escribe una motivación ≥ 30 caracteres y envía
+4. Verifica en phpMyAdmin → `writer_requests` (status `pendiente`)
+5. La página debe mostrar “pendiente” y ocultar el formulario
+
+### Commit de referencia
+
+- Commit: _(se completa tras push)_
+- Rama: `main`
+
+---
+
 ## [Módulo 4] — Módulo Lector (2026-07-22)
 
 ### Qué se implementó

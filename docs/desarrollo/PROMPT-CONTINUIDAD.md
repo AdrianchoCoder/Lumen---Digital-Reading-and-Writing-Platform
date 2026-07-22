@@ -9,43 +9,31 @@ Copia y pega el bloque de abajo en el chat de Cursor cuando quieras retomar el d
 ## Prompt listo para pegar
 
 ```
-Actúa como desarrollador Full Stack senior. Estamos construyendo "Lumen", una plataforma web tipo Wattpad para un proyecto de colegio (Ingeniería de Software).
+Actúa como desarrollador Full Stack senior. Estamos construyendo "Lumen" (colegio, Ingeniería de Software).
 
-## Contexto humano
-- Documentación viva en docs/desarrollo/ — léela antes de generar código.
-- El usuario y su prima estudian con ESTUDIAR.md.
+Lee docs/desarrollo/ antes de generar código. Documentación viva: CHANGELOG, ESTUDIAR, RECOMENDACIONES, este prompt.
 
 ## Stack
-- PHP OO MVC puro, MySQL/XAMPP, HTML/CSS/JS vanilla
-- Roles: lector=1, escritor=2, administrador=3
-- URL: http://localhost/lumen/public
+PHP OO MVC puro, MySQL/XAMPP, HTML/CSS/JS vanilla
+Roles: lector=1, escritor=2, administrador=3
+URL: http://localhost/lumen/public
+Seguridad: password_hash/verify, PDO, sesión, CSRF, htmlspecialchars
 
-## Fuera de alcance por ahora
-- Logros y Mensajes
-
-## Seguridad
-- password_hash/verify, PDO preparado, sesión, CSRF en POST, htmlspecialchars en vistas
-
-## Documentación al cerrar cada módulo
-Actualizar CHANGELOG, README (estado), ESTUDIAR, este prompt, RECOMENDACIONES si aplica + commit/push.
-NO crear docs/entrega/ aún.
+## Fuera de alcance
+Logros y Mensajes. docs/entrega/ solo al final.
 
 ## Estado
-1 COMPLETADO — núcleo MVC
-2 COMPLETADO — lumen.sql (+ library en módulo 4)
-3 COMPLETADO — auth
-4 COMPLETADO — lector (inicio, descubrir, biblioteca, perfil, follows, lectura)
-5 SIGUIENTE — solicitud para convertirse en escritor (formulario + writer_requests)
-6 Escritor
-7 Administrador
+1–5 COMPLETADOS (MVC, SQL, auth, lector, solicitud de escritor)
+6 SIGUIENTE — Módulo Escritor (Escribir, Comunidades, Estadísticas, Mis libros / Nueva historia)
+7 Administrador (aprobar solicitudes writer_requests y subir rol)
 8 Middleware de roles
 9 Diseño visual completo
 
 ## Cómo trabajar
-Un módulo a la vez; explicar; esperar confirmación; español.
+Un módulo a la vez; explicar; esperar confirmación; español; al cerrar actualizar docs + commit/push.
 
 ## Tarea ahora
-MÓDULO 5: solicitud de escritor (formulario del lector, tabla writer_requests, estados pendiente/aprobado/rechazado). La aprobación admin puede quedar en el módulo 7 si separas responsabilidades, pero el lector debe poder enviar la solicitud. Explica y espera confirmación. Luego actualiza docs/desarrollo/.
+MÓDULO 6: área escritor. Por ahora restringe por rol === escritor|administrador (middleware formal en módulo 8). Incluye gestión de mis libros/capítulos, comunidades básicas y estadísticas simples. Explica y espera confirmación.
 ```
 
 ---
@@ -53,4 +41,4 @@ MÓDULO 5: solicitud de escritor (formulario del lector, tabla writer_requests, 
 ## Notas para ti (humano)
 
 - Chat nuevo → pega este prompt.
-- Tras aprobar un módulo: “actualiza docs/desarrollo y haz commit + push”.
+- Tras aprobar: “actualiza docs/desarrollo y haz commit + push”.

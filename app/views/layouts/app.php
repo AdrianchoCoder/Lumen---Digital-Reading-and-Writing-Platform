@@ -35,6 +35,9 @@ $nav = static function (string $path, string $currentPath): string {
             <a class="<?= $nav('/descubrir', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/descubrir">Descubrir</a>
             <a class="<?= $nav('/biblioteca', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/biblioteca">Biblioteca</a>
             <a class="<?= $nav('/perfil', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/perfil">Perfil</a>
+            <?php if (is_array($authUser) && ($authUser['role'] ?? '') === 'lector'): ?>
+                <a class="<?= $nav('/solicitar-escritor', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/solicitar-escritor">Ser escritor</a>
+            <?php endif; ?>
         </nav>
         <div class="side-footer">
             <?php if (is_array($authUser)): ?>
