@@ -129,6 +129,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 10b | Descubrir catálogo B + logo sidebar | `044ea70` | `main` |
 | 10c | Lectura de capítulo inmersiva (A) | `0610c6d` | `main` |
 | 10d | Biblioteca rejilla portadas (A) | `853378b` | `main` |
+| 10e | Ficha de historia (opción A) | *(pendiente)* | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

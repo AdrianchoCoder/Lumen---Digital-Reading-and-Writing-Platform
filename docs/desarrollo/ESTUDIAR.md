@@ -693,6 +693,35 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10e — Página de la historia (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Ficha de obra | La vista `book.php` es la “tienda” de la historia antes de leer |
+| Portada sintética | Sin imagen real: color por `id * 47 % 360` (igual que Inicio/Biblioteca) |
+| Empezar a leer | Enlace al **primer** capítulo de la lista que ya trae el controlador |
+| Acciones | Biblioteca y seguir siguen siendo POST + CSRF; solo cambió el layout |
+| Capítulos | Cada fila es un enlace a `/libros/{id}/capitulos/{capítulo}` |
+
+### Para la exposición
+
+“Al abrir una historia ves portada, sinopsis y botones claros; desde ahí guardas, sigues al autor o empiezas el primer capítulo.”
+
+### Archivos
+
+1. `app/views/reader/book.php`  
+2. CSS `.story-hero*` y `.chapter-*` en `app.css`  
+
+### Práctica
+
+1. Desde Descubrir o Biblioteca abre una historia.  
+2. Prueba **Empezar a leer**, un capítulo de la lista, guardar/quitar y seguir.  
+3. Mira el vacío si una historia no tuviera capítulos.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -709,6 +738,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron Descubrir (catálogo B + sección Escritores → perfil)  
 - [ ] Ambos probaron leer un capítulo (vista inmersiva + volver a la historia)  
 - [ ] Ambos probaron Biblioteca (rejilla de portadas + Quitar + vacío)  
+- [ ] Ambos probaron la ficha de historia (portada + Empezar a leer + capítulos)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

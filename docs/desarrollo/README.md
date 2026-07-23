@@ -38,6 +38,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10b | Descubrir catálogo B + logo sidebar | Completado | `044ea70` |
 | 10c | Lectura de capítulo inmersiva (A) | Completado | `0610c6d` |
 | 10d | Biblioteca rejilla portadas (A) | Completado | `853378b` |
+| 10e | Ficha de historia (opción A) | Completado | *(pendiente commit)* |
 
 ## Plan de módulos: cerrado
 
@@ -46,7 +47,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
 
-**10d — Biblioteca (opción A):** cabecera + rejilla de portadas (como Inicio), “Quitar” discreto y vacío con CTA a Descubrir.
+**10e — Página de la historia (opción A):** portada + datos + “Empezar a leer”, acciones de biblioteca/seguir y lista de capítulos pulida.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

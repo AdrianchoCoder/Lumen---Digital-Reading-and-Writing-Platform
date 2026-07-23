@@ -4,6 +4,28 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10e] — Ficha de historia opción A (2026-07-23)
+
+### Objetivo
+Pulir `/libros/{id}` al nivel de Inicio/Biblioteca: que se sienta la “portada del producto” antes de leer.
+
+### Cambios
+- Hero horizontal: portada sintética (`--cover-hue`) + género, título, autor, sinopsis
+- CTA **Empezar a leer** → primer capítulo (si existe)
+- Acciones en fila: biblioteca (guardar/quitar) y seguir/dejar de seguir (CSRF intacto)
+- Lista de capítulos en filas (número, título, “Leer”) con hover
+- Vacío de capítulos con `empty-panel`
+- Sin cambios de controlador/modelos
+
+### Archivos
+- `app/views/reader/book.php`
+- `public/assets/css/app.css` (`.story-hero*`, `.chapter-list`, `.chapter-row*`)
+
+### Commit
+- Commit: *(se rellena al hacer push)*
+
+---
+
 ## [Mejora 10d] — Biblioteca rejilla de portadas (opción A) (2026-07-23)
 
 ### Objetivo
