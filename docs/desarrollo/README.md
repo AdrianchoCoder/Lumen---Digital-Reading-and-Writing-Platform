@@ -34,7 +34,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+f | UX compacta formularios auth | Completado | `f5d54f2` |
 | 9+g | Fix ojito contraseña (SVG en assets) | Completado | `98517ff` |
 | 9+h | Ojito Font Awesome dentro del campo | Completado | `c7cde0f` |
-| 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | *(ver CHANGELOG)* |
+| 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | `12d3664` |
 
 ## Plan de módulos: cerrado
 
