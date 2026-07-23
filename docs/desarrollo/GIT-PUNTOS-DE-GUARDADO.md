@@ -130,7 +130,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 10c | Lectura de capítulo inmersiva (A) | `0610c6d` | `main` |
 | 10d | Biblioteca rejilla portadas (A) | `853378b` | `main` |
 | 10e | Ficha de historia (opción A) | `68cb6a7` | `main` |
-| 10f | Perfil + popup al guardar | *(pendiente)* | `main` |
+| 10f | Perfil + popup al guardar | `a79b209` | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

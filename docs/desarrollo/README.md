@@ -39,7 +39,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10c | Lectura de capítulo inmersiva (A) | Completado | `0610c6d` |
 | 10d | Biblioteca rejilla portadas (A) | Completado | `853378b` |
 | 10e | Ficha de historia (opción A) | Completado | `68cb6a7` |
-| 10f | Perfil + popup al guardar | Completado | *(pendiente commit)* |
+| 10f | Perfil + popup al guardar | Completado | `a79b209` |
 
 ## Plan de módulos: cerrado
 

@@ -23,7 +23,7 @@ Pulir `/perfil` (y perfiles públicos `/u/{username}`) con una ficha atractiva y
 - `public/assets/css/app.css` (`.profile-*`, `.app-popup*`)
 
 ### Commit
-- Commit: *(se rellena al hacer push)*
+- Commit: `a79b209`
 
 ---
 
