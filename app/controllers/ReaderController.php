@@ -141,7 +141,7 @@ final class ReaderController extends Controller
         Session::set('user', array_merge($auth, [
             'display_name' => $displayName,
         ]));
-        Session::flash('success', 'Perfil actualizado.');
+        Session::flash('success', 'Se ha guardado o actualizado correctamente tu perfil.');
         $this->redirect('/perfil');
     }
 

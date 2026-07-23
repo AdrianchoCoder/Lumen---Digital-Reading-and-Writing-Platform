@@ -4,6 +4,29 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10f] — Perfil + popup al guardar (2026-07-23)
+
+### Objetivo
+Pulir `/perfil` (y perfiles públicos `/u/{username}`) con una ficha atractiva y confirmar el guardado con un popup.
+
+### Cambios
+- Hero: avatar con inicial, nombre, @usuario, rol, bio, stats (seguidores / siguiendo / historias)
+- Propio: formulario de edición; ajeno: Seguir / Dejar de seguir
+- Historias publicadas en rejilla de portadas (o vacío pulido)
+- Tras guardar: flash `Se ha guardado o actualizado correctamente tu perfil.` → **popup modal** (no banner duplicado en `/perfil`)
+- Mensaje actualizado en `ReaderController::updateProfile`
+
+### Archivos
+- `app/views/reader/profile.php`
+- `app/views/layouts/app.php` (oculta flash-ok de perfil cuando hay popup)
+- `app/controllers/ReaderController.php`
+- `public/assets/css/app.css` (`.profile-*`, `.app-popup*`)
+
+### Commit
+- Commit: *(se rellena al hacer push)*
+
+---
+
 ## [Mejora 10e] — Ficha de historia opción A (2026-07-23)
 
 ### Objetivo

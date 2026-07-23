@@ -39,6 +39,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10c | Lectura de capítulo inmersiva (A) | Completado | `0610c6d` |
 | 10d | Biblioteca rejilla portadas (A) | Completado | `853378b` |
 | 10e | Ficha de historia (opción A) | Completado | `68cb6a7` |
+| 10f | Perfil + popup al guardar | Completado | *(pendiente commit)* |
 
 ## Plan de módulos: cerrado
 
@@ -47,7 +48,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
 
-**10e — Página de la historia (opción A):** portada + datos + “Empezar a leer”, acciones de biblioteca/seguir y lista de capítulos pulida.
+**10f — Perfil:** hero con avatar/stats, edición clara, obras en rejilla y **popup** al guardar (“Se ha guardado o actualizado correctamente tu perfil”).
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

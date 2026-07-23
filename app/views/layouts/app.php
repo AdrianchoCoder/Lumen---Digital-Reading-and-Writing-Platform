@@ -126,7 +126,13 @@ $icon = static function (string $name): string {
         </header>
 
         <div class="app-main">
-            <?php if (!empty($flashSuccess)): ?>
+            <?php
+            // En /perfil el éxito de guardar se muestra como popup (ver profile.php).
+            $profileSuccessPopup = $currentPath === '/perfil'
+                && !empty($flashSuccess)
+                && str_contains((string) $flashSuccess, 'perfil');
+            ?>
+            <?php if (!empty($flashSuccess) && !$profileSuccessPopup): ?>
                 <p class="flash flash-ok"><?= htmlspecialchars((string) $flashSuccess, ENT_QUOTES, 'UTF-8') ?></p>
             <?php endif; ?>
             <?php if (!empty($flashError)): ?>

@@ -722,6 +722,35 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10f — Perfil (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Perfil propio vs ajeno | `/perfil` = el tuyo (editas); `/u/usuario` = otro (puedes seguir) |
+| Stats | Seguidores / siguiendo / historias salen de Follows + libros publicados |
+| Popup de guardado | Tras POST exitoso hay flash; en Perfil se muestra como modal, no solo banner |
+| Misma rejilla | Las obras del perfil reutilizan `.book-grid` / `.story-card` |
+
+### Para la exposición
+
+“En Perfil ves quién eres (avatar, bio, stats), editas tu nombre y biografía, y al guardar aparece un mensaje claro de confirmación.”
+
+### Archivos
+
+1. `app/views/reader/profile.php`  
+2. CSS `.profile-*` / `.app-popup*` en `app.css`  
+3. Flash en `ReaderController::updateProfile`  
+
+### Práctica
+
+1. Abre **Perfil**, cambia el nombre o la bio y guarda.  
+2. Confirma el popup y que el sidebar muestre el nombre nuevo.  
+3. Abre el perfil de un escritor desde Descubrir (`/u/...`) y prueba Seguir.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -739,6 +768,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron leer un capítulo (vista inmersiva + volver a la historia)  
 - [ ] Ambos probaron Biblioteca (rejilla de portadas + Quitar + vacío)  
 - [ ] Ambos probaron la ficha de historia (portada + Empezar a leer + capítulos)  
+- [ ] Ambos probaron Perfil (editar + popup de guardado + perfil ajeno)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  
