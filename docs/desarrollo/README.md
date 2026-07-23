@@ -32,7 +32,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+d | Auth login/register + marca separada | Completado | `07430cb` |
 | 9+e | Validaciones login/register + ojito | Completado | `4412bab` |
 | 9+f | UX compacta formularios auth | Completado | `f5d54f2` |
-| 9+g | Fix ojito contraseña (SVG en assets) | Completado | *(ver CHANGELOG)* |
+| 9+g | Fix ojito contraseña (SVG en assets) | Completado | `98517ff` |
 
 ## Plan de módulos: cerrado
 
