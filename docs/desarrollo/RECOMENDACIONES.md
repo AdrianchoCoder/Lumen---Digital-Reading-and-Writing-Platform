@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 10f Perfil** (2026-07-23).
+Última actualización de este archivo: **mejora 10g Ser escritor** (2026-07-23).
 
 ---
 
@@ -240,6 +240,7 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - Biblioteca (opción A): misma rejilla/portadas que Inicio; “Quitar” fuera del `<a>` para no anidar formulario e enlace
 - Ficha de historia (opción A): portada + metadatos + CTA “Empezar a leer” al primer capítulo; lista de capítulos en filas; sin backend nuevo
 - Perfil: hero con identidad + stats; al guardar perfil preferir **popup** de confirmación (no solo flash banner)
+- Ser escritor: UI motivadora (hero + beneficios + estados); al enviar solicitud, popup de agradecimiento y espera de aprobación
 - Commits: título + descripción relacionados con el cambio real de esa sesión (UI/UX, validación, etc.)
 - No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
 - Hovers de landing/auth con clases propias; en **modo claro** usar morado más oscuro para contraste

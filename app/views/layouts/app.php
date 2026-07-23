@@ -127,12 +127,13 @@ $icon = static function (string $name): string {
 
         <div class="app-main">
             <?php
-            // En /perfil el éxito de guardar se muestra como popup (ver profile.php).
-            $profileSuccessPopup = $currentPath === '/perfil'
-                && !empty($flashSuccess)
-                && str_contains((string) $flashSuccess, 'perfil');
+            // Éxitos de Perfil y Ser escritor se muestran como popup en sus vistas.
+            $successAsPopup = !empty($flashSuccess) && (
+                ($currentPath === '/perfil' && str_contains((string) $flashSuccess, 'perfil'))
+                || ($currentPath === '/solicitar-escritor' && str_contains((string) $flashSuccess, 'solicitud'))
+            );
             ?>
-            <?php if (!empty($flashSuccess) && !$profileSuccessPopup): ?>
+            <?php if (!empty($flashSuccess) && !$successAsPopup): ?>
                 <p class="flash flash-ok"><?= htmlspecialchars((string) $flashSuccess, ENT_QUOTES, 'UTF-8') ?></p>
             <?php endif; ?>
             <?php if (!empty($flashError)): ?>

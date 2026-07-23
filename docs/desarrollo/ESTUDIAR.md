@@ -751,6 +751,37 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10g — Ser escritor (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Solo lectores | El menú **Ser escritor** aparece si `role === lector` |
+| Flujo | Lector envía motivación → admin aprueba → rol `escritor` |
+| Pendiente | No puedes enviar otra solicitud mientras haya una pendiente |
+| Popup | Tras enviar, confirmación atractiva + “espera a que aceptemos” |
+| Sesión | Tras aprobar, a veces hay que **re-login** para ver el menú Escribir |
+
+### Para la exposición
+
+“Si eres lector y quieres publicar, Lumen te invita a solicitar ser escritor: envías tu motivación y esperas la aprobación del administrador.”
+
+### Archivos
+
+1. `app/views/reader/writer-request.php`  
+2. `WriterRequestController`  
+3. CSS `.writer-request-*`  
+
+### Práctica
+
+1. Entra como **lector** → **Ser escritor**.  
+2. Escribe una motivación (≥ 30 caracteres) y envía.  
+3. Confirma el popup y el estado “en revisión”.  
+4. (Opcional) Como admin, aprueba la solicitud.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -769,6 +800,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron Biblioteca (rejilla de portadas + Quitar + vacío)  
 - [ ] Ambos probaron la ficha de historia (portada + Empezar a leer + capítulos)  
 - [ ] Ambos probaron Perfil (editar + popup de guardado + perfil ajeno)  
+- [ ] Ambos probaron Ser escritor (formulario atractivo + popup al enviar)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

@@ -4,6 +4,32 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10g] — Ser escritor + popup de agradecimiento (2026-07-23)
+
+### Objetivo
+Hacer atractiva la solicitud de escritor (mismo nivel que Perfil) e informar con un popup al enviar.
+
+### Cambios
+- Hero motivador con beneficios (publicar, Descubrir, perfil de autor)
+- Estados visuales: ya escritor / pendiente / rechazado / aprobado
+- Formulario e historial rediseñados
+- Popup al enviar: agradecimiento + espera de aceptación
+- Flash: mensaje de agradecimiento en `WriterRequestController::store`
+- Ajuste: popup de Perfil ahora dice **“Se ha actualizado correctamente tu perfil.”**
+- Layout `app.php`: el flash de éxito en `/solicitar-escritor` no duplica banner (va al popup)
+
+### Archivos
+- `app/views/reader/writer-request.php`
+- `app/controllers/WriterRequestController.php`
+- `app/controllers/ReaderController.php` (texto popup perfil)
+- `app/views/layouts/app.php`
+- `public/assets/css/app.css` (`.writer-request-*`)
+
+### Commit
+- Commit: *(se rellena al hacer push)*
+
+---
+
 ## [Mejora 10f] — Perfil + popup al guardar (2026-07-23)
 
 ### Objetivo
@@ -13,7 +39,7 @@ Pulir `/perfil` (y perfiles públicos `/u/{username}`) con una ficha atractiva y
 - Hero: avatar con inicial, nombre, @usuario, rol, bio, stats (seguidores / siguiendo / historias)
 - Propio: formulario de edición; ajeno: Seguir / Dejar de seguir
 - Historias publicadas en rejilla de portadas (o vacío pulido)
-- Tras guardar: flash `Se ha guardado o actualizado correctamente tu perfil.` → **popup modal** (no banner duplicado en `/perfil`)
+- Tras guardar: flash `Se ha actualizado correctamente tu perfil.` → **popup modal** (no banner duplicado en `/perfil`)
 - Mensaje actualizado en `ReaderController::updateProfile`
 
 ### Archivos

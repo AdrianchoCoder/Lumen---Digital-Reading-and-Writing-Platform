@@ -159,7 +159,7 @@ venir por la historia, quedarse por la conexión (lectura, escritura, seguimient
 ```
 Actúa como desarrollador Frontend senior. Proyecto Lumen (entrega colegio).
 Lee docs/desarrollo/ antes de cambiar código.
-Estado: módulos 1–9 + 9+…9+h + 10a–10f (vistas lector hasta Perfil).
+Estado: módulos 1–9 + 9+…9+h + 10a–10g (vistas lector + Ser escritor).
 SOLO frontend esta semana. No features backend nuevas.
 Stack: PHP MVC, MySQL/XAMPP, JS vanilla. URL http://localhost/lumen/public
 Documentar 6 docs + commit/push al cerrar bloque. Español.
@@ -170,7 +170,7 @@ Tarea: [VISTA A PULIR AHORA]
 
 ## Notas
 
-- Plan 1–9 cerrado; 9+ = auth/landing; 10a–10f = pulido vistas lector (Inicio → Perfil).
-- Siguiente foco probable: área **Escritor** (Escribir).
+- Plan 1–9 cerrado; 9+ = auth/landing; 10a–10g = pulido UI lector + solicitud escritor.
+- Siguiente foco probable: área **Escribir** (hub del escritor).
 - Entrega: `docs/entrega/README.md`
 - Demo: `admin@lumen.local` / `Admin123!` · `escritor@lumen.local` / `Escritor123!`

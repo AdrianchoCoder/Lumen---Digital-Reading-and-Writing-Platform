@@ -78,7 +78,10 @@ final class WriterRequestController extends Controller
         }
 
         $this->requests->create((int) $auth['id'], $motivation);
-        Session::flash('success', 'Solicitud enviada. Un administrador la revisará pronto.');
+        Session::flash(
+            'success',
+            '¡Gracias por querer escribir en Lumen! Hemos recibido tu solicitud. Espera a que la aceptemos para convertirte en escritor y publicar tus historias.'
+        );
         $this->redirect('/solicitar-escritor');
     }
 

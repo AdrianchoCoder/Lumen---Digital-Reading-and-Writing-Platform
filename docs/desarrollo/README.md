@@ -40,6 +40,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10d | Biblioteca rejilla portadas (A) | Completado | `853378b` |
 | 10e | Ficha de historia (opción A) | Completado | `68cb6a7` |
 | 10f | Perfil + popup al guardar | Completado | `a79b209` |
+| 10g | Ser escritor + popup agradecimiento | Completado | *(pendiente commit)* |
 
 ## Plan de módulos: cerrado
 
@@ -48,7 +49,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
 
-**10f — Perfil:** hero con avatar/stats, edición clara, obras en rejilla y **popup** al guardar (“Se ha guardado o actualizado correctamente tu perfil”).
+**10g — Ser escritor:** hero motivador, estados claros, formulario e historial pulidos, y popup de agradecimiento al enviar la solicitud. (También: texto del popup de Perfil → “Se ha actualizado correctamente tu perfil.”)
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 
