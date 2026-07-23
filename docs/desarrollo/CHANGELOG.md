@@ -4,6 +4,30 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10a] — Inicio logueado (UI tipo Wattpad) (2026-07-23)
+
+### Qué se implementó (solo frontend)
+
+- Cabecera de bienvenida con accesos a Descubrir y Biblioteca
+- “Recién publicadas” en **rejilla de portadas** (color por id, chip de género)
+- “Siguiendo” en **fila horizontal de avatares** (inicial + nombre)
+- Estados vacíos con panel + CTA
+- Sin cambios de modelos, controladores ni queries
+
+### Cómo probar
+
+1. Login → `http://localhost/lumen/public/inicio`
+2. Tema claro/oscuro
+3. Hover en portadas y chips de autores
+4. Responsive: ventana estrecha
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+h] — Ojito con Font Awesome dentro del campo (2026-07-23)
 
 ### Qué se implementó

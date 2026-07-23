@@ -34,15 +34,16 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+f | UX compacta formularios auth | Completado | `f5d54f2` |
 | 9+g | Fix ojito contraseña (SVG en assets) | Completado | `98517ff` |
 | 9+h | Ojito Font Awesome dentro del campo | Completado | `c7cde0f` |
+| 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
 Los **9 módulos** del plan inicial están completos.  
 A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
-### Última mejora (9+)
+### Última mejora
 
-Auth compacta + ojito con **Font Awesome** dentro del campo de contraseña (derecha). **Sin cambiar** MVC.
+**10a — Inicio:** cabecera, rejilla de portadas y fila “Siguiendo” (solo UI).
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

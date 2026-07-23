@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 9+h Font Awesome ojito** (2026-07-23).
+Última actualización de este archivo: **mejora 10a Inicio UI** (2026-07-23).
 
 ---
 
@@ -232,6 +232,8 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - UI auth: preferir **formularios compactos** (sin muros de texto); chips de requisitos; errores de una línea
 - Ojito de contraseña: usar **Font Awesome** (`fa-eye` / `fa-eye-slash`) con posición **absolute** dentro de `.password-field` (no flex al 100% del input, empuja el botón abajo)
 - CDN Font Awesome en `layouts/main.php`; hace falta red la primera vez
+- Semana de entrega: priorizar **pulido frontend** de vistas demo; no inventar backend (comentarios, likes, etc.)
+- Inicio logueado: portadas visuales + rail de siguiendo; datos del controlador sin cambiar queries
 - Commits: título + descripción relacionados con el cambio real de esa sesión (UI/UX, validación, etc.)
 - No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
 - Hovers de landing/auth con clases propias; en **modo claro** usar morado más oscuro para contraste

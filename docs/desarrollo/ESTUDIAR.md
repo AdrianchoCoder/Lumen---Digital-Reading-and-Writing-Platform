@@ -588,6 +588,29 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10a — Inicio logueado (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Solo vista/CSS | Los datos vienen igual del controlador; cambió la presentación |
+| Portadas fake | Gradiente con `--cover-hue` a partir del id del libro |
+| Follow rail | Scroll horizontal de autores seguidos |
+| Empty panel | Estado vacío con CTA a Descubrir |
+
+### Archivos
+
+1. `app/views/reader/home.php`  
+2. CSS `.home-hero`, `.book-grid`, `.follow-rail` en `app.css`  
+
+### Práctica
+
+1. Entra a `/inicio` y revisa hover de portadas.  
+2. Si no sigues a nadie, prueba el CTA del vacío.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -600,6 +623,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron la landing (carrusel + modal + footer) sin sesión  
 - [ ] Ambos probaron login/register con el nuevo diseño y tema claro/oscuro  
 - [ ] Ambos probaron validaciones (correo dominio, contraseña, usuario, ojito)  
+- [ ] Ambos probaron el Inicio logueado (portadas + siguiendo)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

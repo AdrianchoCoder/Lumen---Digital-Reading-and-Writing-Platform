@@ -125,6 +125,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 9+f | UX compacta formularios auth | `f5d54f2` | `main` |
 | 9+g | Fix ojito contraseña (SVG assets) | `98517ff` | `main` |
 | 9+h | Ojito Font Awesome dentro del campo | `c7cde0f` | `main` |
+| 10a | Inicio logueado UI (rejilla + siguiendo) | *(rellenar tras commit)* | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 
