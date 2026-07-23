@@ -666,6 +666,33 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10d — Biblioteca (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Misma rejilla que Inicio | Reutilizan `.book-grid` y `.story-card` → coherencia visual |
+| Quitar sin romper el clic | El form de quitar está fuera del `<a>` (HTML válido) |
+| Datos existentes | Sigue siendo `Library::booksForUser`; solo cambió la vista |
+
+### Para la exposición
+
+“La biblioteca muestra tus historias guardadas como portadas, igual que el Inicio, y puedes quitarlas sin salir del diseño.”
+
+### Archivos
+
+1. `app/views/reader/library.php`  
+2. CSS `.library-*` en `app.css`  
+
+### Práctica
+
+1. Guarda una historia desde Descubrir o la ficha.  
+2. Ábrela desde la portada en Biblioteca.  
+3. Prueba **Quitar** y comprueba el vacío si no queda ninguna.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -681,6 +708,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron el Inicio logueado (portadas + siguiendo)  
 - [ ] Ambos probaron Descubrir (catálogo B + sección Escritores → perfil)  
 - [ ] Ambos probaron leer un capítulo (vista inmersiva + volver a la historia)  
+- [ ] Ambos probaron Biblioteca (rejilla de portadas + Quitar + vacío)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 10c lectura de capítulo** (2026-07-23).
+Última actualización de este archivo: **mejora 10d Biblioteca** (2026-07-23).
 
 ---
 
@@ -237,6 +237,7 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - Descubrir (opción B): catálogo en filas; la sección **Escritores** sirve para descubrir autores y abrir perfil (comunidad), no solo listar libros
 - Área logueada: logo `logo.png` en el sidebar, separado del texto Lumen (misma marca que landing/auth)
 - Lectura de capítulo: priorizar columna cómoda + barra de contexto del libro; no inventar navegación prev/sig sin datos del controlador
+- Biblioteca (opción A): misma rejilla/portadas que Inicio; “Quitar” fuera del `<a>` para no anidar formulario e enlace
 - Commits: título + descripción relacionados con el cambio real de esa sesión (UI/UX, validación, etc.)
 - No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
 - Hovers de landing/auth con clases propias; en **modo claro** usar morado más oscuro para contraste

@@ -37,6 +37,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | `12d3664` |
 | 10b | Descubrir catálogo B + logo sidebar | Completado | `044ea70` |
 | 10c | Lectura de capítulo inmersiva (A) | Completado | `0610c6d` |
+| 10d | Biblioteca rejilla portadas (A) | Completado | *(pendiente commit)* |
 
 ## Plan de módulos: cerrado
 
@@ -45,7 +46,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
 
-**10c — Leer capítulo (opción A):** barra de volver, columna de lectura inmersiva y pie de retorno a la historia.
+**10d — Biblioteca (opción A):** cabecera + rejilla de portadas (como Inicio), “Quitar” discreto y vacío con CTA a Descubrir.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

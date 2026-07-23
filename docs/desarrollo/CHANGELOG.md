@@ -4,6 +4,26 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10d] — Biblioteca rejilla de portadas (opción A) (2026-07-23)
+
+### Objetivo
+Pulir la vista Biblioteca al mismo nivel visual que Inicio: portadas en rejilla, no solo filas de texto.
+
+### Cambios
+- Cabecera tipo hero con conteo de historias y CTA a Descubrir
+- Rejilla reutilizando `.book-grid` / `.story-card` / portadas con `--cover-hue`
+- Chip de género cuando existe; vacío con panel y CTA
+- Botón **Quitar** absoluto sobre la portada (formulario fuera del enlace, CSRF intacto)
+
+### Archivos
+- `app/views/reader/library.php`
+- `public/assets/css/app.css` (`.library-hero`, `.library-card`, `.library-remove*`)
+
+### Commit
+- Commit: *(se rellena al hacer push)*
+
+---
+
 ## [Mejora 10c] — Lectura de capítulo inmersiva (opción A) (2026-07-23)
 
 ### Qué se implementó (solo frontend)
