@@ -640,6 +640,32 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10c — Lectura de capítulo (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Lectura inmersiva | Columna estrecha + interlineado alto = menos fatiga |
+| Barra sticky | Vuelves a la historia sin perder contexto del libro |
+| Solo UI | El texto sigue saliendo de `chapter.content` del controlador |
+
+### Para la exposición
+
+“Al abrir un capítulo, Lumen prioriza la lectura: barra con el libro, tipografía cómoda y vuelta clara a la lista de capítulos.”
+
+### Archivos
+
+1. `app/views/reader/chapter.php`  
+2. CSS `.reader-chapter*` en `app.css`  
+
+### Práctica
+
+1. Abre un capítulo desde una historia.  
+2. Prueba el enlace volver arriba y el botón del pie.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -654,6 +680,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron validaciones (correo dominio, contraseña, usuario, ojito)  
 - [ ] Ambos probaron el Inicio logueado (portadas + siguiendo)  
 - [ ] Ambos probaron Descubrir (catálogo B + sección Escritores → perfil)  
+- [ ] Ambos probaron leer un capítulo (vista inmersiva + volver a la historia)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

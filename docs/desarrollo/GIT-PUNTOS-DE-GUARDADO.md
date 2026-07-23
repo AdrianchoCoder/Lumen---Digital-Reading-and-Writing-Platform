@@ -127,6 +127,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 9+h | Ojito Font Awesome dentro del campo | `c7cde0f` | `main` |
 | 10a | Inicio logueado UI (rejilla + siguiendo) | `12d3664` | `main` |
 | 10b | Descubrir catálogo B + logo sidebar | `044ea70` | `main` |
+| 10c | Lectura de capítulo inmersiva (A) | *(rellenar tras commit)* | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

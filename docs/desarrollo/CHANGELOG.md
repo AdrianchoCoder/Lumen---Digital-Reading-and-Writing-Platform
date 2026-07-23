@@ -4,6 +4,29 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10c] — Lectura de capítulo inmersiva (opción A) (2026-07-23)
+
+### Qué se implementó (solo frontend)
+
+- Vista `reader/chapter.php` rediseñada para lectura cómoda estilo Wattpad
+- Barra superior (sticky): volver a la historia + título del libro
+- Columna de lectura centrada, tipografía e interlineado pensados para leer
+- Contenedor con acento morado suave; pie con botón “Volver a la historia”
+- Sin cambios de controlador/modelos (sin prev/siguiente: no venían en los datos)
+
+### Cómo probar
+
+1. Login → Descubrir → abrir una historia → un capítulo  
+2. Probar tema claro/oscuro y ventana estrecha  
+3. Usar “Volver a la historia” arriba y abajo  
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 10b] — Descubrir opción B + logo en área logueada (2026-07-23)
 
 ### Qué se implementó (solo frontend)

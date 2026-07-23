@@ -36,6 +36,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+h | Ojito Font Awesome dentro del campo | Completado | `c7cde0f` |
 | 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | `12d3664` |
 | 10b | Descubrir catálogo B + logo sidebar | Completado | `044ea70` |
+| 10c | Lectura de capítulo inmersiva (A) | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
@@ -44,7 +45,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
 
-**10b — Descubrir (opción B):** catálogo en filas + sección Escritores (para descubrir autores/perfiles) + logo Lumen en el sidebar del área logueada.
+**10c — Leer capítulo (opción A):** barra de volver, columna de lectura inmersiva y pie de retorno a la historia.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

@@ -1361,6 +1361,110 @@ h2 {
     font-size: 1.05rem;
 }
 
+/* ——— Lectura de capítulo (opción A inmersiva) ——— */
+.reader-chapter {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.reader-chapter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0.65rem;
+    z-index: 5;
+}
+
+.reader-back {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.reader-back:hover {
+    text-decoration: underline;
+}
+
+.reader-book-title {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: right;
+    max-width: min(100%, 22rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reader-chapter-shell {
+    padding: 1.75rem 1.5rem 2rem;
+    border-radius: calc(var(--radius) + 6px);
+    border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--border));
+    background:
+        radial-gradient(640px 280px at 50% 0%, var(--accent-soft), transparent 60%),
+        var(--panel);
+}
+
+.reader-chapter-shell .eyebrow {
+    margin-bottom: 0.5rem;
+}
+
+.reader-chapter-title {
+    margin: 0 0 1.35rem;
+    font-size: clamp(1.65rem, 3.2vw, 2.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.reader-chapter-body {
+    max-width: 38rem;
+    margin: 0 auto;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--text);
+}
+
+.reader-chapter-foot {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .reader-chapter-bar {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reader-book-title {
+        text-align: left;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .reader-chapter-shell {
+        padding: 1.25rem 1rem 1.5rem;
+    }
+
+    .reader-chapter-body {
+        font-size: 1.02rem;
+        line-height: 1.8;
+    }
+}
+
 .admin-card {
     display: grid;
     gap: 1rem;
