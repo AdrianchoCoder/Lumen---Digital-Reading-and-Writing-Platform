@@ -146,21 +146,18 @@
             btn.addEventListener('click', function () {
                 var wrap = btn.closest('.password-field');
                 var input = wrap ? wrap.querySelector('input') : null;
+                var icon = btn.querySelector('i');
                 if (!input) return;
+
                 var show = input.type === 'password';
                 input.type = show ? 'text' : 'password';
                 btn.setAttribute('aria-label', show ? 'Ocultar contraseña' : 'Mostrar contraseña');
                 btn.setAttribute('title', show ? 'Ocultar contraseña' : 'Mostrar contraseña');
                 btn.classList.toggle('is-visible', show);
-                var eye = btn.querySelector('.icon-eye');
-                var eyeOff = btn.querySelector('.icon-eye-off');
-                if (eye) {
-                    if ('hidden' in eye) eye.hidden = show;
-                    else eye.style.display = show ? 'none' : 'block';
-                }
-                if (eyeOff) {
-                    if ('hidden' in eyeOff) eyeOff.hidden = !show;
-                    else eyeOff.style.display = show ? 'block' : 'none';
+
+                if (icon) {
+                    icon.classList.toggle('fa-eye', !show);
+                    icon.classList.toggle('fa-eye-slash', show);
                 }
             });
         });

@@ -4,6 +4,28 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+h] — Ojito con Font Awesome dentro del campo (2026-07-23)
+
+### Qué se implementó
+
+- CDN **Font Awesome 6.5.2** en `layouts/main.php`
+- Iconos `fa-eye` / `fa-eye-slash` en login y register
+- Posición **absolute** a la derecha **dentro** del input (`padding-right` en el campo)
+- Sin botón cuadrado aparte debajo del campo (el flex fallaba porque el input a 100% empujaba el icono a la línea siguiente)
+
+### Cómo probar
+
+1. Ctrl+F5 en `/login` y `/register` (hace falta internet la primera vez por el CDN)
+2. El ojo debe verse **dentro** del campo, a la derecha
+3. Al clic: muestra texto y cambia a ojo tachado
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+g] — Fix ojito de contraseña (2026-07-23)
 
 ### Qué fallaba

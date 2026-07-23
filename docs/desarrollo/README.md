@@ -33,6 +33,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+e | Validaciones login/register + ojito | Completado | `4412bab` |
 | 9+f | UX compacta formularios auth | Completado | `f5d54f2` |
 | 9+g | Fix ojito contraseña (SVG en assets) | Completado | `98517ff` |
+| 9+h | Ojito Font Awesome dentro del campo | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
@@ -41,7 +42,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora (9+)
 
-Auth compacta + **ojito corregido** (SVG en `assets/img/icons`, botón dentro del campo). **Sin cambiar** MVC.
+Auth compacta + ojito con **Font Awesome** dentro del campo de contraseña (derecha). **Sin cambiar** MVC.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

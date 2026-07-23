@@ -6,8 +6,6 @@
 use App\Core\AuthRules;
 
 $domainsAttr = implode(',', AuthRules::emailDomains());
-$eyeSrc = htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') . '/assets/img/icons/eye.svg';
-$eyeOffSrc = htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') . '/assets/img/icons/eye-off.svg';
 ?>
 <section class="auth-card">
     <p class="eyebrow">Cuenta</p>
@@ -88,8 +86,7 @@ $eyeOffSrc = htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') . '/assets/img/icons
                     aria-describedby="reg-password-strength reg-password-error"
                 >
                 <button type="button" class="password-toggle" data-toggle-password aria-label="Mostrar contraseña" title="Mostrar contraseña">
-                    <img class="icon-eye" src="<?= $eyeSrc ?>" width="20" height="20" alt="">
-                    <img class="icon-eye-off" src="<?= $eyeOffSrc ?>" width="20" height="20" alt="" hidden>
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
                 </button>
             </div>
             <p class="password-strength" id="reg-password-strength" data-password-strength aria-label="Requisitos">
@@ -116,8 +113,7 @@ $eyeOffSrc = htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') . '/assets/img/icons
                     aria-describedby="reg-password-confirm-error"
                 >
                 <button type="button" class="password-toggle" data-toggle-password aria-label="Mostrar confirmación" title="Mostrar contraseña">
-                    <img class="icon-eye" src="<?= $eyeSrc ?>" width="20" height="20" alt="">
-                    <img class="icon-eye-off" src="<?= $eyeOffSrc ?>" width="20" height="20" alt="" hidden>
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
                 </button>
             </div>
             <span class="field-error" id="reg-password-confirm-error" data-error role="alert"><?= !empty($errors['password_confirm']) ? htmlspecialchars($errors['password_confirm'], ENT_QUOTES, 'UTF-8') : '' ?></span>

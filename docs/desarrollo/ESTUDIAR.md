@@ -570,6 +570,24 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 9+h — Font Awesome dentro del input (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| CDN | Font Awesome se carga desde internet en el `<head>` de `main.php` |
+| Iconos | `fa-eye` y `fa-eye-slash` |
+| Posición | `position: absolute; right: …` sobre `.password-field` |
+| Por qué no flex | Un `input` al 100% de ancho empuja el botón a la fila de abajo |
+
+### Práctica
+
+1. Inspecciona el botón del ojito en DevTools: debe estar encima del input.  
+2. Desconecta la red: el icono puede no cargar (dependencia CDN).
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
