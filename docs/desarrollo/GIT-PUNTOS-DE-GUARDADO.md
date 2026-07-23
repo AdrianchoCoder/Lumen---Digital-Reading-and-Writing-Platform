@@ -131,7 +131,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 10d | Biblioteca rejilla portadas (A) | `853378b` | `main` |
 | 10e | Ficha de historia (opción A) | `68cb6a7` | `main` |
 | 10f | Perfil + popup al guardar | `a79b209` | `main` |
-| 10g | Ser escritor + popup agradecimiento | *(pendiente)* | `main` |
+| 10g | Ser escritor + popup agradecimiento | `feb350e` | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

@@ -26,7 +26,7 @@ Hacer atractiva la solicitud de escritor (mismo nivel que Perfil) e informar con
 - `public/assets/css/app.css` (`.writer-request-*`)
 
 ### Commit
-- Commit: *(se rellena al hacer push)*
+- Commit: `feb350e`
 
 ---
 
