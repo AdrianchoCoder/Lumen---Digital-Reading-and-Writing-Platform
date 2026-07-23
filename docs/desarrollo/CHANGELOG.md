@@ -40,7 +40,7 @@ Datos: misma búsqueda `?q=` vía `User::searchWriters` (sin cambiar backend).
 
 ### Commit de referencia
 
-- Commit: *(rellenar tras push)*
+- Commit: `044ea70`
 - Rama: `main`
 
 ---
