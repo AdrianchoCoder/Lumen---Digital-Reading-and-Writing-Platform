@@ -159,7 +159,7 @@ venir por la historia, quedarse por la conexión (lectura, escritura, seguimient
 ```
 Actúa como desarrollador Frontend senior. Proyecto Lumen (entrega colegio).
 Lee docs/desarrollo/ antes de cambiar código.
-Estado: módulos 1–9 + 9+…9+h + 10a (Inicio UI rejilla/siguiendo).
+Estado: módulos 1–9 + 9+…9+h + 10a (Inicio) + 10b (Descubrir catálogo B + Escritores + logo sidebar).
 SOLO frontend esta semana. No features backend nuevas.
 Stack: PHP MVC, MySQL/XAMPP, JS vanilla. URL http://localhost/lumen/public
 Documentar 6 docs + commit/push al cerrar bloque. Español.

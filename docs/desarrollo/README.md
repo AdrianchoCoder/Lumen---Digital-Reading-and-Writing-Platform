@@ -35,6 +35,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+g | Fix ojito contraseña (SVG en assets) | Completado | `98517ff` |
 | 9+h | Ojito Font Awesome dentro del campo | Completado | `c7cde0f` |
 | 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | `12d3664` |
+| 10b | Descubrir catálogo B + logo sidebar | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
@@ -43,7 +44,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
 
-**10a — Inicio:** cabecera, rejilla de portadas y fila “Siguiendo” (solo UI).
+**10b — Descubrir (opción B):** catálogo en filas + sección Escritores (para descubrir autores/perfiles) + logo Lumen en el sidebar del área logueada.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

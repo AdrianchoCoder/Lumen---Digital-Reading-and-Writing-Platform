@@ -4,6 +4,47 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10b] — Descubrir opción B + logo en área logueada (2026-07-23)
+
+### Qué se implementó (solo frontend)
+
+- **Descubrir** rediseñado en estilo catálogo (opción B):
+  - Cabecera + buscador destacado
+  - Historias en **filas** (portada izquierda + título, autor, género, sinopsis)
+  - Sección **Comunidad → Escritores** (chips con avatar): descubrir autores y abrir su perfil
+- Logo oficial `public/assets/img/logo.png` en el **sidebar** del área logueada (separado del texto “Lumen”, como en landing/auth)
+
+### Para qué está la sección Escritores (importante para la demo)
+
+No es decorativa. Completa el flujo tipo Wattpad:
+
+1. El usuario busca o navega historias en el catálogo.  
+2. También puede encontrar **personas** (escritores) en la misma página.  
+3. Al hacer clic va a `/u/{username}` → ver perfil / seguir / leer sus obras.
+
+Así Descubrir no es solo “lista de libros”: también es puerta de entrada a la comunidad de autores.  
+Datos: misma búsqueda `?q=` vía `User::searchWriters` (sin cambiar backend).
+
+### Archivos
+
+- `app/views/reader/discover.php`
+- `app/views/layouts/app.php` (logo sidebar)
+- `public/assets/css/app.css` (catálogo + sidebar brand)
+
+### Cómo probar
+
+1. Login → `/descubrir` (Ctrl+F5)  
+2. Revisar filas de historias y chips de escritores  
+3. Clic en un escritor → perfil  
+4. Comprobar logo en el sidebar en Inicio/Descubrir/etc.
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 10a] — Inicio logueado (UI tipo Wattpad) (2026-07-23)
 
 ### Qué se implementó (solo frontend)

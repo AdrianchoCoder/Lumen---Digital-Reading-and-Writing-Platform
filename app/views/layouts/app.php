@@ -64,10 +64,18 @@ $icon = static function (string $name): string {
 </head>
 <body class="app-body">
     <aside class="sidebar">
-        <a class="brand" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/inicio">
-            <span class="brand-mark"><?= $icon('star') ?></span>
-            <?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?>
-        </a>
+        <div class="sidebar-brand">
+            <a class="sidebar-logo-link" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/inicio" aria-label="Ir al inicio — logo">
+                <span class="logo-slot sidebar-logo-slot">
+                    <img
+                        src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/img/logo.png"
+                        alt=""
+                        class="logo-img"
+                    >
+                </span>
+            </a>
+            <a class="sidebar-brand-text" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/inicio"><?= htmlspecialchars($appName, ENT_QUOTES, 'UTF-8') ?></a>
+        </div>
         <nav class="side-nav">
             <a class="<?= $nav('/inicio', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/inicio"><?= $icon('home') ?> Inicio</a>
             <a class="<?= $nav('/descubrir', $currentPath) ?>" href="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/descubrir"><?= $icon('compass') ?> Descubrir</a>

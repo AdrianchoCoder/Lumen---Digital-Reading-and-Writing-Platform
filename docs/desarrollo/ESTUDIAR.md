@@ -611,6 +611,35 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 10b — Descubrir catálogo + Escritores + logo sidebar (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Opción B | Historias en filas (portada + texto), no rejilla |
+| Sección Escritores | Descubrir **autores** y abrir perfil; no es adorno |
+| Misma búsqueda | `?q=` alimenta libros y escritores |
+| Logo sidebar | `logo.png` + texto Lumen separados en `app.php` |
+
+### Para la exposición (frase lista)
+
+“En Descubrir el usuario encuentra historias en formato catálogo y, abajo, escritores para ir a su perfil y seguirlos; así conectamos lectura y comunidad.”
+
+### Archivos
+
+1. `app/views/reader/discover.php`  
+2. `app/views/layouts/app.php`  
+3. CSS `.catalog-row`, `.writer-chips`, `.sidebar-brand`  
+
+### Práctica
+
+1. Busca un género y mira resultados en filas.  
+2. Haz clic en un chip de escritor.  
+3. Confirma el logo en el menú lateral.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -624,6 +653,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron login/register con el nuevo diseño y tema claro/oscuro  
 - [ ] Ambos probaron validaciones (correo dominio, contraseña, usuario, ojito)  
 - [ ] Ambos probaron el Inicio logueado (portadas + siguiendo)  
+- [ ] Ambos probaron Descubrir (catálogo B + sección Escritores → perfil)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  
