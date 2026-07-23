@@ -4,6 +4,32 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+f] — UX compacta de formularios auth (2026-07-23)
+
+### Qué se implementó
+
+- Formularios login/register **más limpios**: sin párrafos de ayuda que generaban scroll
+- Solo label + input + error (cuando aplica)
+- Requisitos de contraseña en **una línea de chips** (`8+ · a-z · A-Z · 0-9 · símbolo`) que se ponen verdes al cumplirse
+- Ojito real (SVG ojo / ojo tachado) **dentro del campo**, a la derecha
+- Register: usuario y nombre visible en **dos columnas** en desktop
+- Errores cortos; no se muestran “obligatorio” mientras el campo sigue vacío al escribir
+- Las reglas de seguridad en PHP (`AuthRules`) **no cambian**
+
+### Cómo probar
+
+1. Ctrl+F5 en `/login` y `/register`
+2. Comprobar menos scroll y chips de contraseña
+3. Probar el ojito (mostrar/ocultar)
+4. Validar dominio de correo y contraseña débil → error breve
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+e] — Validaciones login/register (2026-07-22)
 
 ### Qué se implementó

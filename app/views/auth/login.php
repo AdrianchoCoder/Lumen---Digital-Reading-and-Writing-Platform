@@ -6,7 +6,6 @@
 use App\Core\AuthRules;
 
 $domainsAttr = implode(',', AuthRules::emailDomains());
-$emailHint = AuthRules::emailDomainsHint();
 ?>
 <section class="auth-card">
     <p class="eyebrow">Cuenta</p>
@@ -20,7 +19,7 @@ $emailHint = AuthRules::emailDomainsHint();
     <form
         method="post"
         action="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/login"
-        class="form auth-form"
+        class="form auth-form auth-form-compact"
         data-auth-form="login"
         data-email-domains="<?= htmlspecialchars($domainsAttr, ENT_QUOTES, 'UTF-8') ?>"
         novalidate
@@ -28,8 +27,7 @@ $emailHint = AuthRules::emailDomainsHint();
         <?= \App\Core\Csrf::field() ?>
 
         <div class="field<?= !empty($errors['email']) ? ' is-invalid' : '' ?>" data-validate="email">
-            <label class="field-label" for="login-email">Correo electrónico</label>
-            <p class="field-hint">Debe incluir @ y un dominio permitido: <?= htmlspecialchars($emailHint, ENT_QUOTES, 'UTF-8') ?></p>
+            <label class="field-label" for="login-email">Correo</label>
             <input
                 type="email"
                 id="login-email"
@@ -38,18 +36,14 @@ $emailHint = AuthRules::emailDomainsHint();
                 required
                 autocomplete="email"
                 maxlength="190"
-                placeholder="ej: nombre@gmail.com"
-                aria-describedby="login-email-hint login-email-error"
+                placeholder="nombre@gmail.com"
+                aria-describedby="login-email-error"
             >
-            <p class="field-hint" id="login-email-hint">Ejemplos válidos: @gmail.com, @hotmail.com, @outlook.com</p>
-            <span class="field-error" id="login-email-error" data-error role="alert">
-                <?= !empty($errors['email']) ? htmlspecialchars($errors['email'], ENT_QUOTES, 'UTF-8') : '' ?>
-            </span>
+            <span class="field-error" id="login-email-error" data-error role="alert"><?= !empty($errors['email']) ? htmlspecialchars($errors['email'], ENT_QUOTES, 'UTF-8') : '' ?></span>
         </div>
 
         <div class="field<?= !empty($errors['password']) ? ' is-invalid' : '' ?>" data-validate="password">
             <label class="field-label" for="login-password">Contraseña</label>
-            <p class="field-hint">Mínimo 8 caracteres, con mayúscula, minúscula, número y un carácter especial.</p>
             <div class="password-field">
                 <input
                     type="password"
@@ -58,24 +52,30 @@ $emailHint = AuthRules::emailDomainsHint();
                     required
                     autocomplete="current-password"
                     maxlength="72"
-                    placeholder="Tu contraseña"
-                    aria-describedby="login-password-hint login-password-error"
+                    placeholder="••••••••"
+                    aria-describedby="login-password-strength login-password-error"
                 >
-                <button type="button" class="password-toggle" data-toggle-password aria-label="Mostrar contraseña" title="Mostrar u ocultar">
-                    <svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <svg class="icon-eye-off" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.1A10.5 10.5 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-4.2 4.8M6.1 6.1A17.6 17.6 0 0 0 2 12s3.5 7 10 7a10.4 10.4 0 0 0 4.2-.9"/></svg>
+                <button type="button" class="password-toggle" data-toggle-password aria-label="Mostrar contraseña" title="Mostrar contraseña">
+                    <svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <svg class="icon-eye-off" viewBox="0 0 24 24" aria-hidden="true" hidden>
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-6.5 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                        <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c6.5 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                        <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/>
+                        <line x1="1" y1="1" x2="23" y2="23"/>
+                    </svg>
                 </button>
             </div>
-            <ul class="field-rules" id="login-password-hint" aria-label="Requisitos de contraseña">
-                <li data-rule="length">Al menos 8 caracteres</li>
-                <li data-rule="lower">Una minúscula</li>
-                <li data-rule="upper">Una mayúscula</li>
-                <li data-rule="number">Un número</li>
-                <li data-rule="special">Un carácter especial (!@#$…)</li>
-            </ul>
-            <span class="field-error" id="login-password-error" data-error role="alert">
-                <?= !empty($errors['password']) ? htmlspecialchars($errors['password'], ENT_QUOTES, 'UTF-8') : '' ?>
-            </span>
+            <p class="password-strength" id="login-password-strength" data-password-strength aria-label="Requisitos">
+                <span data-rule="length">8+</span>
+                <span data-rule="lower">a-z</span>
+                <span data-rule="upper">A-Z</span>
+                <span data-rule="number">0-9</span>
+                <span data-rule="special">símbolo</span>
+            </p>
+            <span class="field-error" id="login-password-error" data-error role="alert"><?= !empty($errors['password']) ? htmlspecialchars($errors['password'], ENT_QUOTES, 'UTF-8') : '' ?></span>
         </div>
 
         <button type="submit" class="btn auth-submit-btn">Entrar</button>

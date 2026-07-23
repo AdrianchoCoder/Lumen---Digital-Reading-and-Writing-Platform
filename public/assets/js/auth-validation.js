@@ -1,5 +1,5 @@
 /**
- * Validación en vivo de login/register.
+ * Validación en vivo de login/register (UI compacta).
  * Reglas alineadas con App\Core\AuthRules (PHP).
  */
 (function () {
@@ -14,23 +14,36 @@
         return raw.split(',').map(function (d) { return d.trim().toLowerCase(); }).filter(Boolean);
     }
 
-    function setError(field, message) {
+    function setError(field, message, options) {
+        options = options || {};
         var el = field.querySelector('[data-error]');
-        if (!el) return;
-        el.textContent = message || '';
+        var input = field.querySelector('input');
+        var hasValue = !!(input && input.value !== '');
+        var force = !!options.force;
+        var soft = !!options.soft;
+
+        // En escritura: no bombardear con "obligatorio" si el campo sigue vacío
+        if (soft && !hasValue && !force) {
+            if (el) el.textContent = '';
+            field.classList.remove('is-invalid', 'is-valid');
+            return message === '';
+        }
+
+        if (el) el.textContent = message || '';
         field.classList.toggle('is-invalid', !!message);
-        field.classList.toggle('is-valid', !message && field.querySelector('input') && field.querySelector('input').value !== '');
+        field.classList.toggle('is-valid', !message && hasValue);
+        return message === '';
     }
 
     function validateEmail(value, domains) {
         value = (value || '').trim();
         if (!value) return 'El correo es obligatorio.';
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-            return 'Escribe un correo válido con @ (ejemplo: nombre@gmail.com).';
+            return 'Correo inválido (usa nombre@dominio.com).';
         }
         var domain = value.slice(value.lastIndexOf('@') + 1).toLowerCase();
         if (domains.indexOf(domain) === -1) {
-            return 'Dominio no permitido. Usa Gmail, Hotmail, Outlook, Yahoo, etc.';
+            return 'Usa Gmail, Hotmail, Outlook, Yahoo u otro dominio permitido.';
         }
         return '';
     }
@@ -49,33 +62,37 @@
         if (!value) return 'La contraseña es obligatoria.';
         var c = passwordChecks(value);
         if (!c.length) return 'Mínimo ' + PASSWORD_MIN + ' caracteres.';
-        if (!c.lower) return 'Incluye al menos una letra minúscula.';
-        if (!c.upper) return 'Incluye al menos una letra mayúscula.';
-        if (!c.number) return 'Incluye al menos un número.';
-        if (!c.special) return 'Incluye al menos un carácter especial (!@#$%…).';
+        if (!c.lower) return 'Falta una minúscula.';
+        if (!c.upper) return 'Falta una mayúscula.';
+        if (!c.number) return 'Falta un número.';
+        if (!c.special) return 'Falta un símbolo (!@#$…).';
         return '';
     }
 
-    function updatePasswordRules(field, value) {
+    function updatePasswordStrength(field, value) {
         var checks = passwordChecks(value || '');
-        field.querySelectorAll('[data-rule]').forEach(function (li) {
-            var key = li.getAttribute('data-rule');
+        var bar = field.querySelector('[data-password-strength]');
+        if (!bar) return;
+        bar.querySelectorAll('[data-rule]').forEach(function (chip) {
+            var key = chip.getAttribute('data-rule');
             var ok = !!checks[key];
-            li.classList.toggle('is-met', ok && value !== '');
-            li.classList.toggle('is-unmet', value !== '' && !ok);
+            chip.classList.toggle('is-met', ok && value !== '');
+            chip.classList.toggle('is-unmet', value !== '' && !ok);
         });
+        var allOk = value !== '' && checks.length && checks.lower && checks.upper && checks.number && checks.special;
+        bar.classList.toggle('is-complete', allOk);
     }
 
     function validateUsername(value) {
         value = (value || '').trim();
-        if (!value) return 'El nombre de usuario es obligatorio.';
+        if (!value) return 'El usuario es obligatorio.';
         if (value.length < USERNAME_MIN || value.length > USERNAME_MAX) {
-            return 'Usuario: entre ' + USERNAME_MIN + ' y ' + USERNAME_MAX + ' caracteres.';
+            return 'Usuario: ' + USERNAME_MIN + '–' + USERNAME_MAX + ' caracteres.';
         }
-        if (/^[0-9]/.test(value)) return 'No puede empezar con un número.';
-        if (/^[^a-zA-Z]/.test(value)) return 'Debe empezar con una letra (A–Z).';
+        if (/^[0-9]/.test(value)) return 'No puede empezar con número.';
+        if (/^[^a-zA-Z]/.test(value)) return 'Debe empezar con una letra.';
         if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(value)) {
-            return 'Solo letras, números y guion bajo (_). Sin espacios ni símbolos.';
+            return 'Solo letras, números y _.';
         }
         return '';
     }
@@ -84,41 +101,42 @@
         value = (value || '').trim();
         if (!value) return 'El nombre visible es obligatorio.';
         if (value.length < DISPLAY_MIN || value.length > DISPLAY_MAX) {
-            return 'Nombre visible: entre ' + DISPLAY_MIN + ' y ' + DISPLAY_MAX + ' caracteres.';
+            return 'Nombre: ' + DISPLAY_MIN + '–' + DISPLAY_MAX + ' caracteres.';
         }
-        if (!/^[\p{L}]/u.test(value)) return 'El nombre visible debe empezar con una letra.';
+        if (!/^[\p{L}]/u.test(value)) return 'Debe empezar con una letra.';
         if (!/^[\p{L}][\p{L}\p{N}\s.'\-]*$/u.test(value)) {
-            return 'Usa letras, espacios y (opcional) punto, apóstrofe o guion.';
+            return 'Caracteres no permitidos.';
         }
         return '';
     }
 
-    function validateField(field, form, domains) {
+    function messageFor(type, value, form, domains) {
+        if (type === 'email') return validateEmail(value, domains);
+        if (type === 'password') return validatePassword(value);
+        if (type === 'password_confirm') {
+            var pass = form.querySelector('[data-validate="password"] input');
+            var passVal = pass ? pass.value : '';
+            if (!value) return 'Confirma tu contraseña.';
+            if (value !== passVal) return 'Las contraseñas no coinciden.';
+            return '';
+        }
+        if (type === 'username') return validateUsername(value);
+        if (type === 'display_name') return validateDisplayName(value);
+        return '';
+    }
+
+    function validateField(field, form, domains, options) {
+        options = options || {};
         var type = field.getAttribute('data-validate');
         var input = field.querySelector('input');
         if (!type || !input) return true;
 
-        var message = '';
-        var value = input.value;
-
-        if (type === 'email') {
-            message = validateEmail(value, domains);
-        } else if (type === 'password') {
-            updatePasswordRules(field, value);
-            message = validatePassword(value);
-        } else if (type === 'password_confirm') {
-            var pass = form.querySelector('[data-validate="password"] input');
-            var passVal = pass ? pass.value : '';
-            if (!value) message = 'Confirma tu contraseña.';
-            else if (value !== passVal) message = 'Las contraseñas no coinciden.';
-        } else if (type === 'username') {
-            message = validateUsername(value);
-        } else if (type === 'display_name') {
-            message = validateDisplayName(value);
+        if (type === 'password') {
+            updatePasswordStrength(field, input.value);
         }
 
-        setError(field, message);
-        return message === '';
+        var message = messageFor(type, input.value, form, domains);
+        return setError(field, message, options);
     }
 
     function bindForm(form) {
@@ -132,6 +150,7 @@
                 var show = input.type === 'password';
                 input.type = show ? 'text' : 'password';
                 btn.setAttribute('aria-label', show ? 'Ocultar contraseña' : 'Mostrar contraseña');
+                btn.setAttribute('title', show ? 'Ocultar contraseña' : 'Mostrar contraseña');
                 btn.classList.toggle('is-visible', show);
                 var eye = btn.querySelector('.icon-eye');
                 var eyeOff = btn.querySelector('.icon-eye-off');
@@ -144,25 +163,25 @@
             var input = field.querySelector('input');
             if (!input) return;
 
-            // Muestra estado al escribir / salir del campo
             input.addEventListener('input', function () {
-                validateField(field, form, domains);
+                validateField(field, form, domains, { soft: true });
                 if (field.getAttribute('data-validate') === 'password') {
                     var confirmField = form.querySelector('[data-validate="password_confirm"]');
                     if (confirmField && confirmField.querySelector('input').value !== '') {
-                        validateField(confirmField, form, domains);
+                        validateField(confirmField, form, domains, { soft: true });
                     }
                 }
             });
+
             input.addEventListener('blur', function () {
-                validateField(field, form, domains);
+                validateField(field, form, domains, { force: input.value !== '' });
             });
         });
 
         form.addEventListener('submit', function (e) {
             var ok = true;
             form.querySelectorAll('.field[data-validate]').forEach(function (field) {
-                if (!validateField(field, form, domains)) ok = false;
+                if (!validateField(field, form, domains, { force: true })) ok = false;
             });
             if (!ok) {
                 e.preventDefault();

@@ -534,6 +534,23 @@ GET /  →  HomeController::index
 
 ---
 
+## Mejora 9+f — UX compacta auth (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Menos texto fijo | Labels + placeholder; errores solo cuando fallan |
+| Chips de fuerza | Una fila compacta sustituye la lista larga |
+| Ojito en el input | Botón absoluto a la derecha del campo |
+| Menos scroll | Dos columnas (usuario/nombre) + gaps menores |
+
+### Idea de diseño
+
+Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia cómo se muestra.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
