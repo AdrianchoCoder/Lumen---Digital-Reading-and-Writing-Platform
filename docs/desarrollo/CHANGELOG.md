@@ -22,7 +22,7 @@ Pulir `/libros/{id}` al nivel de Inicio/Biblioteca: que se sienta la “portada 
 - `public/assets/css/app.css` (`.story-hero*`, `.chapter-list`, `.chapter-row*`)
 
 ### Commit
-- Commit: *(se rellena al hacer push)*
+- Commit: `68cb6a7`
 
 ---
 

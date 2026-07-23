@@ -38,7 +38,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10b | Descubrir catálogo B + logo sidebar | Completado | `044ea70` |
 | 10c | Lectura de capítulo inmersiva (A) | Completado | `0610c6d` |
 | 10d | Biblioteca rejilla portadas (A) | Completado | `853378b` |
-| 10e | Ficha de historia (opción A) | Completado | *(pendiente commit)* |
+| 10e | Ficha de historia (opción A) | Completado | `68cb6a7` |
 
 ## Plan de módulos: cerrado
 
