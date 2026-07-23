@@ -36,7 +36,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+h | Ojito Font Awesome dentro del campo | Completado | `c7cde0f` |
 | 10a | Inicio logueado UI (rejilla + siguiendo) | Completado | `12d3664` |
 | 10b | Descubrir catálogo B + logo sidebar | Completado | `044ea70` |
-| 10c | Lectura de capítulo inmersiva (A) | Completado | *(ver CHANGELOG)* |
+| 10c | Lectura de capítulo inmersiva (A) | Completado | `0610c6d` |
 
 ## Plan de módulos: cerrado
 
