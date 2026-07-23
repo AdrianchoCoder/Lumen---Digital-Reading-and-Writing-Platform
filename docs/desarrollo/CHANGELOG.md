@@ -20,7 +20,7 @@ Pulir la vista Biblioteca al mismo nivel visual que Inicio: portadas en rejilla,
 - `public/assets/css/app.css` (`.library-hero`, `.library-card`, `.library-remove*`)
 
 ### Commit
-- Commit: *(se rellena al hacer push)*
+- Commit: `853378b`
 
 ---
 
