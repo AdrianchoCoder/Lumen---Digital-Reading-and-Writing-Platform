@@ -121,7 +121,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 9+b | Logo + fondo + hovers landing | `2374778` | `main` |
 | 9+c | Pulido marca / hover claro / carrusel | `e996bd4` | `main` |
 | 9+d | Auth login/register + marca separada | `07430cb` | `main` |
-| 9+e | Validaciones login/register + ojito | *(rellenar tras commit)* | `main` |
+| 9+e | Validaciones login/register + ojito | `4412bab` | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 
