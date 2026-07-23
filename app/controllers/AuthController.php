@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Core\AuthRules;
 use App\Core\Controller;
 use App\Core\Session;
 use App\Models\User;
@@ -51,12 +52,15 @@ final class AuthController extends Controller
 
         $errors = [];
 
-        if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Ingresa un correo válido.';
+        $emailError = AuthRules::validateEmail($email);
+        if ($emailError !== null) {
+            $errors['email'] = $emailError;
         }
 
-        if ($password === '') {
-            $errors['password'] = 'Ingresa tu contraseña.';
+        // En login: no vacía + misma fortaleza (evita contraseñas débiles y alinea con registro).
+        $passwordError = AuthRules::validatePassword($password, true);
+        if ($passwordError !== null) {
+            $errors['password'] = $passwordError;
         }
 
         $user = null;
@@ -167,6 +171,7 @@ final class AuthController extends Controller
         $this->redirect('/login');
     }
 
+    /** @return array<string, string> */
     private function validateRegistration(
         string $username,
         string $email,
@@ -176,24 +181,29 @@ final class AuthController extends Controller
     ): array {
         $errors = [];
 
-        if ($username === '' || !preg_match('/^[a-zA-Z0-9_]{3,50}$/', $username)) {
-            $errors['username'] = 'Usuario: 3-50 caracteres (letras, números o _).';
+        $usernameError = AuthRules::validateUsername($username);
+        if ($usernameError !== null) {
+            $errors['username'] = $usernameError;
         }
 
-        if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 190) {
-            $errors['email'] = 'Ingresa un correo válido.';
+        $displayError = AuthRules::validateDisplayName($displayName);
+        if ($displayError !== null) {
+            $errors['display_name'] = $displayError;
         }
 
-        if ($displayName === '' || mb_strlen($displayName) > 100) {
-            $errors['display_name'] = 'El nombre visible es obligatorio (máx. 100).';
+        $emailError = AuthRules::validateEmail($email);
+        if ($emailError !== null) {
+            $errors['email'] = $emailError;
         }
 
-        if (strlen($password) < 8) {
-            $errors['password'] = 'La contraseña debe tener al menos 8 caracteres.';
+        $passwordError = AuthRules::validatePassword($password, true);
+        if ($passwordError !== null) {
+            $errors['password'] = $passwordError;
         }
 
-        if ($password !== $passwordConfirm) {
-            $errors['password_confirm'] = 'Las contraseñas no coinciden.';
+        $confirmError = AuthRules::validatePasswordConfirm($password, $passwordConfirm);
+        if ($confirmError !== null) {
+            $errors['password_confirm'] = $confirmError;
         }
 
         return $errors;

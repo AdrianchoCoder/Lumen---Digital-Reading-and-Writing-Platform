@@ -4,6 +4,34 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+e] — Validaciones login/register (2026-07-22)
+
+### Qué se implementó
+
+- Clase compartida `app/core/AuthRules.php` (reglas PHP = reglas JS)
+- Validación **en vivo** + al enviar: `public/assets/js/auth-validation.js`
+- Labels y **hints visibles** antes de escribir en cada campo
+- **Correo:** formato con `@` + dominio permitido (Gmail, Hotmail, Outlook, Yahoo, Live, iCloud, Proton, `lumen.local` para demos)
+- **Contraseña:** mín. 8, mayúscula, minúscula, número, especial + checklist en vivo + **ojito** mostrar/ocultar
+- **Register:** usuario (3–20, empieza con letra, solo `a-zA-Z0-9_`), nombre visible (2–40, empieza con letra), confirmar contraseña
+- Servidor vuelve a validar todo (no confiar solo en el navegador)
+
+### Cómo probar
+
+1. `/login` y `/register` — lee los hints sin tocar nada  
+2. Correo `hola@empresa.com` → error de dominio; `hola@gmail.com` → ok  
+3. Usuario `1ana` o `_ana` → error; `ana_lee` → ok  
+4. Contraseña débil → checklist en rojo; `Admin123!` → ok  
+5. Ojito muestra/oculta contraseña  
+6. Cuentas demo siguen: `admin@lumen.local` / `Admin123!`
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+d] — Auth login/register + marca separada (2026-07-22)
 
 ### Qué se implementó

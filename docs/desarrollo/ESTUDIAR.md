@@ -501,6 +501,39 @@ GET /  →  HomeController::index
 
 ---
 
+## Mejora 9+e — Validaciones de formularios auth (2026-07-22)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Doble validación | JS mejora UX; PHP es la verdad (seguridad) |
+| `AuthRules` | Una sola fuente de reglas en el servidor |
+| Dominios de correo | Lista blanca (no cualquier dominio) |
+| Checklist contraseña | Feedback visual mientras escribes |
+| Ojito | `type="password"` ↔ `type="text"` |
+
+### Archivos para leer (orden)
+
+1. `app/core/AuthRules.php`  
+2. `app/controllers/AuthController.php`  
+3. `public/assets/js/auth-validation.js`  
+4. `app/views/auth/login.php` y `register.php`  
+
+### Preguntas de repaso
+
+- ¿Por qué se permite `lumen.local`?  
+- ¿Qué pasa si desactivas JavaScript?  
+- ¿Por qué el usuario no puede empezar con número?
+
+### Práctica
+
+1. Intenta registrar `9user` y un correo `@empresa.com`.  
+2. Escribe una contraseña y mira cómo se ponen verdes las reglas.  
+3. Usa el ojito en login.
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):
@@ -512,6 +545,7 @@ Marcar cuando corresponda (se refinará al final):
 - [ ] Ambos probaron el tema claro/oscuro y la barra de búsqueda  
 - [ ] Ambos probaron la landing (carrusel + modal + footer) sin sesión  
 - [ ] Ambos probaron login/register con el nuevo diseño y tema claro/oscuro  
+- [ ] Ambos probaron validaciones (correo dominio, contraseña, usuario, ojito)  
 - [ ] Ambos pueden explicar qué es el middleware de roles y los niveles 1/2/3  
 - [ ] Ambos probaron aprobar una solicitud de escritor en Admin  
 - [ ] Ambos probaron el área Escribir (crear historia + capítulo)  

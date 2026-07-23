@@ -12,9 +12,9 @@ Actúa como desarrollador Full Stack senior. Proyecto "Lumen" (colegio, Ingenier
 Lee docs/desarrollo/ y docs/entrega/ antes de cambiar código.
 
 ## Estado
-Módulos 1–9 COMPLETADOS + mejoras 9+…9+d (landing + login/register con mismo diseño, marca logo/texto separada).
-Stack intacto (MVC/carpetas). Auth usa layout `main.php`; landing usa `landing.php`.
-Siguiente trabajo: bajo demanda (más frontend, bugs, features del colegio).
+Módulos 1–9 COMPLETADOS + mejoras 9+…9+e (landing, auth UI, validaciones login/register).
+Stack intacto (MVC). AuthRules.php + auth-validation.js. Dominios correo en lista blanca (+ lumen.local demo).
+Siguiente trabajo: bajo demanda.
 
 ## Stack
 PHP OO MVC, MySQL/XAMPP, HTML/CSS/JS vanilla

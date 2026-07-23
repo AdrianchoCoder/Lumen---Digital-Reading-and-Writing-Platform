@@ -696,9 +696,124 @@ h2 {
     color: var(--muted);
 }
 
+.field {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.field-hint {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
 .field-error {
     color: var(--err);
     font-size: 0.85rem;
+    min-height: 1.1em;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.field.is-invalid input {
+    border-color: color-mix(in srgb, var(--err) 55%, var(--border));
+}
+
+.field.is-valid input {
+    border-color: color-mix(in srgb, var(--ok) 45%, var(--border));
+}
+
+.field-rules {
+    list-style: none;
+    margin: 0.15rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.2rem;
+}
+
+.field-rules li {
+    font-size: 0.8rem;
+    color: var(--muted);
+    padding-left: 1.15rem;
+    position: relative;
+}
+
+.field-rules li::before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+}
+
+.field-rules li.is-met {
+    color: var(--ok);
+}
+
+.field-rules li.is-met::before {
+    content: "●";
+    color: var(--ok);
+}
+
+.field-rules li.is-unmet {
+    color: var(--err);
+}
+
+.field-rules li.is-unmet::before {
+    content: "○";
+    color: var(--err);
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 2.75rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.1rem;
+    height: 2.1rem;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    padding: 0;
+}
+
+.password-toggle:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.password-toggle svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .muted-link {

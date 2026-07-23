@@ -74,5 +74,6 @@ $isRegisterPage = $currentPath === '/register';
         </main>
     </div>
     <script src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/js/theme.js"></script>
+    <script src="<?= htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') ?>/assets/js/auth-validation.js"></script>
 </body>
 </html>

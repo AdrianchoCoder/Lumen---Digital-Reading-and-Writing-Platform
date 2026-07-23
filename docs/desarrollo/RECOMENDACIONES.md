@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 9+d auth + marca separada** (2026-07-22).
+Última actualización de este archivo: **mejora 9+e validaciones auth** (2026-07-22).
 
 ---
 
@@ -225,6 +225,10 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - Fondo: `public/assets/img/backgroundLandingPages.jpeg` con velo **ligero** (landing y auth)
 - Login/register: reutilizar el lenguaje visual de la landing en `layouts/main.php`, no inventar otro sistema
 - En login no mostrar botón de “Entrar/Iniciar” en el top (redundante); en register mostrar **Iniciar sesión**
+- Validaciones auth: siempre **cliente + servidor**; reglas centralizadas en `AuthRules.php` y espejo en `auth-validation.js`
+- Correos: lista blanca de dominios; incluir `lumen.local` para cuentas demo del colegio
+- Usuario: empieza con letra, longitud corta (3–20); nombre visible con tope (2–40)
+- Contraseña fuerte en registro y login (misma política); ojito para UX, no sustituye hash en servidor
 - No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
 - Hovers de landing/auth con clases propias; en **modo claro** usar morado más oscuro para contraste
 - Carrusel: si el hover “recorta” tarjetas, añadir padding vertical (overflow-x implica recorte en Y)
