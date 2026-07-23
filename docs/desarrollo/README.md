@@ -32,6 +32,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+d | Auth login/register + marca separada | Completado | `07430cb` |
 | 9+e | Validaciones login/register + ojito | Completado | `4412bab` |
 | 9+f | UX compacta formularios auth | Completado | `f5d54f2` |
+| 9+g | Fix ojito contraseña (SVG en assets) | Completado | *(ver CHANGELOG)* |
 
 ## Plan de módulos: cerrado
 
@@ -40,7 +41,7 @@ A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora (9+)
 
-Auth con validaciones + **UI compacta** (menos scroll, chips de contraseña, ojito real). Landing intacta. **Sin cambiar** la estructura MVC.
+Auth compacta + **ojito corregido** (SVG en `assets/img/icons`, botón dentro del campo). **Sin cambiar** MVC.
 
 Guía de entrega: [../entrega/README.md](../entrega/README.md)
 

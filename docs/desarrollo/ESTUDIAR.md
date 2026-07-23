@@ -551,6 +551,25 @@ Primero UX limpia; la seguridad sigue en `AuthRules` + el mismo JS, solo cambia 
 
 ---
 
+## Mejora 9+g — Ojito de contraseña corregido (2026-07-23)
+
+### Qué deben entender
+
+| Concepto | En una frase |
+|----------|----------------|
+| Por qué falló el SVG | `fill: none` + stroke mal aplicado → solo se veían puntos |
+| Solución usada | Archivos `eye.svg` / `eye-off.svg` + layout **flex** del campo |
+| Alternativas | Inline SVG, icon font/CDN, emoji |
+
+### Archivos
+
+1. `public/assets/img/icons/eye.svg`  
+2. `public/assets/img/icons/eye-off.svg`  
+3. CSS `.password-field` (flex)  
+4. `login.php` / `register.php`  
+
+---
+
 ## Antes de la exposición (checklist vivo)
 
 Marcar cuando corresponda (se refinará al final):

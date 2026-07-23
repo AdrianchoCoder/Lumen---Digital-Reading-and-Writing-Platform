@@ -154,8 +154,14 @@
                 btn.classList.toggle('is-visible', show);
                 var eye = btn.querySelector('.icon-eye');
                 var eyeOff = btn.querySelector('.icon-eye-off');
-                if (eye) eye.hidden = show;
-                if (eyeOff) eyeOff.hidden = !show;
+                if (eye) {
+                    if ('hidden' in eye) eye.hidden = show;
+                    else eye.style.display = show ? 'none' : 'block';
+                }
+                if (eyeOff) {
+                    if ('hidden' in eyeOff) eyeOff.hidden = !show;
+                    else eyeOff.style.display = show ? 'block' : 'none';
+                }
             });
         });
 

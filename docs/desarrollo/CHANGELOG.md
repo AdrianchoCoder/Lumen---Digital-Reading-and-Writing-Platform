@@ -4,6 +4,32 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 9+g] — Fix ojito de contraseña (2026-07-23)
+
+### Qué fallaba
+
+- El SVG inline usaba `stroke` + `fill: none`; en la práctica solo se veían “dos puntos” (pupila) y el botón no quedaba integrado al campo.
+
+### Qué se hizo
+
+- Iconos reales en `public/assets/img/icons/eye.svg` y `eye-off.svg` (SVG relleno)
+- Campo de contraseña con **flex**: input + botón ojito a la **derecha dentro del mismo marco**
+- Login y register actualizados
+
+### Opciones de iconos (referencia de estudio)
+
+1. **Archivos SVG/PNG** en `assets` (lo usado ahora; fiable)  
+2. **SVG inline** con `fill="currentColor"` (bien si el CSS no anula el trazo)  
+3. **Librería** (Font Awesome / Lucide por CDN)  
+4. **Emoji** (👁) — rápido, menos control de estilo  
+
+### Commit de referencia
+
+- Commit: *(rellenar tras push)*
+- Rama: `main`
+
+---
+
 ## [Mejora 9+f] — UX compacta de formularios auth (2026-07-23)
 
 ### Qué se implementó

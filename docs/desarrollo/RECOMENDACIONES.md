@@ -3,7 +3,7 @@
 Acuerdos y consejos acumulados durante el desarrollo.  
 **Se va ampliando** al cerrar cada módulo o cuando surja una decisión importante.
 
-Última actualización de este archivo: **mejora 9+f UX compacta auth** (2026-07-23).
+Última actualización de este archivo: **mejora 9+g fix ojito** (2026-07-23).
 
 ---
 
@@ -230,6 +230,7 @@ Si estás en la página de login y escribes solo `escribir` sin `/` al inicio, e
 - Usuario: empieza con letra, longitud corta (3–20); nombre visible con tope (2–40)
 - Contraseña fuerte en registro y login (misma política); ojito para UX, no sustituye hash en servidor
 - UI auth: preferir **formularios compactos** (sin muros de texto); chips de requisitos; errores de una línea
+- Ojito de contraseña: preferir **SVG en archivo** (`assets/img/icons`) + layout flex del campo; evitar SVG solo-stroke que puede verse como puntos
 - Commits: título + descripción relacionados con el cambio real de esa sesión (UI/UX, validación, etc.)
 - No poner enlace “Inicio” en el navbar de la landing si solo recarga la misma página
 - Hovers de landing/auth con clases propias; en **modo claro** usar morado más oscuro para contraste

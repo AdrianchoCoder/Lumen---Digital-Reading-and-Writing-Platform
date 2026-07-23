@@ -6,6 +6,8 @@
 use App\Core\AuthRules;
 
 $domainsAttr = implode(',', AuthRules::emailDomains());
+$eyeSrc = htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') . '/assets/img/icons/eye.svg';
+$eyeOffSrc = htmlspecialchars($appUrl, ENT_QUOTES, 'UTF-8') . '/assets/img/icons/eye-off.svg';
 ?>
 <section class="auth-card">
     <p class="eyebrow">Cuenta</p>
@@ -56,16 +58,8 @@ $domainsAttr = implode(',', AuthRules::emailDomains());
                     aria-describedby="login-password-strength login-password-error"
                 >
                 <button type="button" class="password-toggle" data-toggle-password aria-label="Mostrar contraseña" title="Mostrar contraseña">
-                    <svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    <svg class="icon-eye-off" viewBox="0 0 24 24" aria-hidden="true" hidden>
-                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-6.5 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"/>
-                        <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c6.5 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"/>
-                        <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/>
-                        <line x1="1" y1="1" x2="23" y2="23"/>
-                    </svg>
+                    <img class="icon-eye" src="<?= $eyeSrc ?>" width="20" height="20" alt="">
+                    <img class="icon-eye-off" src="<?= $eyeOffSrc ?>" width="20" height="20" alt="" hidden>
                 </button>
             </div>
             <p class="password-strength" id="login-password-strength" data-password-strength aria-label="Requisitos">

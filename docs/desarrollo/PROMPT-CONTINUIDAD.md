@@ -12,8 +12,8 @@ Actúa como desarrollador Full Stack senior. Proyecto "Lumen" (colegio, Ingenier
 Lee docs/desarrollo/ y docs/entrega/ antes de cambiar código.
 
 ## Estado
-Módulos 1–9 COMPLETADOS + mejoras 9+…9+f (landing, auth UI, validaciones, UX compacta de formularios).
-Stack intacto (MVC). AuthRules.php + auth-validation.js. Commits con mensaje claro del cambio UI/UX actual.
+Módulos 1–9 COMPLETADOS + mejoras 9+…9+g (auth UX; ojito con SVG en assets/img/icons).
+Stack intacto (MVC). Commits con mensaje claro del cambio de la sesión.
 Siguiente trabajo: bajo demanda.
 
 ## Stack
