@@ -31,7 +31,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 9+c | Pulido marca / hover claro / carrusel | Completado | `e996bd4` |
 | 9+d | Auth login/register + marca separada | Completado | `07430cb` |
 | 9+e | Validaciones login/register + ojito | Completado | `4412bab` |
-| 9+f | UX compacta formularios auth | Completado | *(ver CHANGELOG)* |
+| 9+f | UX compacta formularios auth | Completado | `f5d54f2` |
 
 ## Plan de módulos: cerrado
 
