@@ -42,7 +42,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10f | Perfil + popup al guardar | Completado | `a79b209` |
 | 10g | Ser escritor + popup agradecimiento | Completado | `feb350e` |
 | 10h | Fix ruta local lumen → nexus | Completado | `642c711` |
-| 10i | URL de app auto-detectada (portabilidad) | Completado | *(se rellena al hacer push)* |
+| 10i | URL de app auto-detectada (portabilidad) | Completado | `3cf6afb` |
 
 ## Plan de módulos: cerrado
 

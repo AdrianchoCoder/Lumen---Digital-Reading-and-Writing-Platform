@@ -31,7 +31,7 @@ Con el mismo código respondiendo a la vez bajo `htdocs/nexus` y bajo el enlace 
 - `docs/entrega/README.md`
 
 ### Commit
-- Commit: *(se rellena al hacer push)*
+- Commit: `3cf6afb`
 
 ---
 
