@@ -132,6 +132,7 @@ Así siempre tienes un “guardar partida” en GitHub.
 | 10e | Ficha de historia (opción A) | `68cb6a7` | `main` |
 | 10f | Perfil + popup al guardar | `a79b209` | `main` |
 | 10g | Ser escritor + popup agradecimiento | `feb350e` | `main` |
+| 10h | Fix ruta local lumen → nexus | *(se rellena al hacer push)* | `main` |
 
 Para volver al estado del módulo 5, por ejemplo:
 

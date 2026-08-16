@@ -41,6 +41,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10e | Ficha de historia (opción A) | Completado | `68cb6a7` |
 | 10f | Perfil + popup al guardar | Completado | `a79b209` |
 | 10g | Ser escritor + popup agradecimiento | Completado | `feb350e` |
+| 10h | Fix ruta local lumen → nexus | Completado | *(se rellena al hacer push)* |
 
 ## Plan de módulos: cerrado
 
@@ -48,6 +49,8 @@ Los **9 módulos** del plan inicial están completos.
 A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
+
+**10h — Fix ruta local:** `app.url` en `config/config.php` estaba fijo a `http://localhost/lumen/public`; al renombrar la carpeta a `nexus` en XAMPP daba 404 y assets/redirects rotos. Actualizado a `http://localhost/nexus/public`.
 
 **10g — Ser escritor:** hero motivador, estados claros, formulario e historial pulidos, y popup de agradecimiento al enviar la solicitud. (También: texto del popup de Perfil → “Se ha actualizado correctamente tu perfil.”)
 
@@ -57,4 +60,4 @@ Guía de entrega: [../entrega/README.md](../entrega/README.md)
 
 1–6 docs + commit + push cuando cierres un bloque de trabajo.
 
-URL local: `http://localhost/lumen/public`
+URL local: `http://localhost/nexus/public`

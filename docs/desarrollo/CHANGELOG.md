@@ -4,6 +4,30 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10h] — Fix ruta local: lumen → nexus (2026-08-15)
+
+### Objetivo
+Corregir el acceso local (404 en `localhost/nexus/public`) tras renombrar la carpeta del proyecto de `lumen` a `nexus` en XAMPP.
+
+### Qué fallaba
+- En `htdocs` no existía ninguna carpeta ni enlace llamado `nexus` (solo seguía existiendo el enlace `lumen` de siempre), así que Apache devolvía 404 antes de llegar a `public/`.
+- `config/config.php` tenía `app.url` fijo en `http://localhost/lumen/public`. Ese valor arma los `href`/`src` de CSS, JS, logo y las URLs de `redirect()` en `Controller.php`; si la carpeta cambia de nombre sin actualizar esta URL, assets y redirects se rompen aunque la carpeta sí exista.
+
+### Cambios
+- `config/config.php`: `app.url` → `http://localhost/nexus/public`
+- Entorno local (fuera del repo, no versionado): creada una *junction* `C:\xampp\htdocs\nexus` apuntando a esta carpeta del repo (no requiere privilegios de administrador, a diferencia de un symlink)
+
+### Nota técnica
+`Router::dispatch` y `Controller::currentPath()` ya calculaban la ruta base dinámicamente desde `SCRIPT_NAME`, así que no dependían del nombre de la carpeta. El único punto "duro" era `app.url` en config.
+
+### Archivos
+- `config/config.php`
+
+### Commit
+- Commit: *(se rellena al hacer push)*
+
+---
+
 ## [Mejora 10g] — Ser escritor + popup de agradecimiento (2026-07-23)
 
 ### Objetivo

@@ -13,7 +13,7 @@ return [
         'name'      => 'Lumen',
         'env'       => 'local',
         'debug'     => true,
-        'url'       => 'http://localhost/lumen/public',
+        'url'       => 'http://localhost/nexus/public',
         'timezone'  => 'America/Bogota',
     ],
 
