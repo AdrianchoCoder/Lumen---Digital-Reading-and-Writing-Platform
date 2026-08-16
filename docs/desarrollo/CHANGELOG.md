@@ -24,7 +24,7 @@ Corregir el acceso local (404 en `localhost/nexus/public`) tras renombrar la car
 - `config/config.php`
 
 ### Commit
-- Commit: *(se rellena al hacer push)*
+- Commit: `642c711`
 
 ---
 
