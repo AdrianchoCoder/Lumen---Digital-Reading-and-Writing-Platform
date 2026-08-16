@@ -10,7 +10,9 @@ return [
         'name'      => 'Lumen',
         'env'       => 'local',
         'debug'     => true,
-        'url'       => 'http://localhost/lumen/public',
+        // Vacío = se detecta solo (esquema + host + carpeta) desde la petición.
+        // Solo fija un valor aquí si necesitas forzar un dominio distinto (ej. detrás de un proxy).
+        'url'       => '',
         'timezone'  => 'America/Bogota',
     ],
 

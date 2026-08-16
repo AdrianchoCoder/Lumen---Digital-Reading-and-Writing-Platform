@@ -34,7 +34,7 @@ abstract class Controller
 
         $data = array_merge([
             'appName'      => $this->config['app']['name'] ?? 'Lumen',
-            'appUrl'       => rtrim($this->config['app']['url'] ?? '', '/'),
+            'appUrl'       => AppUrl::detect($this->config['app']['url'] ?? null),
             'authUser'     => $authUser,
             'flashSuccess' => Session::pullFlash('success'),
             'flashError'   => Session::pullFlash('error'),
@@ -63,7 +63,7 @@ abstract class Controller
 
     protected function redirect(string $path): void
     {
-        $base = rtrim($this->config['app']['url'] ?? '', '/');
+        $base = AppUrl::detect($this->config['app']['url'] ?? null);
         $target = str_starts_with($path, 'http') ? $path : $base . '/' . ltrim($path, '/');
         header('Location: ' . $target);
         exit;

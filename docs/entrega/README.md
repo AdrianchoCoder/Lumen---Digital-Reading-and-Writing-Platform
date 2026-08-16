@@ -21,16 +21,11 @@ Guía corta para instalar y presentar el proyecto cuando el desarrollo ya está 
 
 ### Pasos
 
-1. Copia el proyecto a `C:\xampp\htdocs\lumen` **o** crea un enlace (junction) como en el desarrollo.
+1. Copia el proyecto a `C:\xampp\htdocs\<lo-que-quieras>` (cualquier nombre de carpeta sirve) **o** crea un enlace (junction) como en el desarrollo.
 2. Arranca **Apache** y **MySQL** en XAMPP.
 3. Abre phpMyAdmin → Importar → `database/lumen.sql`.
-4. Copia `config/config.example.php` a `config/config.php` si hace falta y deja:
-
-```php
-'url' => 'http://localhost/lumen/public',
-```
-
-5. Abre: `http://localhost/lumen/public`
+4. Copia `config/config.example.php` a `config/config.php` si hace falta. Con `'url' => ''` (valor por defecto) la app detecta sola el dominio y la carpeta desde la petición, así que **no hace falta editar nada** aunque cambies el nombre de la carpeta.
+5. Abre: `http://localhost/<nombre-de-tu-carpeta>/public`
 
 ### Cuentas demo
 

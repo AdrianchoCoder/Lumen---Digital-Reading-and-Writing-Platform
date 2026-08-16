@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
+use App\Core\AppUrl;
 use App\Core\Session;
 
 /**
@@ -22,7 +23,7 @@ final class RoleMiddleware
     {
         $config = require dirname(__DIR__, 2) . '/config/config.php';
         $roles = $config['roles'] ?? [];
-        $appUrl = rtrim((string) ($config['app']['url'] ?? ''), '/');
+        $appUrl = AppUrl::detect($config['app']['url'] ?? null);
 
         if ($rule === 'auth') {
             if (!self::isLoggedIn()) {

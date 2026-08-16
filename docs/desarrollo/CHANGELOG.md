@@ -4,6 +4,37 @@ Registro incremental. El más reciente va arriba.
 
 ---
 
+## [Mejora 10i] — URL de app auto-detectada (portabilidad) (2026-08-15)
+
+### Objetivo
+Que cualquiera pueda clonar el repo y ejecutarlo con XAMPP sin importar el nombre de carpeta que use en `htdocs`, sin tocar `config.php`.
+
+### Qué fallaba
+`config/config.php` (trackeado en git) traía `app.url` fijo (`http://localhost/nexus/public`). Cualquiera que clonara el repo con otro nombre de carpeta —el caso normal, porque git clona con el nombre del repo, no `nexus`— se topaba con el mismo 404 / assets rotos que motivó la Mejora 10h. `docs/entrega/README.md` además seguía mencionando `lumen` como nombre fijo de carpeta.
+
+### Cambios
+- Nueva clase `App\Core\AppUrl::detect()`: si `config['app']['url']` viene vacío, arma la URL base desde la propia petición (esquema + host + carpeta de `public/index.php`, con la misma lógica de `SCRIPT_NAME` que ya usa `Router::dispatch`)
+- `Controller::view()` y `Controller::redirect()` usan `AppUrl::detect()` en vez de leer `app.url` directo
+- `RoleMiddleware::handle()` igual, para los redirects de `auth`/`guest`/`role:*`
+- `config/config.php` y `config/config.example.php`: `'url' => ''` por defecto (auto-detección); se deja como override opcional solo para forzar un dominio distinto (ej. detrás de un proxy)
+- `docs/entrega/README.md`: quitado el paso manual de ajustar `url`; cualquier nombre de carpeta funciona
+
+### Verificación
+Con el mismo código respondiendo a la vez bajo `htdocs/nexus` y bajo el enlace viejo `htdocs/lumen`, ambos generan assets y redirects con su propio nombre de carpeta correctamente, sin editar `config.php`.
+
+### Archivos
+- `app/core/AppUrl.php` (nuevo)
+- `app/core/Controller.php`
+- `app/middleware/RoleMiddleware.php`
+- `config/config.php`
+- `config/config.example.php`
+- `docs/entrega/README.md`
+
+### Commit
+- Commit: *(se rellena al hacer push)*
+
+---
+
 ## [Mejora 10h] — Fix ruta local: lumen → nexus (2026-08-15)
 
 ### Objetivo

@@ -42,6 +42,7 @@ Documentación viva del proyecto de **Ingeniería de Software** (colegio).
 | 10f | Perfil + popup al guardar | Completado | `a79b209` |
 | 10g | Ser escritor + popup agradecimiento | Completado | `feb350e` |
 | 10h | Fix ruta local lumen → nexus | Completado | `642c711` |
+| 10i | URL de app auto-detectada (portabilidad) | Completado | *(se rellena al hacer push)* |
 
 ## Plan de módulos: cerrado
 
@@ -49,6 +50,8 @@ Los **9 módulos** del plan inicial están completos.
 A partir de aquí: mejoras de frontend, bugs, o lo que pidan en el colegio.
 
 ### Última mejora
+
+**10i — URL auto-detectada:** `app.url` ya no viene fijo en `config.php`; `App\Core\AppUrl::detect()` arma la URL base desde la petición (esquema + host + carpeta), así que el proyecto funciona clonado en cualquier carpeta de `htdocs` sin editar nada.
 
 **10h — Fix ruta local:** `app.url` en `config/config.php` estaba fijo a `http://localhost/lumen/public`; al renombrar la carpeta a `nexus` en XAMPP daba 404 y assets/redirects rotos. Actualizado a `http://localhost/nexus/public`.
 
